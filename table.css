@@ -1,21 +1,21 @@
 @charset "utf-8";
 
 /*============================================
-ƒe[ƒuƒ‹
+ï¿½eï¿½[ï¿½uï¿½ï¿½
 ============================================*/
 table.profile {
-	width:680px;				/*ƒe[ƒuƒ‹‘S‘Ì‚Ì•*/
+	width:680px;				/*ï¿½eï¿½[ï¿½uï¿½ï¿½ï¿½Sï¿½Ì‚Ì•ï¿½*/
 }
 table.profile th {
-	width:150px;				/*Œ©o‚µƒZƒ‹‚Ì•*/
-	padding:10px;				/*ƒpƒfƒBƒ“ƒO*/
-	text-align:center;				/*ƒZƒ“ƒ^[‘µ‚¦‚É‚·‚é*/
-	white-space:nowrap;				/*ƒZƒ‹“à‚Ì‰üs‚ğ‹Ö~‚·‚é*/
-	background-color:#ccccee;			/*ƒZƒ‹‚Ì”wŒiF*/
-	border-bottom:dotted #666666 1px;		/*ƒZƒ‹‚Ìƒ{[ƒ_[*/
+	width:150px;				/*ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½Zï¿½ï¿½ï¿½Ì•ï¿½*/
+	padding:10px;				/*ï¿½pï¿½fï¿½Bï¿½ï¿½ï¿½O*/
+	text-align:center;				/*ï¿½Zï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½*/
+	white-space:nowrap;				/*ï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½Ì‰ï¿½ï¿½sï¿½ï¿½ï¿½Ö~ï¿½ï¿½ï¿½ï¿½*/
+	background-color:#ccccee;			/*ï¿½Zï¿½ï¿½ï¿½Ì”wï¿½iï¿½F*/
+	border-bottom:dotted #666666 1px;		/*ï¿½Zï¿½ï¿½ï¿½Ìƒ{ï¿½[ï¿½_ï¿½[*/
 }
 table.profile td {
-	padding:10px;				/*ƒpƒfƒBƒ“ƒO*/
-	background-color:#eeeeff;			/*ƒZƒ‹‚Ì”wŒiF*/
-	border-bottom:dotted #666666 1px;		/*ƒZƒ‹‚Ìƒ{[ƒ_[*/
+	padding:10px;				/*ï¿½pï¿½fï¿½Bï¿½ï¿½ï¿½O*/
+	background-color:#eeeeff;			/*ï¿½Zï¿½ï¿½ï¿½Ì”wï¿½iï¿½F*/
+	border-bottom:dotted #666666 1px;		/*ï¿½Zï¿½ï¿½ï¿½Ìƒ{ï¿½[ï¿½_ï¿½[*/
 }
