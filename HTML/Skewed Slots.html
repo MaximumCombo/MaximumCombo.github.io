@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>Skewed Slots — Keep Talking and Nobody Explodes Module</title>
+    <meta content="initial-scale=1" name="viewport">
+    <link rel='stylesheet' type='text/css' href='css/font.css'>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src='js/ktane-utils.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+
+    <style>
+        .prime {
+            background: khaki;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Skewed Slots</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Skewed Slots.svg" class="diagram">
+                <h2>モジュール詳細: ゆがんだスロット</h2>
+                <p class="flavour-text">これはどういうわけか違法だ・・・</p>
+                <i>インジケーターを確認するには「付録A」を参照すること。</i>
+                <br>
+                <i>バッテリーの種類を確認するには「付録B」を参照すること。</i>
+                <br>
+                <i>ポートの種類を確認するには「付録C」を参照すること。</i>
+                <br>
+                <i>数学用語を確認するには「付録 数学」を参照すること。</i>
+                <ul>
+                    <li>このモジュールには3つの数字が書かれたスロットとSUBMIT(確認)ボタンがある。</li>
+                    <li>表示された数字から、下の表のルールに従って正しい数字を入力してSUBMITボタンを押す。表の頭にはルールを適用する対象のスロットが記されている。</li>
+                    <li>全てのルールを適用して得た数字が0より小さい場合、10を足す。そうでない場合、数字が9より大きいなら、10を引く。数字が0-9の間になるまでこの動作を続ける。</li>
+                    <li>数字を間違えた場合、自動でスロットが回り、1ミスとなる。</li>
+                </ul>
+                <strong><em>注釈：</em></strong>元々の数字とは最初に表示された数字のことである。
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong><em>全てのスロット</em></strong>
+                                <br>
+                                2を全て5に、7を全て0にする。
+                                <br>
+                                光っているインジケーターがある分だけ1を足し、光っていないものの分だけ1を引く。
+                                <br>
+                                もし、数字が3の倍数なら、4を足す。
+                                <br>
+                                そうでない場合、数字が7より大きいなら、数字を2倍する。
+                                <br>
+                                そうでない場合、数字が3より小さく、偶数ならば2で割る。
+                                <br>
+                                そうでない場合、ステレオRCAかPS/2ポートがあるなら、この次のルールには従わない。
+                                <br>
+                                そうでない場合、元々の数字にバッテリーの数を足す。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong><em>左のスロット</em></strong>
+                                <br>
+                                数字が偶数で5よりも大きい場合、二で割る。
+                                <br>
+                                そうでない場合、数字が素数なら、シリアルナンバーの一番右の数字を足す。
+                                <br>
+                                そうでない場合、パラレルポートがあるなら-1倍する。
+                                <br>
+                                そうでない場合、真ん中のスロットの元々の数字が奇数なら、この数字を変えない。
+                                <br>
+                                そうでない場合、2を引く。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/3</div>
+        </div>
+        <div class="page page-bg-02">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Skewed Slots</span>
+            </div>
+            <div class="page-content">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong><em>真ん中のスロット</em></strong>
+                                <br>
+                                光っていないBOBというインジケーターがある場合、数字を変えない。
+                                <br>
+                                そうでない場合、数字が0なら、左のスロットの元々の数字を足す。
+                                <br>
+                                そうでない場合、数字がフィボナッチ数列の中にあるなら、その数字の次にくる数字を足す。
+                                <br>
+                                そうでない場合、数字が7以上なら、4を足す。
+                                <br>
+                                そうでない場合、数字を3倍する。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong><em>右のスロット</em></strong>
+                                <br>
+                                シリアルポートがある場合、シリアルナンバーの最も大きい数字を足す。
+                                <br>
+                                そうでない場合、元々の数字が他の元々の数字と同じだったなら、数字を変えない。
+                                <br>
+                                そうでない場合、数字が5以上なら、数字は元々の数字の2進数の位をそれぞれ合計した数字。
+                                <br>
+                                そうでない場合、数字に1を足す。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 2/3</div>
+        </div>
+        <div class="page appendix-indicators page-bg-03">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Appendix Math</span>
+            </div>
+            <div class="page-content">
+                <h2>付録 数学: 数学用語について</h2>
+                <h3>フィボナッチ数列</h3>
+                1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+                <h3>素数</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td>1</td>
+                            <td class="prime">2</td>
+                            <td class="prime">3</td>
+                            <td>4</td>
+                            <td class="prime">5</td>
+                            <td>6</td>
+                            <td class="prime">7</td>
+                            <td>8</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td class="prime">11</td>
+                            <td>12</td>
+                            <td class="prime">13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td class="prime">17</td>
+                            <td>18</td>
+                            <td class="prime">19</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td class="prime">23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td class="prime">29</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3>2進数</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>10進数</td>
+                            <td>2進数</td>
+                        </tr>
+                        <tr>
+                            <td>0</td>
+                            <td>0000</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>0001</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>0010</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>0011</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>0100</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>0101</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>0110</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>0111</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>1001</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>1010</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 3/3</div>
+        </div>
+    </div>
+</body>
+</html>

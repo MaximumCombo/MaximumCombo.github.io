@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Forget Me Maybe — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        .dark table, table {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-05">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Forget Me Maybe</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Forget Me Maybe.svg" class="diagram">
+                <h2>モジュール詳細：記録・青</h2>
+                <p class="flavour-text">このモジュールは気を引かれるのが好きのようだ。実際、注意する<em><i>必要</i></em>がある。</p>
+                <p>このモジュールは下のメインディスプレイと右のステージカウンターの二つのディスプレイと、0から9までのボタンがある。</p>
+                <p>45から60秒*の時間が経つごとに、次のステージを生成し、音を流す。表示された数字に下の表で得た数字を合計し、その数字の一番右の桁を記録する。この数字がそのステージでの<em>計算した数字</em>。</p>
+                <p>モジュールは他のモジュールを全て解除するまでステージを生成し続ける。全て解除するとディスプレイが空白になる。</p>
+                <p>計算した数字のボタンをステージ順に押す。間違った数字を押すとミスとなり、そのステージで表示された数字のボタンのLEDが光る。</p>
+                <p style="font-size: 10pt;"><i>*この範囲は解除者のMod設定による。</i></p>
+                <table>
+                    <tr><td>ステージ1:
+                        <ul>
+                            <li>シリアルナンバーの数字の合計を取る。</li>
+                            <li>バッテリーが偶数個ある場合、一番左の桁の数字を取る。</li>
+                            <li>そうでない場合、一番右の桁の数字を取る。</li>
+                        </ul>
+                    </td></tr>
+                    <tr><td>ステージ2:
+                        <ul>
+                            <li>爆弾に付いている通常のモジュールの数を取る。</li>
+                            <li>ポートが奇数個ある場合、一番左の桁の数字を取る。</li>
+                            <li>そうでない場合、一番右の桁の数字を取る。</li>
+                        </ul>
+                    </td></tr>
+                    <tr><td>他のステージ:
+                        <ul>
+                            <li>前二つのステージどちらかの数字が0だった場合、シリアルナンバーの最初の文字をアルファベット順で数えた結果の一番右の桁の数字を取る。</li>
+                            <li>そうでない場合、前二つのステージ両方の数字が偶数だった場合、ポートとインジケータの合計した数の一番右の桁の数字を取る。</li>
+                            <li>そうでない場合、前二つのステージ両方の計算した数字を取り、それらを合計し、その一番右の桁の数字を取る。</li>
+                        </ul>
+                    </td></tr>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/1</div>
+        </div>
+    </div>
+</body>
+</html>

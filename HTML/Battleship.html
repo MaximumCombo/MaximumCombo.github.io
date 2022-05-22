@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Battleship — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+</head>
+<body>
+<div class="section">
+    <div class="page page-bg-04">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Battleship</span>
+        </div>
+        <div class="page-content">
+            <img src="img/Component/Battleship.svg" class="diagram">
+            <h2>モジュール詳細：戦艦ゲーム</h2>
+            <p class="flavour-text">砲撃! ... (水の跳ねる音) はずれた。
+
+            <p><strong>分析担当者に告ぐ。</strong> 我々は敵の戦艦部隊をこの5×5の格子状のエリアに追い詰めた。敵艦はこのエリア内に隠れているが、我々の方が
+                奴らよりも一枚上手のようだ。
+
+            <p>この情報だけでは敵艦の位置を正確に特定するのは困難であると思われる。
+               そこで貴官の出番である。
+               貴官にはこのエリアの内、安全に偵察ができる場所を特定してもらいたい:
+            <ul>
+                <li>シリアルナンバーの最初の文字と数字を取る。
+                    それぞれA-Eもしくは1-5の範囲内になるまで、 5 を足すか引く (またはアルファベット順で五つ前に倒す)。
+                    これが最初の安全地帯である。
+                <li>同じ動作を二番目の文字と数字でも行う。
+                    文字か数字がなくなるまでこれを繰り返す。
+                <li>最後に、ポートの数を同じようにA–Eに変換し、
+                    インジケータとバッテリーの数の和も同じように1–5に変換する。
+                    これが最後の安全地帯である。
+                <li>いずれにおいても、文字は縦列の位置(左から右の順)を表し、
+                    数字は横列の位置を表す(上から下の順)。
+            </ul>
+
+            <p><strong>解除者に告ぐ。</strong> 貴官には全ての敵艦船の位置を特定してもらいたい。
+                成功すればモジュールは解除される。
+                以下のツールを自由に使うことが可能だ:
+
+            <ul>
+                <li>安全地帯はレーダー(Radar)ツールを使って調査できる。
+                    安全でない場所で使用すると、敵に我々の位置がバレてしまうので、
+                    やってはならない。
+                <li>ウォーター(Water)ツールを使えば敵艦がいない場所にマークをつけられる。
+                    それぞれの列の頭についている数字をクリックすることで、
+                    マークがついていない場所に一気にウォーターマークをつけることができる。
+                <li>魚雷(Torpedo)ツールを使い、敵艦の場所を攻撃できる。
+                    敵がいない場所で使用してはならない。
+            </ul>
+
+            <p>その他の情報:
+
+            <ul>
+                <li>全ての敵艦は縦か横に向いている。
+                <li>敵艦同士が隣接していることはない。斜め方向にもない。
+                <li>それぞれの列に敵艦(またはその一部)が存在しているエリアがどれくらいあるのかが、
+                    列の頭についている数字で示されている。
+                <li>それぞれの艦船の大きさとその数はマップの下にあるシンボルで記されている。
+            </ul>
+
+            <p>任務の成功を期待している。幸運を祈る。
+        </div>
+        <div class="page-footer relative-footer">ページ 1/1</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+p {font-size: 20px;}
+
+head, body, footer{
+  font-family: 'Noto Sans JP';
+  background: #ffffff;
+  margin: 10px 20% 10px 20%;
+}
+
+div {
+  background: #ffffff;
+}
+
+th, td {
+  border: solid 1px;
+  padding: 2px 4px;
+  width: auto;
+}
+
+table{
+  border: solid 1px;
+  border-collapse: collapse;
+  white-space: nowrap;
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  width: 60%;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <title>Forget Me Not — Keep Talking and Nobody Explodes Module</title>
+        <meta name="viewport" content="initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <script src="js/ktane-utils.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/font.css">
+        <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+
+        <style>
+            .hardmodule-wrap {
+                width: 0;
+                height: 0;
+            }
+            .hardmodule {
+                width: 2em;
+                height: 66em;
+                opacity: 0.3;
+                background-color: #FF0000;
+                -webkit-print-color-adjust: exact;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="ManualContent">
+            <div class="section">
+                <div class="page">
+                    <div class="hardmodule-wrap"><div class="hardmodule"></div></div>
+                    <div id="Forget Me Not" class="page-header">
+                        <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                        <span class="page-header-section-title">Forget Me Not</span>
+                    </div>
+                    <div class="page-content">
+                        <img src="img/Component/Forget Me Not.svg" class="diagram">
+                        <h2>モジュール詳細: 記録</h2>
+                        <p class="flavour-text">こいつは気を引かれるのが好きみたいだが、気を引かれすぎるな。</p>
+                        <ul>
+                            <li>ディスプレイはモジュールを解除する度*に更新される。小さいディスプレイには現在のステージが表示される。</li>
+                            <li>ディスプレイに表示された数字に下の表から得た数字を合計し、その数字の一番右の桁を記録する。これがそのステージでの計算した数字となる。</li>
+                            <li>他のモジュール全て* を解除するとディスプレイが空白になる。</li>
+                            <li>記録した数字をステージ順にキーパッドで入力する。</li>
+                            <li>不正解の数字を入力した場合、そのステージで表示した数字のLEDが光る。</li>
+                        </ul>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>最初の数字:
+                                        <ul>
+                                            <li>爆弾に光っていないCARインジケーターがある場合、数字は2。</li>
+                                            <li>そうでない場合、光っているインジケーターよりも光っていないインジケーターの数が多いなら、数字は7。</li>
+                                            <li>そうでない場合、光っていないインジケーターがないなら、数字は光っているインジケーターの数。</li>
+                                            <li>そうでない場合、数字はシリアルナンバーの最後の数字。</li>
+                                        </ul>
+                                    </td>
+                                </tr><tr>
+                                    <td>二番目の数字:
+                                        <ul>
+                                            <li>爆弾にシリアルポートがあり、かつシリアルナンバーに3つ以上の数字がある場合、数字は3。</li>
+                                            <li>そうでない場合、前のステージの計算した数字が偶数であるなら、数字は前のステージの計算した数字に1を足した数。</li>
+                                            <li>そうでない場合、数字は前のステージの計算した数字に1を引いた数。</li>
+                                        </ul>
+                                    </td>
+                                </tr><tr>
+                                    <td>他の数字:
+                                        <ul>
+                                            <li>前のステージ二つどちらかの計算した数字が0だった場合、数字はシリアルナンバーの一番大きい数。</li>
+                                            <li>そうでない場合、前のステージ二つ両方の計算した数字が偶数であるなら、数字はシリアルナンバーの一番小さい奇数、もしくは該当する数がなければ9。</li>
+                                            <li>そうでない場合、数字は前のステージ二つの計算した数字の和の一番左の桁。</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>*いくつかのモジュールは無視される。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body></html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Morsematics — Keep Talking and Nobody Explodes Module</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src='js/ktane-utils.js'></script>
+    <style>
+        .hardmodule-wrap {
+            width: 0;
+            height: 0;
+        }
+
+        .hardmodule {
+            width: 2em;
+            height: 66em;
+            opacity: 0.3;
+            background-color: #FF0000;
+            -webkit-print-color-adjust: exact;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page">
+            <div class='hardmodule-wrap'><div class='hardmodule'></div></div>
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Morsematics</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Morsematics.svg" class="diagram">
+                <h2>モジュール詳細：モールス計算</h2>
+                <p class="flavour-text">モールスと計算を使うからモールス計算なんだ! さて、もう行かなきゃ…</p>
+                <ul>
+                    <li>それぞれのアルファベットの文字にはアルファベット順に並べたときの番号が当てはまる(A=1、B=2 ... Z=26)</li>
+                    <li>1-26の範囲の外の数字はループさせる (Z+1=A、26+1=1)</li>
+                    <li>モジュールには三つのそれぞれ違う文字のモールス信号が繰り返し送られており、真ん中の三つの点滅する光で表されている</li>
+                    <li>モジュールを解除するには、右下の送信ボタンを使って正解の文字をモールス信号で送らなければならない</li>
+                    <li>上の小さいスイッチを使って点滅する光のオンオフを切り替えられる</li>
+                </ul>
+                送信するモールス信号は次にボタンが押されるまでの間で判別される。<br>
+                "平均の間"より二倍以上の長さでボタンを長押しすると「ツー」、それよりも短い間は「トン」と判断される。<br>
+                送信時には、区別がつかないため、EとTは同じ文字と判断される。<br><br>
+                シリアルナンバーの四文字目と五文字目を「文字のペア」とおく。
+                <br><br>
+                下の手順を上から順に実行し、場合により「文字のペア」を修正する:
+                <ul>
+                    <li>送信されてきた文字がインジケータにある度に1を、そのインジケータが光っているなら文字のペアの最初の文字に足し、光っていなければ二番目の文字に足す</li>
+                    <li>文字のペアの合計が平方数である場合、最初の文字に4を足す。そうでない場合、二番目の文字から4を引く</li>
+                    <li>送信されてきた文字の中で数にすると一番大きいものを文字のペアの最初の文字に足す</li>
+                    <li>送信されてきた文字に数にすると素数になるものが含まれている場合、それら全てを文字のペアの最初の文字から引く</li>
+                    <li>送信されてきた文字に数にすると平方数になるものが含まれている場合、それら全てを文字のペアの二番目の文字から引く</li>
+                    <li>バッテリーがあり、その数が送信されてきた文字の数値を割り切れる場合、それら全てを文字のペアの両方の文字から引く</li>
+                </ul>
+                上記の全ての手順を実行した後、下のルールのどれかに当てはまる物を実行する:
+                <ul>
+                    <li>文字のペアが両方とも同じ: 最初の文字を送信する</li>
+                    <li>文字のペアが最初の文字のほうが大きい: 二つの文字の差を送信する</li>
+                    <li>二番目の文字のほうが大きい: 二つの文字の合計を送信する</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page">
+            <div class='hardmodule-wrap'><div class='hardmodule'></div></div>
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Morsematics</span>
+            </div>
+            <div class="page-content">
+                <img id="morseCodeChart" src="img/Morsematics/International_Morse_Code.svg">
+                <table style="border: none">
+                    <tbody>
+                        <tr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>A</td>
+                            <td>1</td>
+                            <td rowspan="26" style="border: none">
+                            <td>N</td>
+                            <td>14</td>
+                        </tr>
+                        <tr><td>B</td><td>2</td> <td>O</td><td>15</td></tr>
+                        <tr><td>C</td><td>3</td> <td>P</td><td>16</td></tr>
+                        <tr><td>D</td><td>4</td> <td>Q</td><td>17</td></tr>
+                        <tr><td>E</td><td>5</td> <td>R</td><td>18</td></tr>
+                        <tr><td>F</td><td>6</td> <td>S</td><td>19</td></tr>
+                        <tr><td>G</td><td>7</td> <td>T</td><td>20</td></tr>
+                        <tr><td>H</td><td>8</td> <td>U</td><td>21</td></tr>
+                        <tr><td>I</td><td>9</td> <td>V</td><td>22</td></tr>
+                        <tr><td>J</td><td>10</td><td>W</td><td>23</td></tr>
+                        <tr><td>K</td><td>11</td><td>X</td><td>24</td></tr>
+                        <tr><td>L</td><td>12</td><td>Y</td><td>25</td></tr>
+                        <tr><td>M</td><td>13</td><td>Z</td><td>26</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

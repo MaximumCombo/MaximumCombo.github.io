@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Colored Squares — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <script src="js/ruleseed.js"></script>
+    <script>
+        let rules = [];
+
+        function setRules(rnd)
+        {
+            let candidates = [ "青", "縦列", "赤", "黄色", "横列", "緑", "マゼンタ" ];
+            let rows = document.getElementsByClassName('rule-row');
+            for (let i = 0; i < 15; i++)
+            {
+                if (i === 14)
+                    candidates = [ "縦列", "横列", "縦列", "横列", "縦列", "横列", "縦列" ];
+                else
+                    rnd.shuffleFisherYates(candidates);
+                let tds = rows[i].getElementsByClassName('rule');
+                for (let j = 0; j < tds.length; j++)
+                    tds[j].innerText = candidates[j];
+            }
+            setLinks(`#${rnd.seed}`);
+        }
+
+        function setDefaultRules()
+        {
+            let list = document.getElementsByClassName('rule');
+            for (let i = 0; i < list.length; i++)
+                list[i].innerText = list[i].getAttribute('data-original');
+            setLinks('');
+        }
+
+        function setLinks(hash)
+        {
+            document.querySelectorAll('.link > a').forEach(lnk => {
+                lnk.setAttribute('href', /^(.*?)(#.*)?$/.exec(lnk.getAttribute('href'))[1] + hash);
+            });
+        }
+    </script>
+    <style>
+        .brother {
+            clear: both;
+            margin: 1em 0;
+            overflow: auto;
+        }
+        .brother > .component {
+            float: right;
+            margin-left: .5cm;
+        }
+        .dark .brother > .component { background-color: #DDD; }
+        .brother > .component > img {
+            width: 3cm;
+        }
+        .brother > .explanation {
+            font-weight: bold;
+        }
+        .brother > .link {
+            font-size: 24pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-04">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Colored Squares</span>
+            </div>
+            <div class="page-content">
+                <img class="diagram" src="img/Component/Colored Squares.svg">
+                <h2>モジュール詳細：色付き格子</h2>
+                <p class="flavour-text">順番は滅茶苦茶だが、色にはパターンがある。それを見つければ、全てははっきりするだろう。</p>
+                <p class="appendix-reference" id="appendix-reference">色付き格子の類似モジュールの判別法については付録を参照。</p>
+
+                <ul>
+                    <li>同じグループ内に属する全ての四角いボタンを押すことで、モジュールが次に進む。</li>
+                    <li>押したボタンは白く光る。全てのボタンが白く光るとモジュールは解除される。</li>
+                    <li>最初に、最も数が少ない色のボタンを全て押す。もし違う色が同数個ある場合は、よく似た別のモジュールである。下の付録を参照。</li>
+                    <li>次に表を使い、それぞれのステージでどのグループのボタンを押すのかを見つける。</li>
+                    <li>“グループ” とは特定の色のボタン全て、もしくは白くない色のボタンを含む最も上の横列か、同じく最も左の縦列を指す。</li>
+                    <li>不正解のボタンを押すとミスとなり、モジュールはリセットされる。</li>
+                    <li>白いボタンはリセットされるまで白いままだが、他の色はステージごとに別の色に変化することがある。</li>
+                </ul>
+
+                <table>
+                    <tr>
+                        <th nowrap rowspan="2">白いボタン<br>の数</th>
+                        <th nowrap colspan="7">一つ前に押したボタンのグループ</th>
+                    </tr>
+                    <tr><th>赤</th><th>青</th><th>緑</th><th>黄色</th><th>マゼンタ</th><th>横列</th><th>縦列</th></tr>
+                    <tr class='rule-row'><th>1</th><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td></tr>
+                    <tr class='rule-row'><th>2</th><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='黄色'>黄色</td></tr>
+                    <tr class='rule-row'><th>3</th><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='縦列'>縦列</td></tr>
+                    <tr class='rule-row'><th>4</th><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td></tr>
+                    <tr class='rule-row'><th>5</th><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='緑'>緑</td></tr>
+                    <tr class='rule-row'><th>6</th><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='横列'>横列</td></tr>
+                    <tr class='rule-row'><th>7</th><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='赤'>赤</td></tr>
+                    <tr class='rule-row'><th>8</th><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='横列'>横列</td></tr>
+                    <tr class='rule-row'><th>9</th><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='青'>青</td></tr>
+                    <tr class='rule-row'><th>10</th><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='黄色'>黄色</td></tr>
+                    <tr class='rule-row'><th>11</th><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='青'>青</td></tr>
+                    <tr class='rule-row'><th>12</th><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='緑'>緑</td></tr>
+                    <tr class='rule-row'><th>13</th><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='赤'>赤</td></tr>
+                    <tr class='rule-row'><th>14</th><td nowrap class='rule' data-original='赤'>赤</td><td nowrap class='rule' data-original='青'>青</td><td nowrap class='rule' data-original='マゼンタ'>マゼンタ</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='緑'>緑</td><td nowrap class='rule' data-original='黄色'>黄色</td><td nowrap class='rule' data-original='縦列'>縦列</td></tr>
+                    <tr class='rule-row'><th>15</th><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='縦列'>縦列</td><td nowrap class='rule' data-original='横列'>横列</td><td nowrap class='rule' data-original='縦列'>縦列</td></tr>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/2</div>
+        </div>
+        <div class="page page-bg-04">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Colored Squares</span>
+            </div>
+            <div class="page-content">
+                <h2>付録: <cite>色付き格子</cite>の類似モジュールの判別</h2>
+
+                <div class='brother'>
+                    <div class='component'><img src="img/Component/Colored Squares.svg"></div>
+                    <div class='explanation'>一つの色が他の色よりも少ない場合 (同数なし):</div>
+                    <div class='link'>(<a href='Not%20Colored%20Squares.html'></a>非・) <a href='Colored%20Squares.html'>色付き格子</a></div>
+                    <div>正しいボタンを押すと、色付き格子の場合は白く光り、非・色付き格子の場合は黒く光る。</div>
+                </div>
+
+                <div class='brother'>
+                    <div class='component'><img src="img/Component/Uncolored Squares.svg"></div>
+                    <div class='explanation'>二つの色が他の色よりも少ない場合 (二色が同数):</div>
+                    <div class='link'><p href='Uncolored%20Squares.html'>Uncolored Squares</p></div>
+                </div>
+
+                <div class='brother'>
+                    <div class='component'><img src="img/Component/Decolored Squares.svg"></div>
+                    <div class='explanation'>三つの色が二個ずつあり、他二つの色が五個ずつある場合:</div>
+                    <div class='link'><p href='Decolored%20Squares.html'>Decolored Squares</p></div>
+                </div>
+
+                <div class='brother'>
+                    <div class='component'><img src="img/Component/Discolored Squares.svg"></div>
+                    <div class='explanation'>四つの色がそれぞれ一個ある場合:</div>
+                    <div class='link'><p href='Discolored%20Squares.html'>Discolored Squares</p></div>
+                </div>
+
+                <div class='brother'>
+                    <div class='component'><img src="img/Component/Varicolored Squares.svg"></div>
+                    <div class='explanation'>四つの色がそれぞれ三個ある場合:</div>
+                    <div class='link'><p href='Varicolored%20Squares.html'>Varicolored Squares</p></div>
+                </div>
+
+                <div class='brother'>
+                    <div class='component'><img src="img/Component/Juxtacolored Squares.svg"></div>
+                    <div class='explanation'>16個全てが違う色の場合:</div>
+                    <div class='link'><p href='Juxtacolored%20Squares.html'>Juxtacolored Squares</p></div>
+                </div>
+            </div>
+            <div class="page-footer relative-footer">ページ 2/2</div>
+        </div>
+    </div>
+</body>
+</html>

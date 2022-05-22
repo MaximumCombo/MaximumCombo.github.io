@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel=stylesheet>
+
+        <link rel="stylesheet" href="main.css">
+        <title>KTaNE Modマニュアル日本語版</title>
+
+        <script src=HTML/js/jquery.3.1.1.min.js></script><script src=HTML/js/jquery-ui.1.12.1.min.js></script><link href=HTML/css/jquery-ui.1.12.1.css rel=stylesheet type=text/css>
+        <style>
+          .main_table a { text-align: center; position: relative; top: -8px; left: 3px}
+        </style>
+    </head>
+    <body>
+        <h1>KTaNE Modマニュアル日本語版</h1>
+        <p>KTaNEのModを日本語に訳したものです。CtrlキーをHTMLページ上で使うことでマークすることもできます。
+        <br>
+        Altキーでマークの色を変えられます。
+        Crtl+Fキーでモジュール名を検索できます。</p>
+        <small>画像・コード:<a href="https://ktane.timwi.de/">Repository of Manual Pages</a></small>
+
+        <h2>バニラのモジュール</h2>
+        <div id="Vannila Modules">
+
+            <p><li><a href="HTML/Complicated Wires.html" target="_blank">複雑ワイヤ (Complicated Wires)</a></li></p>
+            <p><li><a href="HTML/Keypad.html" target="_blank">キーパッド (Keypad)</a></li></p>
+            <p><li><a href="HTML/Maze.html" target="_blank">迷路 (Maze)</a></li></p>
+            <p><li><a href="HTML/Memory.html" target="_blank">記憶 (Memory)</a></li></p>
+            <p><li><a href="HTML/Morse Code.html" target="_blank">モールス信号 (Morse Code)</a></li></p>
+            <p><li><a href="HTML/Password.html" target="_blank">パスワード (Password)</a></li></p>
+            <p><li><a href="HTML/Simon Says.html" target="_blank">サイモンゲーム (Simon Says)</a></li></p>
+            <p><li><a href="HTML/The Button.html" target="_blank">ボタン (The Button)</a></li></p>
+            <p><li><a href="HTML/Who’s on First.html" target="_blank">表比較 (Who’s on First)</a></li></p>
+            <p><li><a href="HTML/Wires.html" target="_blank">ワイヤ (Wires)</a></li></p>
+            <p><li><a href="HTML/Wire Sequence.html" target="_blank">順番ワイヤ (Wire Sequence)</a></li></p>
+
+        <h3>特殊モジュール</h3>
+            <p><li><a href="HTML/Capacitor Discharge.html" target="_blank">コンデンサー (Capacitor Discharge)</a></li></p>
+            <p><li><a href="HTML/Knob.html" target="_blank">ダイヤル (Knob)</a></li></p>
+            <p><li><a href="HTML/Venting Gas.html" target="_blank">ガス放出 (Venting Gas)</a></li></p>
+
+        <h3>付録</h3>
+        <div id="Appendix">
+            <p><li><a href="HTML/Batteries.html" target="_blank">バッテリー (Batteries)</a></li></p>
+            <p><li><a href="HTML/Indicators.html" target="_blank">インジケーター (Indicators)</a></li></p>
+            <p><li><a href="HTML/Ports.html" target="_blank">ポート (Ports)</a></li></p>
+
+        </div>
+        </div>
+
+
+        <h2>Modのモジュール</h2>
+        <div id="Mod Modules">
+            検索:<input type="search" name="module" id=search-field>   <br>
+         ★ ・・・とても簡単<br>
+         ★★ ・・・簡単<br>
+         ★★★ ・・・普通<br>
+         ★★★★ ・・・難しい<br>
+         ★★★★★ ・・・とても難しい
+
+        </div>
+
+        <table id="table" class="main_table" >
+          <thead>
+            <span id="table_contents"></span>
+            <tr>
+              <th>モジュール名</th>
+              <th>難易度</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+          <tfoot>
+              <br><br>
+          </tfoot>
+        </table>
+
+        <p id="counts"></p>
+
+
+        <script src=HTML/js/main.js></script>
+    </body>
+</html>

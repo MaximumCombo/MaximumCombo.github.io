@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Piano Keys — Keep Talking and Nobody Explodes Module</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='css/font.css'>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+
+    <script src='js/ktane-utils.js'></script>
+    <style>
+        @font-face {
+            font-family: 'OpusStd';
+            src: url('font/OpusStd.otf');
+        }
+
+        @font-face {
+            font-family: 'OpusChordsSansStd';
+            src: url('font/OpusChordsSansStd.otf');
+        }
+
+        .music-symbol {
+            font-family: 'OpusStd';
+            font-size: 1.6em;
+            position: relative;
+            top: -0.2em;
+        }
+
+        .music-chord {
+            font-family: 'OpusChordsSansStd';
+            word-spacing: 0.3em;
+        }
+
+        .no-requirement {
+            font-style: italic;
+        }
+
+        .hardmodule-wrap {
+            position: relative;
+            width: 0px;
+            height: 0px;
+        }
+
+        .hardmodule {
+            position: relative;
+            width: 2em;
+            height: 66em;
+            opacity: 0.3;
+            background-color: #FF0000;
+            -webkit-print-color-adjust: exact;
+        }
+    </style>
+</head>
+<body>
+<div class="section">
+    <div class="page page-bg-01">
+        <div class="page-header">
+			<span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+			<span class="page-header-section-title">Piano Keys</span>
+		</div>
+        <div class="page-content">
+    	    <img src="img/Component/Piano Keys.svg" class="diagram" />
+            <h2>モジュール詳細: ピアノ</h2>
+            <p class="flavour-text">
+                坑道にピアノを落としたらどうなるのか? A flat miner.
+			</p>
+            <p class="appendix-reference">
+                インジケーターを確認するには「付録A」を参照すること。<br />
+                バッテリーの種類を確認するには「付録B」を参照すること。<br />
+                ポートの種類を確認するには「付録C」を参照すること。<br />
+                音名の表記を確認するには次のページを参照すること。
+            </p>
+			<ul>
+                <li>鍵盤モジュールは上部のインジケータに3つの音楽記号が表示され、キーボードには特定のキーを入力する。</li>
+                <li>下の表にはそれぞれ対応する記号と必要条件の2つが書かれている。</li>
+                <li>表の上から順に沿い、最初に該当する記号と条件に書かれている音名のキーを入力する。</li>
+                <li>ミスした場合、最初からやり直しとなる。</li>
+            </ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td width="15%"><strong><em>表示されている記号</em></strong></td>
+                        <td width="40%"><strong><em>必要条件</em></strong></td>
+                        <td width="45%"><strong><em>入力するメロディー</em></strong></td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td><span class="music-symbol">b</span></td>
+                    <td>シリアルナンバーの最後の数字が偶数</td>
+                    <td><span class="music-chord">シb シb シb シb ソb ラb シb ラb シb</span></td>
+                </tr>
+                <tr>
+                    <td><span class="music-symbol">c</span> か <span class="music-symbol">#</span></td>
+                    <td>バッテリーホルダが2つ以上</td>
+                    <td><span class="music-chord">ミb ミb レ レ ミb ミb レ ミb ミb レ レ ミb</span></td>
+                </tr>
+                <tr>
+                    <td><span class="music-symbol">n</span> <strong>と</strong> <span class="music-symbol">U</span></td>
+                    <td><span class ="no-requirement">(なし)</span></td>
+                    <td><span class="music-chord">ミ ファ# ファ# ファ# ファ# ミ ミ ミ</span></td>
+                </tr>
+                <tr>
+                    <td><span class="music-symbol">C</span> か <span class="music-symbol">T</span></td>
+                    <td>ステレオRCAポートがある</td>
+                    <td><span class="music-chord">シb ラ シb ファ ミb シb ラ シb ファ ミb</span></td>
+                </tr>
+                <tr>
+                    <td><span class="music-symbol">B</span></td>
+                    <td>「SND」というインジケータが光っている</td>
+                    <td><span class="music-chord">ミ ミ ミ ド ミ ソ ソ</span></td>
+                </tr>
+                <tr>
+                    <td><span class="music-symbol">m</span>か<span class="music-symbol">U</span>か<span class="music-symbol">c</span></td>
+                    <td>バッテリーが3本以上</td>
+                    <td><span class="music-chord">ド# レ ミ ファ ド# レ ミ ファ シb ラ</span></td>
+                </tr>
+                <tr>
+                    <td><span class="music-symbol">b</span> <strong>と</strong> <span class="music-symbol">#</span></td>
+                    <td><span class ="no-requirement">(なし)</span></td>
+                    <td><span class="music-chord">ソ ソ ド ソ ソ ド ソ ド</span></td>
+                </tr>
+                <tr>
+                    <td><span class="music-symbol">C</span> か <span class="music-symbol">m</span></td>
+                    <td>シリアルナンバーに3か7か8が含まれている</td>
+                    <td><span class="music-chord">ラ ミ ファ ソ ファ ミ レ レ ファ ラ</span></td>
+                </tr>
+                <tr>
+                    <td><span class="music-symbol">n</span>か<span class="music-symbol">T</span>か<span class="music-symbol">B</span></td>
+                    <td><span class ="no-requirement">(なし)</span></td>
+                    <td><span class="music-chord">ソ ソ ソ ミb シb ソ ミb シb ソ</span></td>
+                </tr>
+                <tr>
+                    <td><span class ="no-requirement">(なし)</span></td>
+                    <td><span class ="no-requirement">(なし)</span></td>
+                    <td><span class="music-chord">シ レ ラ ソ ラ シ レ ラ</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="page page-bg-02">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Piano Keys</span>
+        </div>
+        <div class="page-content">
+            <h3>鍵盤の音名表記</h3>
+            <p>
+                一般的な12鍵の音名表記は以下の図の通りである。
+            </p>
+            <img src="img/Piano Keys/Piano.png" />
+        </div>
+    </div>
+</div>
+</body>
+</html>

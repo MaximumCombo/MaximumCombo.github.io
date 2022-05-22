@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Who’s on First — Keep Talking and Nobody Explodes Module</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel='stylesheet' type='text/css' href='css/font.css'>
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src='js/ktane-utils.js'></script>
+    <script src='js/ruleseed.js'></script>
+    <style>
+        table.eye-table td.button {
+            background-size: contain;
+        }
+
+        table.eye-table.eye-0 td.button-0,
+        table.eye-table.eye-1 td.button-1,
+        table.eye-table.eye-2 td.button-2,
+        table.eye-table.eye-3 td.button-3,
+        table.eye-table.eye-4 td.button-4,
+        table.eye-table.eye-5 td.button-5 {
+            background: url('img/Who’s on First/eye-icon.png') center center no-repeat;
+        }
+    </style>
+    <script>
+        var defaults = null;
+
+        var DisplayWords = [
+            "そう", "最初", "表示", "オーケー", "言う", "何もない", "", "から", "いや", "解",
+            "回", "下位", "快", "開", "あと", "まって", "どう？", "導", "同",
+            "動", "どう", "大正", "対照", "対称", "大賞", "才", "再", "最"
+        ];
+        var KeypadWords = [
+            ["準備OK", "最初", "違う", "ブランク", "なし", "そう", "何？", "えーと", "残り", "右", "真ん中", "オーケー", "ウェイト", "押して"],
+            ["どう？", "導", "同", "動", "左", "それ", "うんうん", "そうそう", "え？", "できた", "次", "まって", "もちろん", "例えば"]
+        ];
+
+        function setRules(rnd)
+        {
+            var eyeTables = document.getElementsByClassName('eye-table');
+            var precTrs = document.getElementsByClassName('whos-on-first-step2-table')[0].getElementsByTagName('TR');
+
+            if (defaults === null)
+            {
+                defaults = { eyes: [], lists: {} };
+                for (var i = 0; i < eyeTables.length; i++)
+                {
+                    defaults.eyes.push({
+                        display: eyeTables[i].getElementsByClassName('whos-on-first-look-at-display')[0].innerText,
+                        eye: Array.from(eyeTables[i].classList).filter(s => /^eye-\d+$/.test(s))[0].substr(4) | 0
+                    });
+                }
+                for (var i = 0; i < precTrs.length; i++)
+                    defaults.lists[precTrs[i].getAttribute('data-word')] = precTrs[i].getElementsByTagName('TD')[0].innerText;
+            }
+
+            var rules;
+            if (rnd.seed === 1)
+                rules = defaults;
+            else
+            {
+                rules = { eyes: [], lists: {} };
+                for (var i = 0; i < 28; i++)
+                    rules.eyes.push({ display: DisplayWords[i], eye: rnd.next(0, 6) });
+                for (var i = 0; i < KeypadWords.length; i++)
+                    for (var j = 0; j < KeypadWords[i].length; j++)
+                        // The .slice(0) is necessary to take a copy of the array, because .shuffleFisherYates() is in-place.
+                        rules.lists[KeypadWords[i][j]] = rnd.shuffleFisherYates(KeypadWords[i].slice(0)).join(', ');
+            }
+
+            for (var i = 0; i < eyeTables.length; i++)
+            {
+                eyeTables[i].getElementsByClassName('whos-on-first-look-at-display')[0].innerText = rules.eyes[i].display;
+                Array.from(eyeTables[i].classList).filter(x => /^eye-\d+$/.test(x)).forEach(x => eyeTables[i].classList.remove(x));
+                eyeTables[i].classList.add('eye-' + rules.eyes[i].eye);
+            }
+
+            for (var i = 0; i < precTrs.length; i++)
+                precTrs[i].getElementsByTagName('TD')[0].innerText = rules.lists[precTrs[i].getAttribute('data-word')];
+        }
+
+        function setDefaultRules(rnd) { setRules(rnd); }
+    </script>
+</head>
+
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes</span>
+                <span class="page-header-section-title">表比較</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Who’s on First.svg" class="diagram" />
+                <h2>モジュール詳細：表比較</h2>
+                <p class="flavour-text">笑える遊びに見えるかもしれないが、爆弾につながっていることをお忘れなく。あれこれ「言葉」を重ねても混乱するだけだろう、早速はじめよう。</p>
+                <ol>
+                    <li>ディスプレーの内容とステップ1の各表を比較し、<u>読むべき</u>ボタンラベルを決定する。</li>
+                    <li>ボタンラベルとステップ2の表を比較し、<u>押すべき</u>ボタンを決定する。</li>
+                    <li>モジュールが解除されるまで繰り返す。</li>
+                </ol>
+                <h3>ステップ1：</h3>
+                <p>ディスプレーに表示されているテキストをもとに、一致するボタンのラベルを<u>読んで</u>からステップ2へ進む：</p>
+                <table class="whos-on-first-step1-table">
+                    <tr>
+                        <td>
+                            <table class="eye-table eye-2">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">そう</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-1">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">最初</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-5">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">表示</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-1">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">オーケー</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-5">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">言う</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-2">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">何もない</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="eye-table eye-4">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2"><br></th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-3">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">から</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-5">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">いや</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-2">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">解</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-5">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">回</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-3">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">下位</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="eye-table eye-3">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">快</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-4">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">開</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-4">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">あと</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-5">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">まって</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-3">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">どう？</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-5">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">導</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="eye-table eye-3">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">同</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-3">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">動</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-0">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">どう</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-5">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">大正</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-4">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">対照</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-3">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">対称</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <table class="eye-table eye-2">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">大賞</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-5">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">才</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-1">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">再</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="eye-table eye-5">
+                                <tr>
+                                    <th class="whos-on-first-look-at-display" colspan="2">最</th>
+                                </tr>
+                                <tr>
+                                    <td class="button button-0"></td>
+                                    <td class="button button-1"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-2"></td>
+                                    <td class="button button-3"></td>
+                                </tr>
+                                <tr>
+                                    <td class="button button-4"></td>
+                                    <td class="button button-5"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/2</div>
+        </div>
+        <div class="page page-bg-02">
+            <div class="page-header"> <span class="page-header-doc-title">Keep Talking and Nobody Explodes</span> <span class="page-header-section-title">Who’s on First</span> </div>
+            <div class="page-footer absolute-footer"></div>
+            <div class="page-content">
+                <h3>ステップ2：</h3>
+                <p>ステップ1のラベルをもとに、一致するリストの<u>最初に表れるボタンを押す</u>：</p>
+                <table class="whos-on-first-step2-table">
+                    <tr data-word='準備OK'>
+                        <th>"準備OK":</th>
+                        <td>そう, オーケー, 何？, 真ん中, 残り, 押して, 右, ブランク, 準備OK, 違う, 最初, えーと, なし, ウェイト</td>
+                    </tr>
+                    <tr data-word='最初'>
+                        <th>"最初":</th>
+                        <td>残り, オーケー, そう, 真ん中, 違う, 右, なし, えーと, ウェイト, 準備OK, ブランク, 何？, 押して, 最初</td>
+                    </tr>
+                    <tr data-word='違う'>
+                        <th>"違う":</th>
+                        <td>ブランク, えーと, ウェイト, 最初, 何？, 準備OK, 右, そう, なし, 残り, 押して, オーケー, 違う, 真ん中</td>
+                    </tr>
+                    <tr data-word='ブランク'>
+                        <th>"ブランク":</th>
+                        <td>ウェイト, 右, オーケー, 真ん中, ブランク, 押して, 準備OK, なし, 違う, 何？, 残り, えーと, そう, 最初</td>
+                    </tr>
+                    <tr data-word='なし'>
+                        <th>"なし":</th>
+                        <td>えーと, 右, オーケー, 真ん中, そう, ブランク, 違う, 押して, 残り, 何？, ウェイト, 最初, なし, 準備OK</td>
+                    </tr>
+                    <tr data-word='そう'>
+                        <th>"そう":</th>
+                        <td>オーケー, 右, えーと, 真ん中, 最初, 何？, 押して, 準備OK, なし, そう, 残り, ブランク, 違う, ウェイト</td>
+                    </tr>
+                    <tr data-word='何？'>
+                        <th>"何？":</th>
+                        <td>えーと, 何？, 残り, なし, 準備OK, ブランク, 真ん中, 違う, オーケー, 最初, ウェイト, そう, 押して, 右</td>
+                    </tr>
+                    <tr data-word='えーと'>
+                        <th>"えーと":</th>
+                        <td>準備OK, なし, 残り, 何？, オーケー, そう, 右, 違う, 押して, ブランク, えーと, 真ん中, ウェイト, 最初</td>
+                    </tr>
+                    <tr data-word='残り'>
+                        <th>"残り":</th>
+                        <td>右, 残り, 最初, 違う, 真ん中, そう, ブランク, 何？, えーと, ウェイト, 押して, 準備OK, オーケー, なし</td>
+                    </tr>
+                    <tr data-word='右'>
+                        <th>"右":</th>
+                        <td>そう, なし, 準備OK, 押して, 違う, ウェイト, 何？, 右, 真ん中, 残り, えーと, ブランク, オーケー, 最初</td>
+                    </tr>
+                    <tr data-word='真ん中'>
+                        <th>"真ん中":</th>
+                        <td>ブランク, 準備OK, オーケー, 何？, なし, 押して, 違う, ウェイト, 残り, 真ん中, 右, 最初, えーと, そう</td>
+                    </tr>
+                    <tr data-word='オーケー'>
+                        <th>"オーケー":</th>
+                        <td>真ん中, 違う, 最初, そう, えーと, なし, ウェイト, オーケー, 残り, 準備OK, ブランク, 押して, 何？, 右</td>
+                    </tr>
+                    <tr data-word='ウェイト'>
+                        <th>"ウェイト":</th>
+                        <td>えーと, 違う, ブランク, オーケー, そう, 残り, 最初, 押して, 何？, ウェイト, なし, 準備OK, 右, 真ん中</td>
+                    </tr>
+                    <tr data-word='押して'>
+                        <th>"押して":</th>
+                        <td>右, 真ん中, そう, 準備OK, 押して, オーケー, なし, えーと, ブランク, 残り, 最初, 何？, 違う, ウェイト</td>
+                    </tr>
+                    <tr data-word='どう？'>
+                        <th>"どう？":</th>
+                        <td>もちろん, 導, 同, 動, 次, うんうん, 左, まって, え？, どう？, そうそう, 例えば, できた, それ</td>
+                    </tr>
+                    <tr data-word='導'>
+                        <th>"導":</th>
+                        <td>同, 次, 例えば, うんうん, え？, できた, そうそう, まって, どう？, それ, 動, もちろん, 左, 導</td>
+                    </tr>
+                    <tr data-word='同'>
+                        <th>"同":</th>
+                        <td>そうそう, 導, うんうん, 同, 次, 左, もちろん, それ, 動, どう？, え？, まって, 例えば, できた</td>
+                    </tr>
+                    <tr data-word="動">
+                        <th>"動":</th>
+                        <td>どう？, 動, 左, 次, そうそう, 導, それ, 同, え？, うんうん, もちろん, できた, 例えば, まって</td>
+                    </tr>
+                    <tr data-word='左'>
+                        <th>"左":</th>
+                        <td>できた, それ, 左, うんうん, え？, もちろん, 同, まって, 動, 例えば, 次, そうそう, 導, どう？</td>
+                    </tr>
+                    <tr data-word='それ'>
+                        <th>"それ":</th>
+                        <td>うんうん, もちろん, 次, え？, 動, 左, そうそう, できた, それ, どう？, 例えば, まって, 導, 同</td>
+                    </tr>
+                    <tr data-word='うんうん'>
+                        <th>"うんうん":</th>
+                        <td>うんうん, 同, 導, どう？, できた, まって, そうそう, 次, もちろん, 例えば, 動, 左, それ, え？</td>
+                    </tr>
+                    <tr data-word='そうそう'>
+                        <th>"そうそう":</th>
+                        <td>左, それ, 導, 動, 次, そうそう, できた, どう？, うんうん, 例えば, 同, もちろん, まって, え？</td>
+                    </tr>
+                    <tr data-word='え？'>
+                        <th>"え？":</th>
+                        <td>	どう？, まって, 動, 同, それ, できた, そうそう, 例えば, 導, うんうん, 左, 次, え？, もちろん</td>
+                    </tr>
+                    <tr data-word='できた'>
+                        <th>"できた":</th>
+                        <td>もちろん, うんうん, 次, え？, 同, 左, 動, まって, 例えば, どう？, それ, 導, そうそう, できた</td>
+                    </tr>
+                    <tr data-word='次'>
+                        <th>"次":</th>
+                        <td>え？, うんうん, そうそう, 同, まって, もちろん, 次, 例えば, できた, 導, 左, 動, それ, どう？</td>
+                    </tr>
+                    <tr data-word='まって'>
+                        <th>"まって":</th>
+                        <td>導, それ, できた, そうそう, どう？, 左, もちろん, え？, 動, 次, まって, うんうん, 同, 例えば</td>
+                    </tr>
+                    <tr data-word='もちろん'>
+                        <th>"もちろん":</th>
+                        <td>導, できた, 例えば, 動, どう？, まって, うんうん, 左, もちろん, それ, え？, 次, 同, そうそう</td>
+                    </tr>
+                    <tr data-word='例えば'>
+                        <th>"例えば":</th>
+                        <td>動, 次, それ, 左, まって, できた, そうそう, え？, うんうん, どう？, 例えば, もちろん, 導, 同</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 2/2</div>
+        </div>
+    </div>
+</body>
+</html>

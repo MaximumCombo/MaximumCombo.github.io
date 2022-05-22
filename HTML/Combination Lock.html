@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Combination Lock — Keep Talking and Nobody Explodes Mod</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        div.sp { height: 5mm; }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Combination Lock</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Combination Lock.svg" class="diagram">
+                <h2>モジュール詳細：ダイヤルロック</h2>
+                <p class="flavour-text">これはダイヤルロックのようだ。爆弾を解除するつもりが解錠してしまった。</p>
+                <p class="appendix-reference"><br>
+                    バッテリーの種類を確認するには「付録B」を参照すること。
+                    <br>
+                    2ファクターについては「付録 2ファクター」を参照すること。
+                </p>
+                一般的なダイヤル式のカギのように、3つの数字を使い、解錠する。ダイヤルを最初の数字まで右に回し、二番目の数字まで左に回す。最後に、最後の数字まで右に回して解錠する。
+                <br>
+                同じ数字が連続している場合、同じ数字まで一周する。
+                <div class="sp"></div>
+                <b><u>数字の取得:</u></b>
+                <div class="sp"></div>
+                それぞれの数字は 0-19 の間のどれか。表を参照して数字を取得する。
+                2ファクターが爆弾に付いている場合、時間が経つと数字が変わるので注意。
+                <div class="sp"></div>
+                <table>
+                    <tr>
+                        <td>
+                            <b><u>最初の数字:</u></b>
+                            <ol>
+                                <li>それぞれの2ファクターの一番右の数字を足す。2ファクターがない場合、シリアルナンバーの最後の数字と解除したモジュール数を合計する。</li>
+                                <li>バッテリーの数を足す。</li>
+                                <li>数字が 19 より大きい場合、数字が 0-19 の範囲内になるまで 20 を引く。</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b><u>二番目の数字:</u></b>
+                            <ol>
+                                <li>それぞれの2ファクターの一番左の数字を足す。2ファクターがない場合、爆弾に付いているモジュール数を使う (特殊モジュールを含む)。</li>
+                                <li>解除したモジュール数を足す。</li>
+                                <li>数字が 19 より大きい場合、数字が 0-19 の範囲内になるまで 20 を引く。</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b><u>三番目の数字:</u></b>
+                            <ol>
+                                <li>最初の二つの数字を足す。</li>
+                                <li>数字が 19 より大きい場合、数字が 0-19 の範囲内になるまで 20 を引く。</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/2</div>
+        </div>
+        <div class="page appendix-ports page-bg-02">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Appendix Two Factor</span>
+            </div>
+            <div class="page-content">
+                <h2>付録 2ファクター: 2ファクター確認表</h2>
+                <p>爆弾のケースの側面にデジタル表示されているシリアルナンバーがついていることがある。</p>
+                <img src="img/Two Factor/TwoFactorWidget.svg">
+                <p>
+                ディスプレイには六桁の認証コードが表示されている。数字は安全のため60秒ごとに変化する。
+                シリアルナンバーの変化時には、三つの音が鳴る。
+                </p>
+            </div>
+            <div class="page-footer relative-footer">ページ 2/2</div>
+        </div>
+    </div>
+</body>
+</html>

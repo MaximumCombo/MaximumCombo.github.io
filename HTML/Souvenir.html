@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Souvenir — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        .souvenir {
+            clear: both;
+            font-family: 'Agency FB', 'Noto Serif JP';
+            border: none;
+            column-count: 4;
+            column-gap: .25em;
+        }
+
+            .souvenir .module {
+                break-inside: avoid;
+            }
+
+                .souvenir .module .name {
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    line-height: 1.1;
+                }
+
+                    .souvenir .module .name .the {
+                        font-weight: normal;
+                        font-size: 10pt;
+                    }
+
+            .souvenir ul {
+                margin: 0 0 .2cm;
+                padding-left: 0;
+            }
+
+            .souvenir li {
+                list-style-type: none;
+                line-height: 1.2;
+                margin: .05cm 0;
+            }
+
+        .continued {
+            text-align: right;
+            font-style: italic;
+            font-size: 10pt;
+        }
+
+        @media screen and (max-width: 900px) {
+            .souvenir {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Souvenir</span>
+            </div>
+            <div class="page-content">
+                <img class="diagram" src="img/Component/Souvenir.svg" alt="Module diagram. A display covering the whole module may show a question and 4-6 answers.">
+                <h2>モジュール詳細：クイズ</h2>
+                <p class="flavour-text">覚えておかないと爆発する。</p>
+                <p>クイズモジュールはすでに解除したモジュールについての問題が出される。全ての問題に正しく答えて、モジュールを解除する。</p>
+                <p>ミスしてリセットされたモジュールについては、解除に成功した時について答えること。</p>
+                <h3 style="margin-bottom: .3cm">出題範囲:</h3>
+                <div class="souvenir">
+                    <div class="module"><div class="name">2ビット</div><ul class="questions"><li>返されてきた三つの数字は何だった?</li></ul></div>
+                    <div class="module"><div class="name">3D迷路</div><ul class="questions"><li>迷路の文字は何だった?</li><li>正解の方角はどっち?</li></ul></div>
+                    <div class="module"><div class="name">アドベンチャーゲーム</div><ul class="questions"><li>使用するべきだったアイテムはどれ?</li><li>敵は何だった?</li></ul></div>
+                    <div class="module"><div class="name">色付き格子</div><ul class="questions"><li>最初のボタンのグループは何だった?</li></ul></div>
+                    <div class="module"><div class="name">色付きスイッチ</div><ul class="questions"><li>最初のスイッチの状態は何だった?</li><li>LEDが点灯した時のスイッチの状態は何だった?</li></ul></div>
+                    <div class="module"><div class="name">オンリーコネクト</div><ul class="questions"><li>ヒエログリフの配置は何だった?</li></ul></div>
+                    <div class="module"><div class="name">化学</div><ul class="questions"><li>酸の色/目盛りの値は何だった?</li></ul></div>
+                    <div class="module"><div class="name">カラーフラッシュ</div><ul class="questions"><li>最後の単語の色は何だった?</li></ul></div>
+                    <div class="module"><div class="name">記憶</div><ul class="questions"><li>それぞれのステージのディスプレイの数字は何だった?</li><li>押したボタンの位置と番号は何だった?</li></ul></div>
+                    <div class="module"><div class="name">クイズ</div><ul class="questions"><li>もう一方のクイズ (思い出) モジュールが最初に質問の対象にしたモジュールは何?</li></ul></div>
+                    <div class="module"><div class="name">クリエーション</div><ul class="questions"><li>それぞれの日の天気は何だった?</li></ul></div>
+                    <div class="module"><div class="name">ゲームパッド</div><ul class="questions"><li>数字は何だった?</li></ul></div>
+                    <div class="module"><div class="name">壊れたボタン</div><ul class="questions"><li>正しく押したボタンは何だった?</li></ul></div>
+                    <div class="module"><div class="name">サイモンゲーム</div><ul class="questions"><li>最後のステージで光った色は?</li></ul></div>
+                    <div class="module"><div class="name">サイモンスクリーム</div><ul class="questions"><li>それぞれのステージで表に使用した色は?</li><li>それぞれのステージで適用したルールは?</li></ul></div>
+                    <div class="module"><div class="name">サイモンステート</div><ul class="questions"><li>最初の三つのステージで追加された色は?</li></ul></div>
+                    <div class="module"><div class="name">サードベース</div><ul class="questions"><li>表示された単語は何だった?</li></ul></div>
+                    <div class="module"><div class="name">シーシェル</div><ul class="questions"><li>それぞれのステージの文章は何だった?</li></ul></div>
+                    <div class="module"><div class="name">順番ワイヤ</div><ul class="questions"><li>それぞれの色のワイヤが出てきた回数は?</li></ul></div>
+                    <div class="module"><div class="name">スイッチ</div><ul class="questions"><li>最初のスイッチの状態は何だった?</li></ul></div>
+                    <div class="module"><div class="name">図形変化</div><ul class="questions"><li>最初の形は何だった?</li></ul></div>
+                    <div class="module"><div class="name">速算</div><ul class="questions"><li>最後の二つの文字は何だった?</li></ul></div>
+                    <div class="module"><div class="name">探針</div><ul class="questions"><li>それぞれのワイヤの持っていない周波数は何だった?</li></ul></div>
+                    <div class="module"><div class="name">ダブルオー</div><ul class="questions"><li>決定ボタンはどれだった?</li></ul></div>
+                    <div class="module"><div class="name">電球</div><ul class="questions"><li>押したボタンの順番は何だった?</li></ul></div>
+                    <div class="module"><div class="name">表比較</div><ul class="questions"><li>表示された単語は何だった?</li></ul></div>
+                    <div class="module"><div class="name">ビットマップ</div><ul class="questions"><li>それぞれの象限にある白/黒のピクセルの数は?</li></ul></div>
+                    <div class="module"><div class="name">ボタン</div><ul class="questions"><li>何色のストライプが光った?</li></ul></div>
+                    <div class="module"><div class="name">マイクロコントローラー</div><ul class="questions"><li>どの順番でLEDが光った?</li></ul></div>
+                    <div class="module"><div class="name">迷路</div><ul class="questions"><li>スタート地点はどこだった?</li></ul></div>
+                    <div class="module"><div class="name">モールス計算</div><ul class="questions"><li>送信されてきた文字は何だった?</li></ul></div>
+                    <div class="module"><div class="name">ヤッツィー</div><ul class="questions"><li>最初のロール時の役は?</li></ul></div>
+                    <div class="module"><div class="name">ゆがんだスロット</div><ul class="questions"><li>元々の数字は何だった?</li></ul></div>
+                    <div class="module"><div class="name">リスニング</div><ul class="questions"><li>正解のコードは何だった?</li></ul></div>
+                    <div class="module"><div class="name">六角迷路</div><ul class="questions"><li>丸いコマの色は何だった?</li></ul></div>
+                </div>
+                <!-- <p class="continued">次のページへ続く...</p> -->
+            </div>
+            <div class="page-footer relative-footer">ページ 1/1</div>
+        </div>
+    </div>
+    <script>
+        /* - use this to reflow the questions after adding/removing any
+        window.setTimeout(function()
+        {
+            let pages = Array.from(document.querySelectorAll('div.souvenir'));
+            let indentation = pages[0].firstChild.textContent;
+            let allModules = Array.from(document.querySelectorAll('div.module'));
+            allModules.sort((a, b) => {
+                let at = a.querySelector('.name').innerText.replace(/\(The\)$|[^A-Za-z0-9]/g, '');
+                let bt = b.querySelector('.name').innerText.replace(/\(The\)$|[^A-Za-z0-9]/g, '');
+                return at.localeCompare(bt, 'en', { sensitivity: 'base' });
+            });
+            pages.forEach(p => { p.innerHTML = ''; });
+            let tops = Array.from(document.querySelectorAll('div.page .page-footer')).map(page => page.offsetTop);
+            let curPage = 0;
+            for (let i = 0; i < allModules.length;)
+            {
+                let tn = document.createTextNode(indentation);
+                pages[curPage].appendChild(tn);
+                pages[curPage].appendChild(allModules[i]);
+                if (pages[curPage].parentNode.parentNode.querySelector('.page-footer').offsetTop > tops[curPage])
+                {
+                    pages[curPage].removeChild(allModules[i]);
+                    pages[curPage].removeChild(tn);
+                    curPage++;
+                }
+                else
+                    i++;
+            }
+            pages.forEach(p => { p.appendChild(document.createTextNode(indentation.substr(0, indentation.length - 4))); });
+        }, 100);
+        /**/
+    </script>
+</body>
+</html>

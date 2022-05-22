@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Complicated Buttons — Keep Talking and Nobody Explodes Mod</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='css/font.css'>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src='js/ktane-utils.js'></script>
+    <style>
+        .cb-venn-diagram {
+            width: 100mm;
+            display: block;
+            margin: 0 auto 5mm;
+        }
+
+        .cb-legend {
+            width: 84mm;
+            float: left;
+            margin-bottom: 5mm;
+        }
+
+        #cb-venntable {
+            float: right;
+            width: 93mm;
+            font-size: 9pt;
+            border: 1mm solid black;
+            margin-bottom: 5mm;
+        }
+
+            #cb-venntable td {
+                text-align: center;
+            }
+
+            #cb-venntable th {
+                font-size: 12pt;
+            }
+
+        .repeaters-table {
+            clear: both;
+        }
+
+        ol {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page venn-buttons page-bg-02">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">複雑ボタン</span>
+            </div>
+            <div class="page-footer absolute-footer"></div>
+            <div class="page-content">
+                <img src="img/Component/Complicated Buttons.svg" class="diagram">
+                <h2>モジュール詳細：複雑ボタン</h2>
+                <p class="flavour-text">これらのボタンは他とは違う。だが心配は無用、ボタンの処理にあたってのルールを簡潔にまとめた。少し簡潔すぎたかもしれないが…</p>
+                <ol>
+                    <li>ボタンは単色か複色であり、何かが書かれている。</li>
+                    <li>ベン図を使い、<b>それぞれ</b>のボタンを押すかどうか判断する。</li>
+                    <li>ボタンを押す順番は表の通り。押すボタンがない場合は表の二番目のボタンを押す。</li>
+                    <li><b>ミスの場合、モジュールはリセットされる。</b></li>
+                </ol>
+
+                <img src='img/Complicated Buttons/venndiagram.svg' class='cb-venn-diagram'>
+                <img src='img/Complicated Buttons/legend.svg' class='cb-legend'>
+                <table id="cb-venntable">
+                    <tr><th>文字</th><th>指示</th></tr>
+                    <tr><td>P</td><td>ボタンを押す</td></tr>
+                    <tr><td>D</td><td>ボタンを押さない</td></tr>
+                    <tr><td>R</td><td>シリアルナンバーに複数使われている文字が二つ以上あるならボタンを押す</td></tr>
+                    <tr><td>S</td><td>爆弾にシリアルポートがあるならボタンを押す</td></tr>
+                    <tr><td>B</td><td>爆弾に二つ以上のバッテリーホルダがあるならボタンを押す</td></tr>
+                </table>
+
+                <table class="repeaters-table">
+                    <tr>
+                        <th colspan="1" class="repeaters-spacer"></th>
+                        <th>上のボタンに書かれた文字</th>
+                        <th>バッテリーが 0–1 個</th>
+                        <th>バッテリーが 2–3 個</th>
+                        <th>バッテリーが 4–5 個</th>
+                        <th>バッテリーが 6 個以上</th>
+                    </tr>
+                    <tr><th rowspan="3">押す順番:</th><th>Press</th><td>上, 中, 下</td><td>中, 下, 上</td><td>下, 上, 中</td><td>上, 中, 下</td></tr>
+                    <tr><th>Hold</th><td>中, 上, 下</td><td>下, 中, 上</td><td>上, 下, 中</td><td>中, 下, 上</td></tr>
+                    <tr><th>Detonate</th><td>下, 上, 中</td><td>上, 中, 下</td><td>中, 上, 下</td><td>下, 上, 中</td></tr>
+                </table>
+            </div>
+            <div class="page-footer relative-footer"></div>
+        </div>
+    </div>
+</body>
+</html>

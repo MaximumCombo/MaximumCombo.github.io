@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>Adventure Game — Keep Talking and Nobody Explodes Module</title>
+    <meta content="initial-scale=1" name="viewport">
+    <link rel='stylesheet' type='text/css' href='css/font.css'>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src='js/ktane-utils.js'></script>
+    <style>
+        li { margin-bottom: .5em; }
+        ul { margin-bottom: 3em; }
+        table { margin-bottom: 1em; }
+        table.enemies { float: left; width: 47%; margin-right: 2em; }
+        table.weapons { float: left; width: 45%; }
+        td, th { padding: .18em .6em 0; }
+    </style>
+</head>
+<body>
+    <div id="ManualContent">
+        <div class="section">
+            <div class="page page-bg-03">
+                <div class="page-header">
+                    <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                    <span class="page-header-section-title">アドベンチャーゲーム</span>
+                </div>
+                <div class="page-content">
+                    <img class="diagram" src="img/Component/Adventure Game.svg">
+                    <h2>モジュール詳細：アドベンチャーゲーム</h2>
+
+                    <p class="flavour-text">
+                        昔のテキストゲームにしては奇妙なインターフェイスだ。
+                        誰もが大好きな持ち物を整理するパズルのようなものだが、
+                        ストーリーは一切ない。
+                    <ul>
+                        <li>液晶には敵の名前、キャラクターのステータスと
+                            戦っている環境の情報、現在の所持品が表示されている。
+                        <li>キャラクターは三つの武器と五つのアイテムを所持している。
+                        <li>どのアイテムを使い、どの武器を使用するかを判断しなければならない。
+                        <li>矢印のボタンでステータスと所持品を見られる。
+                        <li>所持品を使うには、使用したいアイテムが液晶に表示されている時に「USE」ボタンを押す。
+                        <li>下のアイテム一覧表で所持品を使うか使わないか判断する。
+                        <li>アイテムはどの順に使っても構わないが、武器を使用する前に使い終わらなければならない。
+                        <li>武器一覧表と敵のステータス表からどの武器を使って戦うか判断する。
+                        <li>それぞれの武器の使用する能力について、キャラクターのステータスに武器ボーナスを足し、敵のステータスと見比べる。
+                        <li>敵を倒すには、武器の内、キャラクターが敵の能力を最も上回るものを使用する。
+                        <li>二つの武器が敵の能力を最も上回る場合、両方使用可能。
+                    </ul>
+
+                    <table>
+                        <tr>
+                            <th>ステータス
+                            <th>解説
+                        </tr>
+                        <tr>
+                            <td>5 STR
+                            <td>キャラクターの攻撃力、戦闘に影響。
+                        </tr>
+                        <tr>
+                            <td>5 DEX
+                            <td>キャラクターの技能、戦闘に影響。
+                        </tr>
+                        <tr>
+                            <td>5 INT
+                            <td>キャラクターの知能、戦闘に影響。
+                        </tr>
+                        <tr>
+                            <td>5’ 5”
+                            <td>キャラクターの身長、単位はフィート。
+                        </tr>
+                        <tr>
+                            <td>15°C
+                            <td>周囲の気温。
+                        </tr>
+                        <tr>
+                            <td>9.8 m/s²
+                            <td>重力の大きさ。
+                        </tr>
+                        <tr>
+                            <td>101 kPa
+                            <td>周囲の気圧、単位はキロパスカル。
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="page-footer relative-footer">ページ 1/2</div>
+            </div>
+            <div class="page page-bg-01">
+                <div class="page-header">
+                    <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                    <span class="page-header-section-title">アドベンチャーゲーム</span>
+                </div>
+                <div class="page-content">
+
+                    <table>
+                        <tr>
+                            <th>アイテム
+                            <th>条件
+                        </tr>
+                        <tr>
+                            <td>Balloon
+                            <td>重力が9.3 m/s²より小さいか、気圧が110 kPaより大きく、敵がEagleではないなら使う。
+                        </tr>
+                        <tr>
+                            <td>Battery
+                            <td>爆弾についているバッテリーが1個以下で、敵がGolemかWizard以外なら使う。
+                        </tr>
+                        <tr>
+                            <td>Bellows
+                            <td>敵がDragonかEagleで、気圧が105 kPaより大きいなら使う。もしくは敵がそれ以外で、気圧が95 kPa未満なら使う。
+                        </tr>
+                        <tr>
+                            <td>Cheat code
+                            <td>チートを助長するな! 使ってはならない。
+                        </tr>
+                        <tr>
+                            <td>Crystal ball
+                            <td>知能がシリアルナンバーの最後の数字よりも大きく、敵がWizardではないなら使う。
+                        </tr>
+                        <tr>
+                            <td>Feather
+                            <td>技能が攻撃力か知能を上回っていれば使う。
+                        </tr>
+                        <tr>
+                            <td>Hard drive
+                            <td>爆弾に同じポートが二つ以上ついていれば使う。
+                        </tr>
+                        <tr>
+                            <td>Lamp
+                            <td>気温が12°C未満で、敵がLizardではなければ使う。
+                        </tr>
+                        <tr>
+                            <td>Moonstone
+                            <td>爆弾のインジケータが少なくとも二つ光っていない。
+                        </tr>
+                        <tr>
+                            <td>Potion
+                            <td>必ず使う。攻撃力、技能、知能が変化することがある。
+                        </tr>
+                        <tr>
+                            <td>Small dog
+                            <td>敵がDemonかDragonかTroll以外なら使う。
+                        </tr>
+                        <tr>
+                            <td>Stepladder
+                            <td>キャラクターの身長が4フィートより短く、敵がGoblinかLizard以外なら使う。
+                        </tr>
+                        <tr>
+                            <td>Sunstone
+                            <td>爆弾のインジケータが少なくとも二つ光っている。
+                        </tr>
+                        <tr>
+                            <td>Symbol
+                            <td>敵がDemonかGolemであるか、気温が31°Cより大きいなら使う。
+                        </tr>
+                        <tr>
+                            <td>Ticket
+                            <td>キャラクターの身長が4’ 6”以上で、重力が少なくとも9.2 m/s²以上、10.4 m/s²以下。
+                        </tr>
+                        <tr>
+                            <td>Trophy
+                            <td>攻撃力がシリアルナンバーの最初の数字よりも大きいか、敵がTrollなら使う。
+                        </tr>
+                    </table>
+
+                    <table class='enemies'>
+                        <tr><th>敵       <th>攻撃力     <th>技能     <th>知能 </tr>
+                        <tr><td>Demon       <td>50      <td>50      <td>50  </tr>
+                        <tr><td>Dragon      <td>10      <td>11      <td>13  </tr>
+                        <tr><td>Eagle       <td>4       <td>7       <td>3   </tr>
+                        <tr><td>Goblin      <td>3       <td>6       <td>5   </tr>
+                        <tr><td>Golem       <td>9       <td>4       <td>7   </tr>
+                        <tr><td>Troll       <td>8       <td>5       <td>4   </tr>
+                        <tr><td>Lizard      <td>4       <td>6       <td>3   </tr>
+                        <tr><td>Wizard      <td>4       <td>3       <td>8   </tr>
+                    </table>
+
+                    <table class='weapons'>
+                        <tr><th>武器          <th>使う能力 <th>ボーナス </tr>
+                        <tr><td>Broadsword      <td>攻撃力   <td>+0    </tr>
+                        <tr><td>Caber           <td>攻撃力   <td>+2    </tr>
+                        <tr><td>Nasty Knife     <td>技能     <td>+0    </tr>
+                        <tr><td>Longbow         <td>技能     <td>+2    </tr>
+                        <tr><td>Magic orb       <td>知能     <td>+0    </tr>
+                        <tr><td>Grimoire        <td>知能     <td>+2    </tr>
+                    </table>
+
+                </div>
+                <div class="page-footer relative-footer">ページ 2/2</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

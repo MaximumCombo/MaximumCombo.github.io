@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Rock-Paper-Scissors-Lizard-Spock — Keep Talking and Nobody Explodes Module</title>
+    <meta content="initial-scale=1" name="viewport">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src='js/ktane-utils.js'></script>
+    <script src='js/ruleseed.js'></script>
+    <script>
+        function setRules(rnd)
+        {
+            var letters = rnd.shuffleArray('SYHREAGCUPMZKNBJQDFLXVWIOT'.split(''));
+            for (var i = 0; i < 12; i++)
+                document.getElementById(`letter-${i + 1}`).innerText = letters[i];
+
+            var ports = rnd.shuffleArray(["RJ-45", ["ステレオ<br>RCA", "Stereo RCA"], "DVI-D", "パラレル", "シリアル", "PS/2"]);
+            for (var i = 0; i < 6; i++)
+                document.getElementById(`port-${i + 1}`).innerHTML = (typeof ports[i] === 'object') ? ports[i][i === 0 ? 1 : 0] : ports[i];
+
+            var indicators = rnd.shuffleArray(["IND", "TRN", "SIG", "CAR", "NSA", "FRK", "CLR", "MSA", "SND", "FRQ", "BOB"]);
+            for (var i = 0; i < 11; i++)
+                document.getElementById(`lit-${i + 1}`).innerHTML = indicators[i];
+
+            indicators = rnd.shuffleArray(["CLR", "CAR", "FRQ", "IND", "MSA", "NSA", "TRN", "SIG", "SND", "BOB", "FRK"]);
+            for (var i = 0; i < 11; i++)
+                document.getElementById(`unlit-${i + 1}`).innerHTML = indicators[i];
+
+            var digits = rnd.shuffleArray('9574831602'.split(''));
+            for (var i = 0; i < 10; i++)
+                document.getElementById(`digit-${i + 1}`).innerText = digits[i];
+
+            var rows = rnd.shuffleArray(["rule-row-ports", "rule-row-sndigits", "rule-row-unlit", "rule-row-snletters", "rule-row-lit"]);
+            var tb = document.querySelector('#rock-paper-scissors-lizard-spock>tbody');
+            for (var i = 0; i < rows.length; i++)
+                tb.appendChild(document.getElementById(rows[i]));
+        }
+
+        function setDefaultRules(rnd) { setRules(rnd); }
+    </script>
+    <style>
+        .squeeze {
+            position: absolute;
+            white-space: nowrap;
+            transform: scaleX(.937);
+            transform-origin: left;
+            text-decoration: inherit;
+        }
+
+        table#rock-paper-scissors-lizard-spock {
+            width: 100%;
+            font-size: 15px;
+        }
+
+            table#rock-paper-scissors-lizard-spock td {
+                white-space: nowrap;
+                vertical-align: top;
+            }
+
+        .skip {
+            font-size: 10pt;
+            font-weight: normal;
+        }
+
+        .page-header-section-title.ruleseed-seeded {
+            transform: scaleX(.75);
+            transform-origin: right;
+            right: 0;
+            position: absolute;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-04">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Rock-Paper-Scissors-L.-Sp.</span>
+            </div>
+            <div class="page-content">
+                <img class='diagram' src='img/Component/Rock-Paper-Scissors-Lizard-Spock.svg'>
+                <h2>モジュール詳細：拡張ジャンケン</h2>
+
+                <p class="flavour-text">
+                    多くの人の経験からジャンケンというゲームは
+                    互いが熟知しているプレイヤー同士だと
+                    出せる手の少なさのせいで
+                    75～80%の確率で引き分けになるらしい。
+                    この拡張ジャンケンはインターネットの先駆者であるサム・カスが
+                    クラシック・ゲームの改良のために開発されたものだ。
+                    サム・カス万歳! 敬礼!
+                </p>
+                <p>
+                    このモジュールを解除するには、どの絵柄のボタンを押すかを判断する。
+                </p>
+                <p>
+                    最初に、オトリを見つける。五つの絵柄が正五角形のように配置されているならば、オトリはいない。
+                    そうでない場合、オトリは真ん中に配置されている絵柄か三つの並んだ絵柄で真ん中に位置する絵柄
+                    (横か斜めか縦)。
+                </p>
+                <p>
+                    次に、下の表で、一番上の段において最も多く当てはまる項目をもつ絵柄を見つける。
+                    最も当てはまる項目をもつ絵柄がオトリでなく、他に同数当てはまる絵柄がない場合、
+                    その絵柄に勝つ絵柄のボタンをすべて押す。そうでない場合、次の段に進む。
+                    
+                    条件に当てはまる項目がない場合、オトリ以外のすべての絵柄のボタンを押す。
+                </p>
+                <p>
+                    どの絵柄がどの絵柄に勝つのか。至って単純。チョキはパーを切り、
+                    パーはグーをつつみ、グーはトカゲをつぶし、トカゲはスポック船長を毒におかし、 
+                    スポック船長はチョキを叩きつけ、チョキはトカゲの尻尾を切り、トカゲはパーを食べ、
+                    パーはスポック船長を論破し、スポック船長はグーを蒸発させ、そして、いつもの通り、
+                    グーはチョキを壊す。
+                </p>
+                <table id='rock-paper-scissors-lizard-spock'>
+                    <colgroup><col /><col /><col /><col /><col /><col /></colgroup>
+                    <tr>
+                        <th>～の数:</th>
+                        <th>グー</th>
+                        <th>パー</th>
+                        <th>チョキ</th>
+                        <th>トカゲ</th>
+                        <th>スポック船長</th>
+                    </tr>
+                    <tr id="rule-row-snletters">
+                        <th>
+                            <div>シリアルナンバーの文字</div>
+                            <div class='skip'>シリアルナンバーに<span id='letter-1'>X</span>か<span id='letter-2'>Y</span>を含むならこの段を飛ばす。</div>
+                        </th>
+                        <td><span id='letter-3'>R</span>、<span id='letter-4'>O</span></td>
+                        <td><span id='letter-5'>P</span>、<span id='letter-6'>A</span></td>
+                        <td><span id='letter-7'>S</span>、<span id='letter-8'>I</span></td>
+                        <td><span id='letter-9'>L</span>、<span id='letter-10'>Z</span></td>
+                        <td><span id='letter-11'>C</span>、<span id='letter-12'>K</span></td>
+                    </tr>
+                    <tr id="rule-row-ports">
+                        <th>
+                            <div>ポート</div>
+                            <div class='skip'><span id="port-1">PS/2</span>ポートがあるならこの段は飛ばす。</div>
+                        </th>
+                        <td id="port-2">RJ-45</td>
+                        <td id="port-3">パラレル</td>
+                        <td id="port-4">シリアル</td>
+                        <td id="port-5">DVI-D</td>
+                        <td id="port-6">ステレオ<br />RCA</td>
+                    </tr>
+                    <tr id="rule-row-lit">
+                        <th>
+                            <div>光るインジケータ</div>
+                            <div class='skip'>光る「<span id="lit-1">TRN</span>」インジケータがあるならこの段は飛ばす。</div>
+                        </th>
+                        <td><span id="lit-2">FRK</span>、<span id="lit-3">FRQ</span></td>
+                        <td><span id="lit-4">BOB</span>、<span id="lit-5">IND</span></td>
+                        <td><span id="lit-6">CAR</span>、<span id="lit-7">SIG</span></td>
+                        <td><span id="lit-8">CLR</span>、<span id="lit-9">NSA</span></td>
+                        <td><span id="lit-10">SND</span>、<span id="lit-11">MSA</span></td>
+                    </tr>
+                    <tr id="rule-row-unlit">
+                        <th>
+                            <div>光ってないインジケータ</div>
+                            <div class='skip'>光ってない「<span id="unlit-1">TRN</span>」インジケータがあるならこの段は飛ばす。</div>
+                        </th>
+                        <td><span id="unlit-2">FRK</span>、<span id="unlit-3">FRQ</span></td>
+                        <td><span id="unlit-4">BOB</span>、<span id="unlit-5">IND</span></td>
+                        <td><span id="unlit-6">CAR</span>、<span id="unlit-7">SIG</span></td>
+                        <td><span id="unlit-8">CLR</span>、<span id="unlit-9">NSA</span></td>
+                        <td><span id="unlit-10">SND</span>、<span id="unlit-11">MSA</span></td>
+                    </tr>
+                    <tr id="rule-row-sndigits">
+                        <th>シリアルナンバーの数字</th>
+                        <td><span id='digit-1'>0</span>、<span id='digit-2'>5</span></td>
+                        <td><span id='digit-3'>3</span>、<span id='digit-4'>6</span></td>
+                        <td><span id='digit-5'>1</span>、<span id='digit-6'>9</span></td>
+                        <td><span id='digit-7'>2</span>、<span id='digit-8'>8</span></td>
+                        <td><span id='digit-9'>4</span>、<span id='digit-10'>7</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/1</div>
+        </div>
+    </div>
+</body>
+</html>

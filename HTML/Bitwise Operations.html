@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Bitwise Operations — Keep Talking and Nobody Explodes Module</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='css/font.css'>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src='js/ktane-utils.js'></script>
+    <style>
+        table.bitwise td.second {
+        }
+    </style>
+</head>
+<body>
+<div class="section">
+    <div class="page page-bg-01">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Bitwise Operations</span>
+        </div>
+        <div class="page-content">
+            <img src="img/Component/Bitwise Operations.svg" class="diagram">
+            <h2>モジュール詳細: ビット演算</h2>
+            <p class="flavour-text">
+                誰もが嫌いなタイプの計算だ。そもそも計算が好きな人なんているだろうか?
+            </p>
+
+            <ul>
+                <li>モジュールには2つの液晶がある:
+                    <ol>
+                        <li>ビット演算子 (AND、OR、XOR、NOT)</li>
+                        <li>8つの数字</li>
+                    </ol>
+                </li>
+                <li>下の表の左右から得た二つの条件と、ディスプレイのビット演算子から答えを見つける。
+                    下の表中のMSBは最も左の桁、LSBが最も右の桁になる。</li>
+            </ul>
+
+            <table class='bitwise'>
+                <tr><th class='first'>条件 1                                               <th>桁<th class='second'>条件 2
+                <tr><td class='first'>単3バッテリーがない                                      <td>MSB<td class='second'>単1バッテリーが1つ以上ある
+                <tr><td class='first'>パラレルポートがある                                        <td>   <td class='second'>ポートが3つ以上ある
+                <tr><td class='first'>光る「NSA」というインジケータがある                                    <td>   <td class='second'>バッテリーホルダが2つ以上ある
+                <tr><td class='first'>爆弾の解除開始時のタイマーの分よりもモジュールの総数が大きい<td>   <td class='second'>光る「BOB」というインジケータがある
+                <tr><td class='first'>一つよりも多くの光るインジケータがある                          <td>   <td class='second'>一つよりも多くの光っていないインジケータがある
+                <tr><td class='first'>モジュールの総数が3で割り切れる                      <td>   <td class='second'>シリアルナンバーに奇数がある
+                <tr><td class='first'>単1バッテリーが2つよりも少ない                              <td>   <td class='second'>モジュールの総数が偶数
+                <tr><td class='first'>ポートの数が4つよりも少ない                                    <td>LSB<td class='second'>バッテリーが2つ以上
+            </table>
+
+            <p>ビット演算子についての表:</p>
+            <table>
+                <tr>
+                    <th>演算子</th>
+                    <th>AND</th>
+                    <th>OR</th>
+                    <th>XOR</th>
+                    <th>NOT</th>
+                </tr>
+                <tr>
+                    <td>どうするか</td>
+                    <td>両方の条件が真であれば、計算結果は1。そうでない場合、計算結果は0。</td>
+                    <td>どちらか(または両方)の条件が真であれば、計算結果は1。そうでない場合、計算結果は0。</td>
+                    <td>どちらか(しかし両方は除く)の条件が真であれば、計算結果は1。そうでない場合、計算結果は0。</td>
+                    <td>条件2は無視し、条件1が真であれば、計算結果は0。そうでない場合、計算結果は1。</td>
+                </tr>
+                <tr>
+                    <td>計算式</td>
+                    <td>条件1 && 条件2</td>
+                    <td>条件1 || 条件2</td>
+                    <td>(条件1 && !条件2) || (!条件1 && 条件2)</td>
+                    <td>!条件1</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body></html>

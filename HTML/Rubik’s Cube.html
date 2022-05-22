@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Rubik’s Cube — Keep Talking and Nobody Explodes Module</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        table.rubiks-cube {
+            border: 2px solid black;
+        }
+
+            table.rubiks-cube.float {
+                margin: 1em 0 1em 1.5em;
+                float: right;
+                clear: right;
+                width: 50mm;
+            }
+
+            table.rubiks-cube th, table.rubiks-cube td {
+                text-align: center;
+            }
+
+            table.rubiks-cube th {
+                border-bottom: 2px solid black;
+            }
+
+        .bar {
+            border-left: 3px solid black;
+        }
+
+        .footnote hr {
+            width: 30%;
+            border: none;
+            border-top: 1px solid black;
+        }
+
+        .footnote p {
+            font-size: 85%;
+        }
+
+        ul {
+            margin-right: 5.5cm;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-05">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Rubik’s Cube</span>
+            </div>
+            <div class="page-content">
+                <img class="diagram" src="img/Component/Rubik’s Cube.svg">
+                <table class="rubiks-cube float">
+                    <caption>表1</caption>
+                    <tr><th>U</th><th>L</th><th>F</th><th class="bar" colspan="2">手順</th></tr>
+                    <tr><td>0</td><td>1</td><td>2</td><td class="bar">L’</td><td>F’</td></tr>
+                    <tr><td>3</td><td>4</td><td>5</td><td class="bar">D’</td><td>U’</td></tr>
+                    <tr><td>6</td><td>7</td><td>8</td><td class="bar">U</td><td>B’</td></tr>
+                    <tr><td>9</td><td>A</td><td>B</td><td class="bar">F</td><td>B</td></tr>
+                    <tr><td>C</td><td>D</td><td>E</td><td class="bar">L</td><td>D</td></tr>
+                    <tr><td>F</td><td>G</td><td>H</td><td class="bar">R’</td><td>U</td></tr>
+                    <tr><td>I</td><td>J</td><td>K</td><td class="bar">U’</td><td>F</td></tr>
+                    <tr><td>L</td><td>M</td><td>N</td><td class="bar">B’</td><td>L’</td></tr>
+                    <tr><td>O</td><td>P</td><td>Q</td><td class="bar">B</td><td>R</td></tr>
+                    <tr><td>R</td><td>S</td><td>T</td><td class="bar">D</td><td>L</td></tr>
+                    <tr><td>U</td><td>V</td><td>W</td><td class="bar">R</td><td>D’</td></tr>
+                    <tr><td>X</td><td>Y</td><td>Z</td><td class="bar">F’</td><td>R’</td></tr>
+                </table>
+
+                <table class="rubiks-cube float">
+                    <caption>表2</caption>
+                    <tr><th>色</th><th class="bar">数字</th></tr>
+                    <tr><td>黄</td><td class="bar">1</td></tr>
+                    <tr><td>青</td><td class="bar">2</td></tr>
+                    <tr><td>赤</td><td class="bar">3</td></tr>
+                    <tr><td>緑</td><td class="bar">4</td></tr>
+                    <tr><td>オレンジ</td><td class="bar">5</td></tr>
+                    <tr><td>白</td><td class="bar">6</td></tr>
+                </table>
+
+                <h2>モジュール詳細：ルービックキューブ</h2>
+                <p class="flavour-text">この解けないものを覚えているか? 今や爆弾についてるんだと。 よく楽しめよ。</p>
+
+                <p>
+                    解かれていないルービックキューブが付いている。モジュールを解除するには、これを解く。
+                    以下の作業で解くまでの手順を判断できる。
+                    もし間違えたときはリセットボタンを押すことで最初の状態に戻すことができる。
+                </p>
+
+                <ul>
+                    <li>右の表1から始める。キューブのU、L、F面の色を見る。 それらの色を表2に使い、その面と対応する列を、得た数字の数だけ下にずらす（枠の外に出た分は表の頭に戻して、ループさせる）。</li>
+                    <li>シリアルナンバーからD面の色が表す位置(再び表2を使う)にある文字を除外する。</li>
+                    <li>残ったシリアルナンバーの文字を上で改変した表1に当てはめ、文字ごとに二つの手順、合計で10の手順を取る。</li>
+                    <li>R面の色が赤、緑、青の場合、それぞれ書かれた両方の手順を左から順に取り出す。そうでない場合、まずそれぞれ最初の手順を取り出し、その後に二つ目の手順をそれぞれ取り出す。</li>
+                    <li>R面の色が赤か黄の場合、最初の五つの手順は逆方向に回転させる。</li>
+                    <li>R面の色が緑か白の場合、全ての手順を逆にする。</li>
+                    <li>最後に、並べた順にキューブを動かす。</li>
+                </ul>
+
+                <p>解説:</p>
+
+                <ul>
+                    <li>F面にリセットボタンが付いている。モジュールを見た時に見える面はU、L、Fである。</li>
+                    <li>面の“色”とはその面の真ん中に貼られている色のことである。</li>
+                    <li>一つの手順は指定された面を時計回りに回すことを指す。「’」は逆方向に回すことを指す(つまり反時計回り)。</li>
+                </ul>
+
+                <div class="footnote">
+                    <hr>
+                    <p>面の向き: U = 上面, D = 下面, L = 左面, R = 右面, F = 前面, B = 後面</p>
+                </div>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/1</div>
+        </div>
+    </div>
+</body>
+</html>

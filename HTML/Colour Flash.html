@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Colour Flash — Keep Talking and Nobody Explodes Module</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        .condition {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="section">
+    <div class="page page-bg-01">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Colour Flash</span>
+        </div>
+        <div class="page-content">
+            <img class="diagram" src="img/Component/Colour Flash.svg">
+            <h2>モジュール詳細：カラーフラッシュ</h2>
+            <p class="flavour-text">
+                色を識別するのは簡単だ。赤、青、緑等々。 だが単語が違う色で書かれていると少し難しくなるが…
+            </p>
+
+            <ul>
+                <li>このモジュールは色を表す単語が8つ、別々の色で、一定の順序で表示される。</li>
+                <li>出てくる色は赤(Red)、黄色(Yellow)、緑(Green)、青(Blue)、マゼンタ(Magenta)、白(White)。</li>
+                <li>それとは別にモジュールには"Yes"ボタンと"No"ボタンが付いている。</li>
+                <li>"Yes"ボタンと"No"ボタンのうち、<em>どちらか片方</em>のボタンを押すことでモジュールを解除できるが、下のルールに従ったタイミングで押す必要がある。</li>
+                <li>順番の最後に表示される単語の色で下のどのルールに従うかを判断する。</li>
+                <li>上から順にルールに従っていき、最初に当てはまるルールに書かれている手順を実行する。</li>
+            </ul>
+
+            <table>
+                <tbody><tr>
+                     <td>
+                         <div class="condition">最後の単語の色が赤(Red)だった場合:</div>
+                         <div>緑が単語として少なくとも三回出てきた場合、緑が単語や色として三回目に出てきたときに"Yes"ボタンを押す。</div>
+                         <div>そうでない場合、青が色として一回だけ出てきた場合、マゼンタという単語が出ているときに"No"ボタンを押す。</div>
+                         <div>そうでない場合、白が最後に単語や色として出てきたときに"Yes"ボタンを押す。</div>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <div class="condition">最後の単語の色が黄色(Yellow)だった場合:</div>
+                         <div>青という単語が緑で表示された場合、緑が最初に色として出てくるときに"Yes"ボタンを押す。</div>
+                         <div>そうでない場合、白という単語が白か赤色で表示された場合、文字の色とその単語が表す色が二回目に合っていないときに"Yes"ボタンを押す。</div>
+                         <div>そうでない場合、マゼンタが単語や色として出てくる回数を数え(マゼンタがマゼンタ色で表示されたときは一回しかカウントしない)、その回数番目の単語が表示されているときに"No"ボタンを押す(例: 四回だった時は四番目で押す)。</div>
+                     </td>
+                 </tr>
+            </tbody></table>
+        </div>
+        <div class="page-footer relative-footer">ページ 1/2</div>
+    </div>
+
+    <div class="page page-bg-02">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Colour Flash</span>
+        </div>
+        <div class="page-content">
+            <p>前の表からの続き…
+
+            </p><table>
+                <tbody><tr>
+                    <td>
+                         <div class="condition">最後の単語の色が緑(Green)だった場合:</div>
+                         <div>一つの単語が連続でそれぞれが違う色で出てきた場合、五番目の単語で"No"ボタンを押す。</div>
+                         <div>マゼンタが単語として少なくとも三回出てきた場合、黄色が最初に単語や色として出てきたときに"No"ボタンを押す。</div>
+                         <div>そうでない場合、単語とその色が一致したときに"Yes"ボタンを押す。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="condition">最後の単語の色が青(Blue)だった場合:</div>
+                        <div>単語とその色が三回以上不一致だった場合、単語とその色が最初に一致しなかったときに"Yes"ボタンを押す。</div>
+                        <div>赤という単語が黄色で表示された場合、もしくは黄色という単語が白で表示された場合、白という単語が赤で表示されたときに"No"ボタンを押す。</div>
+                        <div>そうでない場合、緑が最後に単語や色として出てきたときに"Yes"ボタンを押す。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="condition">最後の単語の色がマゼンタ(Magenta)だった場合:</div>
+                        <div>一つの色が連続でそれぞれが違う単語で共に出てきた場合、三番目の単語のときに"Yes"ボタンを押す。</div>
+                        <div>黄色という単語が出てきた回数が青という色が出てきた回数よりも多い場合、黄色が最後に単語として出てきたときに"No"ボタンを押す。</div>
+                        <div>そうでない場合、最初に単語の色と七番目の単語が一致するときに"No"ボタンを押す。</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="condition">最後の単語の色が白(White)だった場合:</div>
+                        <div>三番目の単語の色が四番目か五番目の単語と一致する場合、青が最初に単語や色として出てくるときに"No"ボタンを押す。</div>
+                        <div>黄色という単語が赤で表示された場合、青が最後に色として出てきたときに"Yes"ボタンを押す。</div>
+                        <div>そうでない場合、"No"ボタンを押す。</div>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        <div class="page-footer relative-footer">ページ 2/2</div>
+    </div>
+</div>
+</body>
+</html>

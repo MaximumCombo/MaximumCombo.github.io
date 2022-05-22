@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Yahtzee — Keep Talking and Nobody Explodes Mod</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        div.footnote {
+            font-size: 70%;
+            margin-left: 1em;
+            margin-top: 2.5em;
+            position: relative;
+        }
+            div.footnote::before {
+                content: '*';
+                position: absolute;
+                left: -1em;
+            }
+            div.footnote::after {
+                content: '';
+                position: absolute;
+                border-top: 1px solid #aaa;
+                left: -1em;
+                top: -1em;
+                width: 15em;
+            }
+        div.footnote p {
+            margin: 0;
+        }
+        li {
+            margin-top: .4em;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-07">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Yahtzee</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Yahtzee.svg" class="diagram">
+                <h2>モジュール詳細：ヤッツィー</h2>
+                <p class="flavour-text">いつから爆弾解体は運ゲーになってしまったのだろうか?</p>
+
+                <p>色が紫、黄色、青、白、黒の五つのサイコロがある。最初にサイコロをロールする。
+                    次に、どのサイコロをキープもしくは再びロールするのかを決める。キープは同じ目のサイコロしかできない。
+                    この動作をヤッツィー<sup>*</sup>になるまで繰り返す。</p>
+                <p>それぞれのステージで、キープするべきサイコロは以下のルールの通り:</p>
+
+                <h3>5個のサイコロをロールした場合:</h3>
+                <p>最初に該当するルールに従う:</p>
+                <ul>
+                    <li><strong>大きいストレートが出た:</strong><sup>*</sup> シリアルナンバーの一番大きい数字と同じ目のサイコロをキープする。該当するサイコロがない場合、紫をキープする。
+                    <li><strong>小さいストレートが出た:</strong><sup>*</sup> はぐれサイコロ<sup>*</sup>をキープする。
+                    <li><strong>スリーカードもしくはフルハウスが出た:</strong><sup>*</sup> 光っているインジケータが ≥ 2つ ある場合、白いサイコロをキープする。そうでない場合、光っていないインジケータが ≥ 2つ ある場合、黒いサイコロをキープする。そうでない場合、スリーカードじゃないサイコロの中で最も目の高いサイコロをキープする。
+                    <li><strong>フォーカードもしくはツーペアが出た:</strong> バッテリーの数と同じ目のサイコロをキープする。該当するサイコロがない場合、バッテリーホルダの数と同じ目のサイコロをキープする。該当するサイコロがない場合、黄色いダイスをキープする。
+                    <li><strong>ペアが出た:</strong> 下の表で最初に当てはまる段の色のサイコロをキープする。
+                        <table>
+                            <tr><th>ポートの種類</th><th>サイコロの色</th></tr>
+                            <tr><th>パラレルポート<td>紫</tr>
+                            <tr><th>PS/2 ポート<td>青</tr>
+                            <tr><th>RCA ポート<td>白</tr>
+                            <tr><th>RJ ポート<td>黒</tr>
+                            <tr><th>上記以外<td>黄色</tr>
+                        </table>
+                    <li><strong>上記以外が出た:</strong> サイコロを再度ロールする。
+                    <li>上記のいずれの場合でも、キープするサイコロは全て同じ目でなければならない。
+                </ul>
+
+                <div class='footnote'>
+                    <p><strong>ヤッツィー:</strong> 全ての目が同じ。</p>
+                    <p><strong>大きいストレート:</strong> 五つの目が連続している。</p>
+                    <p><strong>小さいストレート:</strong> 四つの目が連続している。<strong>はぐれサイコロ</strong>はストレートから外れたサイコロのこと。</p>
+                    <p><strong>スリーカード:</strong> 三つのサイコロが同じ目で、それ以外が違う目。</p>
+                    <p><strong>フルハウス:</strong> それぞれスリーカードとペアが成立している。</p>
+                    <p>これらの役はどのサイコロをキープ、再ロールしたかに関わらず、全てのサイコロについてのもの。</p>
+                </div>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/2</div>
+        </div>
+        <div class="page page-bg-06">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Yahtzee</span>
+            </div>
+            <div class="page-content">
+                <h3>4個のサイコロをロールした場合:</h3>
+                <ul>
+                    <li><strong>(小さいもしくは大きい)ストレート:</strong><sup>*</sup> キープしたサイコロを戻し、別の同じ目のサイコロを一個もしくは違う目のサイコロをキープする。
+                    <li><strong>そうでない場合:</strong>
+                    <ul>
+                        <li>全てのサイコロを再ロールすることは常に可能。
+                        <li>黒いサイコロでなければ、サイコロを1個キープできる。
+                        <li>青いサイコロでなければ、サイコロを2個キープできる。
+                        <li>残った二つのサイコロの目が同時にシリアルナンバーの数字になければ、サイコロを3つキープできる。
+                        <li>残ったサイコロのが一番大きい目であればサイコロを4個キープできる。
+                        <li>2個もしくはそれ未満でなければ、ポートプレートと同じ数のサイコロをキープすることはでき<em>ない</em>。
+                    </ul>
+                </ul>
+
+                <h3>3個のサイコロをロールした場合:</h3>
+                <ul>
+                    <li><strong>フルハウス:</strong><sup>*</sup> 同じ種類のポートがあればペアを再ロールする。そうでない場合、スリーカードを再ロールする。
+                    <li><strong>そうでない場合:</strong>
+                    <ul>
+                        <li>0、1、2個のサイコロをキープすることは可能。
+                        <li>紫もしくは白のサイコロを前のロールでキープした場合、サイコロを3個キープできる。
+                        <li>残ったサイコロのが一番小さい目であればサイコロを4個キープできる。
+                        <li>キープするサイコロの目がシリアルナンバーの数字あればサイコロを何個でもキープできる。
+                    </ul>
+                </ul>
+
+                <h3>2個のサイコロをロールした場合:</h3>
+                <ul>
+                    <li>0、1、2、3個のサイコロをキープすることは可能。
+                    <li>黄色か青のサイコロを前のロールでキープしたか、もしくは残ったサイコロの目とキープする目の差が1ならば、サイコロを4個キープできる。
+                </ul>
+
+                <h3>1個のサイコロをロールした場合:</h3>
+                <p>ヤッツィーになるまでサイコロをロールする。</p>
+            </div>
+            <div class="page-footer relative-footer">ページ 2/2</div>
+        </div>
+    </div>
+</body>
+</html>

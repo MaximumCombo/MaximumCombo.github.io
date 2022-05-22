@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>The Gamepad — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        .arrow {font-family:"Yu Gothic";}
+        .invert {color:#fff;background:#000;}
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">The Gamepad</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/The Gamepad.svg" class="diagram">
+                <h2>モジュール詳細：ゲームパッド</h2>
+                <p class="flavour-text">ああ、このボタンの配置を見ると子供の頃を思い出すよ! まさか時限爆弾で見ることになるとは思わなかったけど。遊びの時間は終わりってことかな。</p>
+                <p><i>付録 数学知識: 数学の基礎知識を参照。</i></p>
+                <ul style="margin:4px 0;padding-left:24px;">
+                    <li>二つの2桁の数字が液晶に表示されている。下には八つのキーがあり、 入力キー (<span class="arrow">◀▲▼▶</span>AB)、 決定キー、一文字消去のキーがある。</li>
+                    <li>正しいコマンドを入力する。コマンドは二つのサブコマンドから成り、液晶の数字を使い、最初に該当するものを使う。 </li>
+                    <li>液晶の二つの数字はそれぞれ <i>x</i>、<i>y</i> と置かれている。 それぞれの桁もまた <i>abcd</i> と置かれる。 <i>n</i> が付いているものはその数の倍数を意味する。
+                </ul>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th style="width:140px;height:16px;vertical-align:top;">共通事項</th>
+                            <td rowspan="2">
+                                <ul style="margin:0;padding:0;padding-left: 16px;">
+                                    <li>x = 11n を満たす場合、一つ目の入力を二つ目と、五つ目の入力と七つ目を入れ替える。</li>
+                                    <li>a = 1 + d を満たす場合、三つ目と四つ目の入力と、六つ目と八つ目の入力を入れ替える。</li>
+                                    <li>x もしくは y が高度合成数の場合、二つのサブコマンドを入れ替える。</li>
+                                    <li>x と y が平方数の場合、入力の順番を逆にする。</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top;">二つのサブコマンドを見つけた<em>後</em>、全ての該当する事項をこなす。</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="margin-top:8px;width:49.5%;float:left;">
+                    <tbody>
+                        <tr>
+                            <th colspan="2">最初のサブコマンド</th>
+                        </tr>
+                        <tr>
+                            <td>x が素数</td>
+                            <td><span class="arrow">▲▲▼▼</span></td>
+                        </tr>
+                        <tr>
+                            <td>x = 12n</td>
+                            <td><span class="arrow">▲</span>A<span class="arrow">◀◀</span></td>
+                        </tr>
+                        <tr>
+                            <td>a+b = 10 かつ シリアルナンバーの最後の数字が奇数</td>
+                            <td>AB<span class="arrow">◀▶</span></td>
+                        </tr>
+                        <tr>
+                            <td>x = 6n + 3 もしくは x = 10n + 5</td>
+                            <td><span class="arrow">▼◀</span>A<span class="arrow">▶</span></td>
+                        </tr>
+                        <tr>
+                            <td>x = 7n かつ y ≠ 7n</td>
+                            <td><span class="arrow">◀◀▲</span>B</td>
+                        </tr>
+                        <tr>
+                            <td>x = c × d</td>
+                            <td>A<span class="arrow">▲◀◀</span></td>
+                        </tr>
+                        <tr>
+                            <td>x が平方数</td>
+                            <td><span class="arrow">▶▶</span>A<span class="arrow">▼</span></td>
+                        </tr>
+                        <tr>
+                            <td>x = 3n – 1 もしくは 爆弾に光って<strong>いない</strong>SNDがある</td>
+                            <td><span class="arrow">▶</span>AB<span class="arrow">▲</span></td>
+                        </tr>
+                        <tr>
+                            <td>60 ≤ x &lt; 90 かつ 爆弾にバッテリーがない</td>
+                            <td>BB<span class="arrow">▶◀</span></td>
+                        </tr>
+                        <tr>
+                            <td>x = 6n</td>
+                            <td>ABA<span class="arrow">▶</span></td>
+                        </tr>
+                        <tr>
+                            <td>x = 4n</td>
+                            <td><span class="arrow">▼▼◀▲</span></td>
+                        </tr>
+                        <tr>
+                            <td>上記以外</td>
+                            <td>A<span class="arrow">◀</span>B<span class="arrow">▶</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table style="margin-top:8px;width:49.5%;float:right;">
+                    <tbody>
+                        <tr>
+                            <th colspan="2">二つ目のサブコマンド</th>
+                        </tr>
+                        <tr>
+                            <td>y が素数</td>
+                            <td><span class="arrow">◀▶◀▶</span></td>
+                        </tr>
+                        <tr>
+                            <td>y = 8n</td>
+                            <td><span class="arrow">▼▶</span>B<span class="arrow">▲</span></td>
+                        </tr>
+                        <tr>
+                            <td>c - d = 4 かつ 爆弾にステレオRCAがある</td>
+                            <td><span class="arrow">▶</span>A<span class="arrow">▼▼</span></td>
+                        </tr>
+                        <tr>
+                            <td>y = 4n + 2 もしくは 爆弾に光っているFRQがある</td>
+                            <td>B<span class="arrow">▲▶</span>A</td>
+                        </tr>
+                        <tr>
+                            <td>y = 7n かつ x ≠ 7n</td>
+                            <td><span class="arrow">◀◀▼</span>A</td>
+                        </tr>
+                        <tr>
+                            <td>y が平方数</td>
+                            <td><span class="arrow">▲▼</span>B<span class="arrow">▶</span></td>
+                        </tr>
+                        <tr>
+                            <td>y = a × b</td>
+                            <td>A<span class="arrow">▲◀▼</span></td>
+                        </tr>
+                        <tr>
+                            <td>y = 4n – 1 もしくは 爆弾にPS/2ポートがある</td>
+                            <td><span class="arrow">▲</span>BBB</td>
+                        </tr>
+                        <tr>
+                            <td>c > d かつ 爆弾に二つ以上バッテリーがある</td>
+                            <td>AA<span class="arrow">▲▼</span></td>
+                        </tr>
+                        <tr>
+                            <td>y = 5n</td>
+                            <td>BAB<span class="arrow">◀</span></td>
+                        </tr>
+                        <tr>
+                            <td>y = 3n</td>
+                            <td><span class="arrow">▶▲▲◀</span></td>
+                        </tr>
+                        <tr>
+                            <td>上記以外</td>
+                            <td>B<span class="arrow">▲</span>A<span class="arrow">▼</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/2</div>
+        </div>
+        <div class="page page-bg-02">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">The Gamepad</span>
+            </div>
+            <div class="page-content">
+                <h2>付録 数学知識: 数学の基礎知識</h2>
+                <p>この付録はゲームパッドモジュールに使われている数学用語についての解説である。</p>
+                <h3>素数</h3>
+                <p>素数は1とそれ自身でしか割り切ることのできない正の整数のことを言う。言い換えれば、素数の数だけあるドーナツは友達が何人いても均等に分けることはできない (ドーナツと同じ人数でない限りは!)。</p>
+                <p>100未満の素数は: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97</p>
+                <h3>平方数</h3>
+                <p>平方数はある整数をそれ自身でかけた数のことを言う。</p>
+                <p>100未満の平方数は: 1, 4, 9, 16, 25, 36, 49, 64, 81</p>
+                <h3>高度合成数</h3>
+                <p>高度合成数はそれより小さい数より多くの約数を持つ整数のことを言う。例として、6 は 1, 2, 3, そして 6 で割り切れる。さらに一つ前の高度合成数で、1, 2, そして 4 で割り切れる 4 より多くの約数を持つため、高度合成数。8 は 1, 2, 4, そして 8 で割り切れるが、それ未満の数 (6) と約数の数が同じなため、高度合成数ではない。</p>
+                <p>100未満の高度合成数は: 1, 2, 4, 6, 12, 24, 36, 48, 60</p>
+            </div>
+            <div class="page-footer relative-footer">ページ 2/2</div>
+        </div>
+    </div>
+</body>
+</html>

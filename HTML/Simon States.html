@@ -1,0 +1,113 @@
+<!DOCTYPE html><html><head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Simon States — Keep Talking and Nobody Explodes Module</title>
+		<meta name="viewport" content="initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src="js/ktane-utils.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/font.css">
+		<link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+
+</head>
+	<body>
+		<div id="ManualContent">
+			<div class="section">
+                <div class="page">
+					<div class="page-header" id="Simon States">
+						<span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+						<span class="page-header-section-title">Simon States</span>
+					</div>
+					<div class="page-content">
+						<img class="diagram" src="img/Component/Simon States.svg">
+						<h2>モジュール詳細: サイモンステート</h2>
+						<p class="flavour-text">サイモンゲームよりも酷くなっている気がするが...</p>
+						<ul>
+							<li>ステージごとに一つ以上のボタンが光る。</li>
+							<li>それぞれのステージでは前のステージのボタンも光る。</li>
+							<li>ボタンは少し間をおいて繰り返し光る。</li>
+							<li>ボタンが光っても、ボタンへの入力はリセットされない。</li>
+							<li>間違ったボタンを押すと、ボタンへの入力はリセットされる。</li>
+							<li>次のページの表を使い、ステージ順に正解のボタンを押す。</li>
+							<li>色の優先度については、下の表を使い正しいボタンを見つける。</li>
+						</ul>
+						<table>
+							<tbody>
+								<tr>
+									<td rowspan="2">優先度</td><td colspan="4">左上のボタン</td>
+								</tr><tr>
+									<td>赤</td><td>黄</td><td>緑</td><td>青</td>
+								</tr><tr>
+									<td>最高</td><td>赤</td><td>青</td><td>緑</td><td>黄</td>
+								</tr><tr>
+									<td>高</td><td>青</td><td>黄</td><td>赤</td><td>緑</td>
+								</tr><tr>
+									<td>低</td><td>緑</td><td>赤</td><td>黄</td><td>青</td>
+								</tr><tr>
+									<td>最低</td><td>黄</td><td>緑</td><td>青</td><td>赤</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+                    <div class="page-footer relative-footer">ページ 1/2</div>
+				</div>
+				<div class="page">
+					<div class="page-header">
+						<span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+						<span class="page-header-section-title">Simon States</span>
+					</div>
+					<div class="page-content">
+						<table>
+							<tbody>
+								<tr>
+									<td>ステージ1
+                                        <ul>
+											<li>一つのボタンが光った場合、そのボタンを押す。</li>
+											<li>そうでない場合、二つのボタンが光り、一つが青なら色の優先度が最も高い光ったボタンを押す。</li>
+											<li>そうでない場合、二つのボタンが光ったなら、青を押す。</li>
+											<li>そうでない場合、三つのボタンが光り、一つが赤なら色の優先度が最も低い光ったボタンを押す。</li>
+											<li>そうでない場合、三つのボタンが光ったなら、赤を押す。</li>
+											<li>そうでない場合、二番目に色の優先度が高い色を押す。</li>
+										</ul>
+									</td>
+								</tr><tr>
+									<td>ステージ2
+                                        <ul>
+											<li>赤と青だけが光った場合、色の優先度が最も高い光っていないボタンを押す。</li>
+											<li>そうでない場合、二つのボタンが光ったなら、色の優先度が最も低い光っていないボタンを押す。</li>
+											<li>そうでない場合、一つのボタンが光り、それが青でないなら、青を押す。</li>
+											<li>そうでない場合、一つのボタンが光ったなら、黄を押す。</li>
+											<li>そうでない場合、全てのボタンが光ったならステージ1と同じボタンを押す。</li>
+											<li>そうでない場合、光らなかったボタンを押す。</li>
+										</ul>
+									</td>
+								</tr><tr>
+									<td>ステージ3
+                                        <ul>
+											<li>三つのボタンが光り、少なくとも一つは前のステージで押されているなら、色の優先度が最も高い押したことのないボタンを押す。</li>
+											<li>そうでない場合、三つのボタンが光ったなら、色の優先度が最も高い光ったボタンを押す。</li>
+											<li>そうでない場合、二つのボタンが光り、両方とも押したなら色の優先度が最も低い光っていないボタンを押す。</li>
+											<li>そうでない場合、二つのボタンが光ったなら、ステージ1と同じボタンを押す。</li>
+											<li>そうでない場合、一つのボタンが光ったなら、そのボタンを押す。</li>
+											<li>そうでない場合、二番目に色の優先度が低い色を押す。</li>
+										</ul>
+									</td>
+								</tr><tr>
+									<td>ステージ4
+                                        <ul>
+											<li>三つの違うボタンが押されたなら、 残りのボタンを押す。</li>
+											<li>そうでない場合、三つのボタンが光り、その内、丁度一つの色が押されたことがないなら、そのボタンを押す。</li>
+											<li>そうでない場合、少なくとも三つのボタンが光ったなら、色の優先度が最も低いボタンを押す。</li>
+											<li>そうでない場合、一つのボタンが光ったなら、そのボタンを押す。</li>
+											<li>そうでない場合、緑を押す。</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+                    <div class="page-footer relative-footer">ページ 2/2</div>
+				</div>
+			</div>
+		</div>
+</body></html>

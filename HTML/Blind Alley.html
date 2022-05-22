@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>Blind Alley — Keep Talking and Nobody Explodes Module</title>
+    <meta content="initial-scale=1" name="viewport">
+    <link rel='stylesheet' type='text/css' href='css/font.css'>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src='js/ktane-utils.js'></script>
+    <script src='js/ruleseed.js'></script>
+    <style>
+        table.regions {
+            border: none;
+            margin: 0 2em 1em 0;
+            clear: both;
+        }
+
+        table.regions col { width: 33%; }
+
+        td.corner {
+            border: none;
+        }
+
+        ul {
+            padding-left: 1.5em;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+    </style>
+    <script>
+        var conditions = [
+            "光っている「IND」というインジケーターがある。",
+            "DVI-Dポートがある。",
+            "RJ-45ポートがある。",
+            "バッテリーホルダの数が偶数。",
+            "光っていない「FRQ」というインジケーターがある。",
+            "光っている「CAR」というインジケーターがある。",
+            "光っている「SND」というインジケーターがある。",
+            "光っていない「CLR」というインジケーターがある。",
+            "光っている「TRN」というインジケーターがある。",
+            "パラレルポートがある。",
+            "バッテリーの数が偶数。",
+            "ステレオRCAポートがある。",
+            "シリアルポートがある。",
+            "光っていない「TRN」というインジケーターがある。",
+            "PS/2ポートがある。",
+            "光っていない「FRK」というインジケーターがある。",
+            "光っている「BOB」というインジケーターがある。",
+            "光っている「NSA」というインジケーターがある。",
+            "光っている「SIG」というインジケーターがある。",
+            "光っている「MSA」というインジケーターがある。",
+            "シリアルナンバーに偶数の数字がある。",
+            "光っている「FRK」というインジケーターがある。",
+            "光っていない「CAR」というインジケーターがある。",
+            "光っていない「NSA」というインジケーターがある。",
+            "光っていない「BOB」というインジケーターがある。",
+            "シリアルナンバーに母音がある。",
+            "光っていない「SND」というインジケーターがある。",
+            "光っている「CLR」というインジケーターがある。",
+            "光っていない「MSA」というインジケーターがある。",
+            "光っていない「IND」というインジケーターがある。",
+            "光っていない「SIG」というインジケーターがある。",
+            "光っている「FRQ」というインジケーターがある。"
+        ];
+        function setDefaultRules(rnd) { setRules(rnd); }
+        function setRules(rnd)
+        {
+            var list = conditions.slice(0);
+            rnd.shuffleFisherYates(list);
+            var lis = document.getElementsByClassName('condition');
+            for (var i = 0; i < lis.length; i++)
+                lis[i].innerText = list[i];
+        }
+    </script>
+</head>
+<body>
+    <div id="ManualContent">
+        <div class="section">
+            <div class="page">
+                <div class="page-header">
+                    <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                    <span class="page-header-section-title">Blind Alley</span>
+                </div>
+                <div class="page-content">
+                    <img class="diagram" src="img/Component/Blind Alley.svg">
+                    <h2>モジュール詳細: 袋小路</h2>
+
+                    <p class="flavour-text">何? どこ?
+
+                    <p>
+                        モジュールには何もないが、下の図のように8つのクリックポイントがある。
+                        書いてある条件に最も当てはまるところがクリックするべき場所。
+
+                    <table class='regions'>
+                        <col><col><col>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li class='condition'>There is an unlit BOB indicator.
+                                    <li class='condition'>There is a lit CAR indicator.
+                                    <li class='condition'>There is a lit IND indicator.
+                                    <li class='condition'>There is an even number of battery holders.
+                                </ul>
+                            <td>
+                                <ul>
+                                    <li class='condition'>There is an unlit CAR indicator.
+                                    <li class='condition'>There is an unlit NSA indicator.
+                                    <li class='condition'>There is a lit FRK indicator.
+                                    <li class='condition'>There is an RJ-45 port.
+                                </ul>
+                            <td class='corner'>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li class='condition'>There is an unlit FRQ indicator.
+                                    <li class='condition'>There is an unlit IND indicator.
+                                    <li class='condition'>There is an unlit TRN indicator.
+                                    <li class='condition'>There is a DVI-D port.
+                                </ul>
+                            <td>
+                                <ul>
+                                    <li class='condition'>There is an unlit SIG indicator.
+                                    <li class='condition'>There is an unlit SND indicator.
+                                    <li class='condition'>There is a lit NSA indicator.
+                                    <li class='condition'>There is an even number of batteries.
+                                </ul>
+                            <td>
+                                <ul>
+                                    <li class='condition'>There is a lit BOB indicator.
+                                    <li class='condition'>There is a lit CLR indicator.
+                                    <li class='condition'>There is a PS/2 port.
+                                    <li class='condition'>There is a serial port.
+                                </ul>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li class='condition'>There is a lit FRQ indicator.
+                                    <li class='condition'>There is a lit SIG indicator.
+                                    <li class='condition'>There is a lit TRN indicator.
+                                    <li class='condition'>There is an even digit in the serial number.
+                                </ul>
+                            <td>
+                                <ul>
+                                    <li class='condition'>There is an unlit FRK indicator.
+                                    <li class='condition'>There is a lit MSA indicator.
+                                    <li class='condition'>There is a parallel port.
+                                    <li class='condition'>There is a vowel in the serial number.
+                                </ul>
+                            <td>
+                                <ul>
+                                    <li class='condition'>There is an unlit CLR indicator.
+                                    <li class='condition'>There is an unlit MSA indicator.
+                                    <li class='condition'>There is a lit SND indicator.
+                                    <li class='condition'>There is a stereo RCA port.
+                                </ul>
+                        </tr>
+                    </table>
+                </div>
+                <div class="page-footer relative-footer">ページ 1/1</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+1.これをモジュールのHTML先頭に挿入。
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+
+2.Souvenir へ追加 (存在すれば)
+
+3.翻訳が終わったらmain.jsに
+    {name:'', tran_name:'', yomi_name:'', d_difficulty: 0, e_difficulty: 0},
+を改変して追加
+

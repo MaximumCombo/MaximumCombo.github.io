@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Boolean Venn Diagram — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        td {
+            width:25%;
+            text-align:center;
+            font-weight:bold;
+            font-size:125%;
+            line-height:120%;
+        }
+        span.symbol {
+            font-size: 200%;
+            font-family: 'Special Elite', 'Courier New', 'Arial', monospace;
+        }
+        span.isymbol {
+            font-size: 125%;
+            font-family: 'Special Elite', 'Courier New', 'Arial', monospace;
+        }
+        svg.symbol {
+            height: 13px;
+        }
+        .dark svg.symbol { filter: invert(85%); }
+    </style>
+</head>
+<body>
+<div class="section">
+    <div class="page page-bg-01">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Boolean Venn Diagram</span>
+        </div>
+        <div class="page-content">
+            <img src="img/Component/Boolean Venn Diagram.svg" class="diagram">
+            <h2>モジュール詳細：論理ベン図</h2>
+            <p class="flavour-text">
+                なぜデカいベン図があるんだ? なぜここに変な記号が表示されてるんだ? まさか...
+
+            <ul>
+                <li>
+                    モジュールはそれぞれ線で囲まれた領域のボタン八つと、図の外にあるボタン一つが付いている。
+                <li>
+                    三つの円は "A" (上)、"B" (左下)、そして "C" (右下) と分けられている。
+                <li>
+                    ディスプレイに表示された式を使い、ベン図のそれぞれの領域が"真"もしくは"偽"かを以下のルールに従い判定する:
+                    <ul>
+                        <li> 円に囲まれた領域は、その円に対して"真"であることを表し、囲まれていない円に対しては"偽"であることを表す。<br>
+                             <i>例: 三つの円に囲まれた領域は"A"、"B"、そして "C"が全て"真"であることを表す。</i>
+                        <li> 括弧の中にある式を先に評価し、その後に括弧の外にある式を評価する。
+                        <li> 下の画像はそれぞれの演算子の説明 (灰色の領域は"真"を意味する)。
+                        <li> "真"と判定された領域のボタンは押す。押したボタンは緑色に光る。
+                    </ul>
+                <li> 全ての"真"と判定された領域のボタン押してモジュールを解除する。
+                <li> メモ: 間違ったボタンを押すとミスとなり、ボタンは赤く光る。
+            </ul>
+            <!-- Note that this table may be replaced with a harder version -->
+            <table style="width:100%">
+                <tr>
+                    <td>X <span class='isymbol'>&#x2227;</span> Y<br>AND</td>
+                    <td>X <span class='isymbol'>&#x2228;</span> Y<br>OR</td>
+                    <td>X <span class='isymbol'>&#x22BB;</span> Y<br>XOR</td>
+                    <td>X <span class='symbol'>&#x2192;</span> Y<br>含意</td>
+                </tr>
+                <tr>
+                    <td><img src="img/Boolean Venn Diagram/TAND.svg"></td>
+                    <td><img src="img/Boolean Venn Diagram/TOR.svg"></td>
+                    <td><img src="img/Boolean Venn Diagram/TXOR.svg"></td>
+                    <td><img src="img/Boolean Venn Diagram/TLIMP.svg"></td>
+                </tr>
+            </table>
+            <div style="height: 15px"></div>
+            <table style="width:100%">
+                <tr>
+                    <td>X | Y<br>NAND</td>
+                    <td>X <span class='symbol'>&#x2193;</span> Y<br>NOR</td>
+                    <td>X
+                        <svg class="symbol" viewbox="0 0 22 12" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-miterlimit="10">
+                            <path fill="none" stroke="#000" stroke-width="1.2" d="M1 6l4 4m-4-4l4-4m-4 4h20l-4 4m 4-4l-4-4m 4 4"/><!--M0 5l5-5m-5 5l-5-5 -->
+                        </svg>
+                        Y<br>XNOR</td>
+                    <td>X <span class='symbol'>&#x2190;</span> Y<br>逆含意</td>
+                </tr>
+                <tr>
+                    <td><img src="img/Boolean Venn Diagram/TNAND.svg"></td>
+                    <td><img src="img/Boolean Venn Diagram/TNOR.svg"></td>
+                    <td><img src="img/Boolean Venn Diagram/TXNOR.svg"></td>
+                    <td><img src="img/Boolean Venn Diagram/TRIMP.svg"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="page-footer relative-footer">ページ 1/1</div>
+    </div>
+</div>
+</body>
+</html>

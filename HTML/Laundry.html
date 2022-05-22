@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Laundry — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        p.strong {
+            font-weight: bold;
+        }
+        table.laundry {
+            width: 100%;
+        }
+        table.laundry td {
+            white-space: nowrap;
+        }
+        table.reference {
+            table-layout: fixed;
+            width: 100%;
+            border: none;
+        }
+        table.reference col {
+            width: 12.5%;
+        }
+        table.reference td {
+            text-align: center;
+            vertical-align: top;
+            padding: 0;
+            border: none;
+        }
+        table.reference td div.label {
+            font-size: 10pt;
+        }
+        h4 {
+            margin: 1.5em 0 .5em;
+            text-align: center;
+        }
+        h4.reference {
+            margin-bottom: 0;
+        }
+        .dark table, table { border: none; }
+        .dark td img { filter: invert(87%); }
+        .page {
+            background-repeat: repeat-y;
+            background-position: top;
+        }
+    </style>
+</head>
+<body>
+<div class="section">
+    <div class="page page-bg-02">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Laundry</span>
+        </div>
+        <div class="page-content">
+            <img src="img/Component/Laundry.svg" class="diagram">
+            <h2>モジュール詳細：洗濯</h2>
+            <p class="flavour-text">整理整頓なんてものじゃない。
+
+            <p class='strong'>
+                服を洗濯しなければならない。下の洗濯表示一覧とルールを参照し、
+                モジュールを正しく設定する。設定完了後に、左上のコイン投入口を選択してモジュールを解除する。
+                間違った設定はミスとなる。
+            <p>
+                洗濯するべきものを下の表から見つける。
+                5 より大きい数字については、数字が 6 未満になるまで 6 を引く。
+                負の数については、数字が 0-5 になるまで 6 を足す。
+
+            <ul>
+                <li><strong>洗濯物</strong> (表 L41) は解除されていないモジュール数 (特殊モジュールを除く)
+                     + インジケータの合計数で決まる。
+                <li><strong>原料</strong> (表 L42) はポートの合計数
+                     + 解除したモジュール数 – バッテリーホルダの数で決まる。
+                <li><strong>洗濯物の色</strong> (表 L43) はシリアルナンバーの最後の数字
+                     + バッテリーの数で決まる。
+            </ul>
+
+            <p>
+                <strong>洗濯処理は原料、乾燥方法は洗濯物の色、アイロン処理と特殊処理は洗濯物のものを設定する。</strong>
+                ただし、以下のルールに従う。上にある方のルールを優先する:
+
+            <ul>
+                <li>洗濯物の色が真珠である場合、「常に」特殊処理を塩素系漂白剤以外に設定する。
+                <li>原料が革、もしくは色がヒスイである場合、120°F 以上には設定しない。「常に」80°F で洗濯する。
+                <li>洗濯物がコルセット、もしくは原料がコーデュロイの場合、特殊処理は原料のものを設定する。
+                <li>原料が羊毛、もしくは色がレモンクォーツである場合、 「常に」乾燥方法を高温に設定する。
+                <li>洗濯物の英名の文字がシリアルナンバーに使われている場合、特殊処理は色のものを設定する。
+                <li>ただし、バッテリーが4本とホルダーが2個だけそれぞれあり、かつ光っている BOB
+                    インジケータが付いている場合、他のルールをすべて無視し、コイン投入口を選択する。Bob が全部やってくれているので。
+                    ありがとう、ボブ。
+            </ul>
+
+            <p class='strong'>
+                洗濯表示はモジュールの左上のダイヤル、乾燥方法はモジュールの右上のダイヤル、アイロン処理は上のディスプレイ、
+                そして特殊処理は下のディスプレイから設定する。なおアイロン処理と特殊処理は英名で設定する必要がある。
+        </div>
+        <div class="page-footer relative-footer">ページ 1/4</div>
+    </div>
+    <div class="page page-bg-03">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Laundry</span>
+        </div>
+        <div class="page-content">
+
+            <h4>表 L41: 洗濯物一覧</h4>
+
+            <table class='laundry'>
+                <tr>
+                    <td class='corner'></td>
+                    <th>洗濯物
+                    <th>洗濯処理
+                    <th>乾燥方法
+                    <th>アイロン処理
+                    <th>特殊処理
+                </tr>
+                <tr>
+                    <td>0
+                    <td>コルセット<br>Corset
+                    <td>140°F
+                    <td>平干し
+                    <td>点2つ
+                    <td><img src='img/Laundry/bleach.png' width='40'>
+                </tr>
+                <tr>
+                    <td>1
+                    <td>シャツ<br>Shirt
+                    <td>105°F
+                    <td><img src='img/Laundry/high heat.png' width='40'>
+                    <td>スチームなし
+                    <td>パークロロエチレン以外
+                </tr>
+                <tr>
+                    <td>2
+                    <td>スカート<br>Skirt
+                    <td>30°C
+                    <td>つり干し
+                    <td><img src='img/Laundry/iron.png' width='40'>
+                    <td>低湿度
+                </tr>
+                <tr>
+                    <td>3
+                    <td>スコート<br>Skort
+                    <td><img src='img/Laundry/machine wash gentle or delicate.png' width='40'>
+                    <td>タンブル乾燥
+                    <td>点3つ
+                    <td>丸と左上の線
+                </tr>
+                <tr>
+                    <td>4
+                    <td>ハーフパンツ<br>Shorts
+                    <td>漂白禁止
+                    <td>日陰干し
+                    <td>150°C
+                    <td><img src='img/Laundry/do not bleach.png' width='40'>
+                </tr>
+                <tr>
+                    <td>5
+                    <td>スカーフ<br>Scarf
+                    <td>95°C
+                    <td>通常
+                    <td><img src='img/Laundry/iron at 110°C 230°F.png' width='40'>
+                    <td>ドライクリーニング禁止
+                </tr>
+            </table>
+
+            <h4>表 L42: 原料一覧</h4>
+
+            <table class='laundry'>
+                <tr>
+                    <td class='corner'></td>
+                    <th>原料
+                    <th>洗濯処理
+                    <th>乾燥方法
+                    <th>アイロン処理
+                    <th>特殊処理
+                </tr>
+                <tr>
+                    <td>0
+                    <td>ポリエステル
+                    <td>50°C
+                    <td>温風なし
+                    <td>点2つ
+                    <td><img src='img/Laundry/petroleum solvent only.png' width='40'>
+                </tr>
+                <tr>
+                    <td>1
+                    <td>コットン
+                    <td><img src='img/Laundry/95°C or 200°F dots.png' width='40'>
+                    <td>中温度
+                    <td>通常
+                    <td>ドライクリーニング禁止
+                </tr>
+                <tr>
+                    <td>2
+                    <td>羊毛
+                    <td>手洗い
+                    <td><img src='img/Laundry/dry in the shade.png' width='40'>
+                    <td>390°F
+                    <td>低湿度
+                </tr>
+                <tr>
+                    <td>3
+                    <td>ナイロン
+                    <td>30°C
+                    <td>ぬれ干し
+                    <td><img src='img/Laundry/no steam.png' width='40'>
+                    <td>低温
+                </tr>
+                <tr>
+                    <td>4
+                    <td>コーデュロイ
+                    <td>105°F
+                    <td><img src='img/Laundry/drip dry.png' width='40'>
+                    <td>110°C
+                    <td>W
+                </tr>
+                <tr>
+                    <td>5
+                    <td>革
+                    <td>洗濯禁止
+                    <td>乾燥禁止
+                    <td>アイロン禁止
+                    <td><img src='img/Laundry/any solvent except tetrachlorethylene.png' width='40'>
+                </tr>
+            </table>
+        </div>
+        <div class="page-footer relative-footer">ページ 2/4</div>
+    </div>
+    <div class="page page-bg-04">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Laundry</span>
+        </div>
+        <div class="page-content">
+
+            <h4>表 L43: 洗濯物の色一覧</h4>
+
+            <table class='laundry'>
+                <tr>
+                    <td class='corner'></td>
+                    <th>色
+                    <th>洗濯処理
+                    <th>乾燥方法
+                    <th>アイロン処理
+                    <th>特殊処理
+                </tr>
+                <tr>
+                    <td>0
+                    <td>ルビー
+                    <td>140°F
+                    <td><img src='img/Laundry/high heat.png' width='40'>
+                    <td>アイロン禁止
+                    <td><img src='img/Laundry/any solvent.png' width='40'>
+                </tr>
+                <tr>
+                    <td>1
+                    <td>レモンクォーツ
+                    <td><img src='img/Laundry/95°C or 200°F.png' width='40'>
+                    <td>平干し
+                    <td>通常
+                    <td><img src='img/Laundry/low heat.png' width='40'>
+                </tr>
+                <tr>
+                    <td>2
+                    <td>サファイア
+                    <td>80°F
+                    <td>タンブル乾燥
+                    <td><img src='img/Laundry/iron at 200°C 390°F.png' width='40'>
+                    <td><img src='img/Laundry/short cycle.png' width='40'>
+                </tr>
+                <tr>
+                    <td>3
+                    <td>ヒスイ
+                    <td>30°C
+                    <td><img src='img/Laundry/do not tumble dry.png' width='40'>
+                    <td>300°F
+                    <td><img src='img/Laundry/no steam finishing.png' width='40'>
+                </tr>
+                <tr>
+                    <td>4
+                    <td>真珠
+                    <td><img src='img/Laundry/machine wash permanent press.png' width='40'>
+                    <td>低温
+                    <td>スチームなし
+                    <td><img src='img/Laundry/low heat.png' width='40'>
+                </tr>
+                <tr>
+                    <td>5
+                    <td>マリナイト
+                    <td>60°C
+                    <td>中温
+                    <td><img src='img/Laundry/iron at 200°C 390°F.png' width='40'>
+                    <td><img src='img/Laundry/non-chlorine bleach.png' width='40'>
+                </tr>
+            </table>
+
+            <h4 class='reference'>洗濯表示一覧</h4>
+
+            <table class='reference'>
+                <col><col><col><col><col><col><col><col>
+                <tr>
+                    <td><img src='img/Laundry/machine%20wash%20permanent%20press.png' width='55'><div class='label'>弱い洗濯</div>
+                    <td><img src='img/Laundry/machine%20wash%20gentle%20or%20delicate.png' width='55'><div class='label'>非常に弱い<br>洗濯</div>
+                    <td><img src='img/Laundry/hand%20wash.png' width='55'><div class='label'>手洗い</div>
+                    <td><img src='img/Laundry/do%20not%20wash.png' width='55'><div class='label'>洗濯禁止</div>
+                    <td><img src='img/Laundry/30°C%20or%2080°F.png' width='55'><div class='label'>30°C<br>80°F</div>
+                    <td><img src='img/Laundry/40°C%20or%20105°F.png' width='55'><div class='label'>40°C<br>105°F</div>
+                    <td><img src='img/Laundry/50°C%20or%20120°F.png' width='55'><div class='label'>50°C<br>120°F</div>
+                    <td><img src='img/Laundry/60°C%20or%20140°F.png' width='55'><div class='label'>60°C<br>140°F</div>
+                </tr>
+                <tr>
+                    <td><img src='img/Laundry/70°C%20or%20160°F.png' width='55'><div class='label'>70°C<br>160°F</div>
+                    <td><img src='img/Laundry/95°C%20or%20200°F.png' width='55'><div class='label'>95°C<br>200°F</div>
+                    <td><img src='img/Laundry/30°C%20or%2080°F%20dots.png' width='55'><div class='label'>30°C<br>80°F</div>
+                    <td><img src='img/Laundry/40°C%20or%20105°F%20dots.png' width='55'><div class='label'>40°C<br>105°F</div>
+                    <td><img src='img/Laundry/50°C%20or%20120°F%20dots.png' width='55'><div class='label'>50°C<br>120°F</div>
+                    <td><img src='img/Laundry/60°C%20or%20140°F%20dots.png' width='55'><div class='label'>60°C<br>140°F</div>
+                    <td><img src='img/Laundry/70°C%20or%20160°F%20dots.png' width='55'><div class='label'>70°C<br>160°F</div>
+                    <td><img src='img/Laundry/95°C%20or%20200°F%20dots.png' width='55'><div class='label'>95°C<br>200°F</div>
+                </tr>
+                <tr>
+                    <td><img src='img/Laundry/do%20not%20wring.png' width='55'><div class='label'>絞り禁止</div>
+                    <td><img src='img/Laundry/tumble%20dry.png' width='55'><div class='label'>タンブル乾燥</div>
+                    <td><img src='img/Laundry/low%20heat%20dry.png' width='55'><div class='label'>低温</div>
+                    <td><img src='img/Laundry/medium%20heat.png' width='55'><div class='label'>中温</div>
+                    <td><img src='img/Laundry/high%20heat.png' width='55'><div class='label'>高温</div>
+                    <td><img src='img/Laundry/no%20heat.png' width='55'><div class='label'>温風なし</div>
+                    <td><img src='img/Laundry/hang%20to%20dry.png' width='55'><div class='label'>つり干し</div>
+                    <td><img src='img/Laundry/drip%20dry.png' width='55'><div class='label'>ぬれ干し</div>
+                </tr>
+                <tr>
+                    <td><img src='img/Laundry/dry%20flat.png' width='55'><div class='label'>平干し</div>
+                    <td><img src='img/Laundry/dry%20in%20the%20shade.png' width='55'><div class='label'>日陰干し</div>
+                    <td><img src='img/Laundry/do%20not%20dry.png' width='55'><div class='label'>乾燥禁止</div>
+                    <td><img src='img/Laundry/do%20not%20tumble%20dry.png' width='55'><div class='label'>タンブル乾燥<br>禁止</div>
+                    <td><img src='img/Laundry/dry.png' width='55'><div class='label'>通常の乾燥</div>
+                    <td><img src='img/Laundry/iron.png' width='55'><div class='label'>通常の<br>アイロン</div>
+                    <td><img src='img/Laundry/do%20not%20iron.png' width='55'><div class='label'>アイロン禁止</div>
+                    <td><img src='img/Laundry/iron%20at%20110°C%20230°F.png' width='55'><div class='label'>110°C<br>230°F</div>
+                </tr>
+                <tr>
+                    <td><img src='img/Laundry/iron%20at%20150°C%20300°F.png' width='55'><div class='label'>150°C<br>300°F</div>
+                    <td><img src='img/Laundry/iron%20at%20200°C%20390°F.png' width='55'><div class='label'>200°C<br>390°F</div>
+                    <td><img src='img/Laundry/no%20steam.png' width='55'><div class='label'>スチームなし</div>
+                    <td><img src='img/Laundry/bleach.png' width='55'><div class='label'>通常の漂白</div>
+                    <td><img src='img/Laundry/do%20not%20bleach.png' width='55'><div class='label'>漂白禁止</div>
+                    <td><img src='img/Laundry/non-chlorine%20bleach.png' width='55'><div class='label'>塩素系漂白剤<br>以外</div>
+                    <td><img src='img/Laundry/dryclean.png' width='55'><div class='label'>ドライ<br>クリーニング</div>
+                    <td><img src='img/Laundry/any%20solvent.png' width='55'><div class='label'>全ての溶剤<br>使用可</div>
+                </tr>
+                <tr>
+                    <td><img src='img/Laundry/any%20solvent%20except%20tetrachlorethylene.png' width='55'><div class='label'>パークロロエ<br>チレン以外</div>
+                    <td><img src='img/Laundry/petroleum%20solvent%20only.png' width='55'><div class='label'>石油系溶剤<br>のみ<br>使用可</div>
+                    <td><img src='img/Laundry/wet%20cleaning.png' width='55'><div class='label'>ウエット<br>クリーニング</div>
+                    <td><img src='img/Laundry/do%20not%20dryclean.png' width='55'><div class='label'>ドライ<br>クリーニング<br>禁止</div>
+                    <td><img src='img/Laundry/short%20cycle.png' width='55'><div class='label'>短時間</div>
+                    <td><img src='img/Laundry/reduced%20moisture.png' width='55'><div class='label'>低湿度</div>
+                    <td><img src='img/Laundry/low%20heat.png' width='55'><div class='label'>低温</div>
+                    <td><img src='img/Laundry/no%20steam%20finishing.png' width='55'><div class='label'>最後の<br>スチームなし</div>
+                </tr>
+            </table>
+        </div>
+        <div class="page-footer relative-footer">ページ 3/4</div>
+    </div>
+    <div class="page page-bg-05">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Laundry</span>
+        </div>
+        <div class="page-content">
+
+            <h4 class='reference'>洗濯表示一覧 (英語)</h4>
+
+            <table class='reference'>
+                <col><col><col><col><col><col><col><col>
+                <tr>
+                    <td><img src='img/Laundry/iron.png' width='55'><div class='label'>iron</div>
+                    <td><img src='img/Laundry/do%20not%20iron.png' width='55'><div class='label'>do not iron</div>
+                    <td><img src='img/Laundry/no%20steam.png' width='55'><div class='label'>no steam</div>
+                    <td><img src='img/Laundry/bleach.png' width='55'><div class='label'>bleach</div>
+                    <td><img src='img/Laundry/do%20not%20bleach.png' width='55'><div class='label'>don't<br>bleach</div>
+                    <td><img src='img/Laundry/non-chlorine%20bleach.png' width='55'><div class='label'>no chlorine</div>
+                    <td><img src='img/Laundry/dryclean.png' width='55'><div class='label'>dryclean</div>
+                    <td><img src='img/Laundry/any%20solvent.png' width='55'><div class='label'>any solvent</div>        
+        
+                </tr>
+                <tr>
+                    <td><img src='img/Laundry/any%20solvent%20except%20tetrachlorethylene.png' width='55'><div class='label'>no<br>tetrachlore</div>
+                    <td><img src='img/Laundry/petroleum%20solvent%20only.png' width='55'><div class='label'>petroleum<br>only</div>
+                    <td><img src='img/Laundry/wet%20cleaning.png' width='55'><div class='label'>wet cleaning</div>
+                    <td><img src='img/Laundry/do%20not%20dryclean.png' width='55'><div class='label'>don't<br>dryclean</div>
+                    <td><img src='img/Laundry/short%20cycle.png' width='55'><div class='label'>short cycle</div>
+                    <td><img src='img/Laundry/reduced%20moisture.png' width='55'><div class='label'>reduced<br>moist</div>
+                    <td><img src='img/Laundry/low%20heat.png' width='55'><div class='label'>low heat</div>
+                    <td><img src='img/Laundry/no%20steam%20finishing.png' width='55'><div class='label'>no steam<br>finish</div>
+        
+                </tr>
+                <tr>
+                </tr>
+            </table>        </div>
+        <div class="page-footer relative-footer">ページ 4/4</div>
+    </div>
+
+</div>
+</body>
+</html>

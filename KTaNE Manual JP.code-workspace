@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "html.format.enable": false,
+    "files.autoSave": "afterDelay",
+    "liveServer.settings.port": 20001
+  }
+}

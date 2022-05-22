@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Astrology — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        li { margin-bottom: .5em; }
+        ul { margin-bottom: 3em; }
+        .dark table, table { border: none; margin: 5em 0; }
+        td { padding: .3em .9em .2em; }
+        th { padding: .2em .3em; }
+        table.numbers td { text-align: right; }
+        table.words { width: 100%; }
+        table.words col.symbol { width: 10%; }
+        table.words th { text-decoration: underline; padding: .2em .5em; }
+        table.words img { width: 17mm; }
+        img { width: 10.5mm; }
+        .dark table img { filter: invert(87%); }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-03">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Astrology</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Astrology.svg" class="diagram">
+
+                <h2>モジュール詳細：星占い</h2>
+
+                <p class="flavour-text">
+                    時々、星は未来を予言する。
+                    その内容は幸運か、はたまた破滅か。
+
+                </p><ul>
+                    <li>ディスプレイにはそれぞれエレメント、惑星、
+                        星座の記号が表示されている。
+                    </li><li>以下の通りに幸運値を計算する:
+                    </li><li>記号同士の相性値を、下の表から参照して幸運値に足す。
+                    </li><li>それぞれの記号の英名の文字がシリアルナンバーに入っている場合、
+                        幸運値に1を足す。
+                    </li><li>それぞれの記号の英名の文字がシリアルナンバーに入っていない場合、
+                        幸運値から1を引く。
+                    </li><li>幸運値が正の数である場合、幸運値がタイマーの右一桁と一致したときに
+                        GOOD OMEN (幸運) ボタンを押す。
+                    </li><li>幸運値が負の数である場合、幸運値がタイマーの右一桁と一致したときに
+                        POOR OMEN (破滅) ボタンを押す。
+                    </li><li>幸運値が 0 の場合、NO OMEN (平凡) ボタンを押す。
+                </li></ul>
+
+                <table class="numbers">
+                    <tbody><tr>
+                        <td class="corner">
+                        </td><th><img src="img/Astrology/p_sun.png">
+                        </th><th><img src="img/Astrology/p_moon.png">
+                        </th><th><img src="img/Astrology/p_mercury.png">
+                        </th><th><img src="img/Astrology/p_venus.png">
+                        </th><th><img src="img/Astrology/p_mars.png">
+                        </th><th><img src="img/Astrology/p_jupiter.png">
+                        </th><th><img src="img/Astrology/p_saturn.png">
+                        </th><th><img src="img/Astrology/p_uranus.png">
+                        </th><th><img src="img/Astrology/p_neptune.png">
+                        </th><th><img src="img/Astrology/p_pluto.png">
+                    </th></tr>
+                    <tr><th><img src="img/Astrology/e_fire.png"> </th><td>   0</td><td>   0</td><td>   1</td><td>  -1</td><td>   0</td><td>   1</td><td>  -2</td><td>   2</td><td>   0</td><td>  -1</td></tr>
+                    <tr><th><img src="img/Astrology/e_water.png"></th><td>  -2</td><td>   0</td><td>  -1</td><td>   0</td><td>   2</td><td>   0</td><td>  -2</td><td>   2</td><td>   0</td><td>   1</td></tr>
+                    <tr><th><img src="img/Astrology/e_earth.png"></th><td>  -1</td><td>  -1</td><td>   0</td><td>  -1</td><td>   1</td><td>   2</td><td>   0</td><td>   2</td><td>   1</td><td>  -2</td></tr>
+                    <tr><th><img src="img/Astrology/e_air.png">  </th><td>  -1</td><td>   2</td><td>  -1</td><td>   0</td><td>  -2</td><td>  -1</td><td>   0</td><td>   2</td><td>  -2</td><td>   2</td></tr>
+                </tbody></table>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/3</div>
+        </div>
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Astrology</span>
+            </div>
+            <div class="page-content">
+
+                <table class="numbers">
+                    <tbody><tr>
+                        <td class="corner">
+                        </td><th><img src="img/Astrology/a_aries.png">
+                        </th><th><img src="img/Astrology/a_taurus.png">
+                        </th><th><img src="img/Astrology/a_gemini.png">
+                        </th><th><img src="img/Astrology/a_cancer.png">
+                        </th><th><img src="img/Astrology/a_leo.png">
+                        </th><th><img src="img/Astrology/a_virgo.png">
+                        </th><th><img src="img/Astrology/a_libra.png">
+                        </th><th><img src="img/Astrology/a_scorpio.png">
+                        </th><th><img src="img/Astrology/a_sagittarius.png">
+                        </th><th><img src="img/Astrology/a_capricorn.png">
+                        </th><th><img src="img/Astrology/a_aquarius.png">
+                        </th><th><img src="img/Astrology/a_pisces.png">
+                    </th></tr>
+                    <tr><th><img src="img/Astrology/e_fire.png"> </th><td>   1</td><td>   0</td><td>  -1</td><td>   0</td><td>   0</td><td>   2</td><td>   2</td><td>   0</td><td>   1</td><td>   0</td><td>   1</td><td>   0</td></tr>
+                    <tr><th><img src="img/Astrology/e_water.png"></th><td>   2</td><td>   2</td><td>  -1</td><td>   2</td><td>  -1</td><td>  -1</td><td>  -2</td><td>   1</td><td>   2</td><td>   0</td><td>   0</td><td>   2</td></tr>
+                    <tr><th><img src="img/Astrology/e_earth.png"></th><td>  -2</td><td>  -1</td><td>   0</td><td>   0</td><td>   1</td><td>   0</td><td>   1</td><td>   2</td><td>  -1</td><td>  -2</td><td>   1</td><td>   1</td></tr>
+                    <tr><th><img src="img/Astrology/e_air.png">  </th><td>   1</td><td>   1</td><td>  -2</td><td>  -2</td><td>   2</td><td>   0</td><td>  -1</td><td>   1</td><td>   0</td><td>   0</td><td>  -1</td><td>  -1</td></tr>
+                </tbody></table>
+
+                <table class="numbers">
+                    <tbody><tr>
+                        <td class="corner">
+                        </td><th><img src="img/Astrology/a_aries.png">
+                        </th><th><img src="img/Astrology/a_taurus.png">
+                        </th><th><img src="img/Astrology/a_gemini.png">
+                        </th><th><img src="img/Astrology/a_cancer.png">
+                        </th><th><img src="img/Astrology/a_leo.png">
+                        </th><th><img src="img/Astrology/a_virgo.png">
+                        </th><th><img src="img/Astrology/a_libra.png">
+                        </th><th><img src="img/Astrology/a_scorpio.png">
+                        </th><th><img src="img/Astrology/a_sagittarius.png">
+                        </th><th><img src="img/Astrology/a_capricorn.png">
+                        </th><th><img src="img/Astrology/a_aquarius.png">
+                        </th><th><img src="img/Astrology/a_pisces.png">
+                    </th></tr>
+                    <tr><th><img src="img/Astrology/p_sun.png">       </th><td>  -1</td><td>  -1</td><td>   2</td><td>   0</td><td>  -1</td><td>   0</td><td>  -1</td><td>   1</td><td>   0</td><td>   0</td><td>  -2</td><td>  -2</td></tr>
+                    <tr><th><img src="img/Astrology/p_moon.png">      </th><td>  -2</td><td>   0</td><td>   1</td><td>   0</td><td>   2</td><td>   0</td><td>  -1</td><td>   1</td><td>   2</td><td>   0</td><td>   1</td><td>   0</td></tr>
+                    <tr><th><img src="img/Astrology/p_mercury.png">   </th><td>  -2</td><td>  -2</td><td>  -1</td><td>  -1</td><td>   1</td><td>  -1</td><td>   0</td><td>  -2</td><td>   0</td><td>   0</td><td>  -1</td><td>   1</td></tr>
+                    <tr><th><img src="img/Astrology/p_venus.png">     </th><td>  -2</td><td>   2</td><td>  -2</td><td>   0</td><td>   0</td><td>   1</td><td>  -1</td><td>   0</td><td>   2</td><td>  -2</td><td>  -1</td><td>   1</td></tr>
+                    <tr><th><img src="img/Astrology/p_mars.png">      </th><td>  -2</td><td>   0</td><td>  -1</td><td>  -2</td><td>  -2</td><td>  -2</td><td>  -1</td><td>   1</td><td>   1</td><td>   1</td><td>   0</td><td>  -1</td></tr>
+                    <tr><th><img src="img/Astrology/p_jupiter.png">   </th><td>  -1</td><td>  -2</td><td>   1</td><td>  -1</td><td>   0</td><td>   0</td><td>   0</td><td>   1</td><td>   0</td><td>  -1</td><td>   2</td><td>   0</td></tr>
+                    <tr><th><img src="img/Astrology/p_saturn.png">    </th><td>  -1</td><td>  -1</td><td>   0</td><td>   0</td><td>   1</td><td>   1</td><td>   0</td><td>   0</td><td>   0</td><td>   0</td><td>  -1</td><td>  -1</td></tr>
+                    <tr><th><img src="img/Astrology/p_uranus.png">    </th><td>  -1</td><td>   2</td><td>   0</td><td>   0</td><td>   1</td><td>  -2</td><td>   1</td><td>   0</td><td>   2</td><td>  -1</td><td>   1</td><td>   0</td></tr>
+                    <tr><th><img src="img/Astrology/p_neptune.png">   </th><td>   1</td><td>   0</td><td>   2</td><td>   1</td><td>  -1</td><td>   1</td><td>   1</td><td>   1</td><td>   0</td><td>  -2</td><td>   2</td><td>   0</td></tr>
+                    <tr><th><img src="img/Astrology/p_pluto.png">     </th><td>  -1</td><td>   0</td><td>   0</td><td>  -1</td><td>  -2</td><td>   1</td><td>   2</td><td>   1</td><td>   1</td><td>   0</td><td>   0</td><td>  -1</td></tr>
+                </tbody></table>
+            </div>
+            <div class="page-footer relative-footer">ページ 2/3</div>
+        </div>
+
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Astrology</span>
+            </div>
+            <div class="page-content">
+
+                <table class="words">
+                    <colgroup><col class="symbol"><col><col class="symbol"><col><col class="symbol"><col>
+                    </colgroup><tbody><tr><th>記号</th><th>エレメント</th><th>記号</th><th>惑星</th><th>記号</th><th>惑星</th></tr>
+                    <tr><th><img src="img/Astrology/e_fire.png"> </th><td>火<br>Fire </td><th><img src="img/Astrology/p_sun.png">    </th><td>太陽<br>Sun    </td><th><img src="img/Astrology/p_jupiter.png"></th><td>火星<br>Jupiter</td></tr>
+                    <tr><th><img src="img/Astrology/e_water.png"></th><td>水<br>Water</td><th><img src="img/Astrology/p_moon.png">   </th><td>月  <br>Moon   </td><th><img src="img/Astrology/p_saturn.png"> </th><td>土星<br>Saturn </td></tr>
+                    <tr><th><img src="img/Astrology/e_earth.png"></th><td>地<br>Earth</td><th><img src="img/Astrology/p_mercury.png"></th><td>水星<br>Mercury</td><th><img src="img/Astrology/p_uranus.png"> </th><td>天王星<br>Uranus </td></tr>
+                    <tr><th><img src="img/Astrology/e_air.png">  </th><td>風<br>Air  </td><th><img src="img/Astrology/p_venus.png">  </th><td>金星<br>Venus  </td><th><img src="img/Astrology/p_neptune.png"></th><td>海王星<br>Neptune</td></tr>
+                    <tr><td class="corner"></td><td class="corner">            </td><th><img src="img/Astrology/p_mars.png">   </th><td>火星<br>Mars   </td><th><img src="img/Astrology/p_pluto.png">  </th><td>冥王星<br>Pluto  </td></tr>
+                </tbody></table>
+
+                <table class="words">
+                    <colgroup><col class="symbol"><col><col class="symbol"><col><col class="symbol"><col>
+                    </colgroup><tbody><tr><th>記号</th><th>星座</th><th>記号</th><th>星座</th><th>記号</th><th>星座</th></tr>
+                    <tr><th><img src="img/Astrology/a_aries.png"> </th><td>おひつじ座<br>Aries </td><th><img src="img/Astrology/a_leo.png">    </th><td>しし座<br>Leo    </td><th><img src="img/Astrology/a_sagittarius.png"></th><td>いて座<br>Sagittarius</td></tr>
+                    <tr><th><img src="img/Astrology/a_taurus.png"></th><td>おうし座<br>Taurus</td><th><img src="img/Astrology/a_virgo.png">  </th><td>おとめ座<br>Virgo  </td><th><img src="img/Astrology/a_capricorn.png">  </th><td>やぎ座<br>Capricorn  </td></tr>
+                    <tr><th><img src="img/Astrology/a_gemini.png"></th><td>ふたご座<br>Gemini</td><th><img src="img/Astrology/a_libra.png">  </th><td>てんびん座<br>Libra  </td><th><img src="img/Astrology/a_aquarius.png">   </th><td>みずがめ座<br>Aquarius   </td></tr>
+                    <tr><th><img src="img/Astrology/a_cancer.png"></th><td>かに座<br>Cancer</td><th><img src="img/Astrology/a_scorpio.png"></th><td>さそり座<br>Scorpio</td><th><img src="img/Astrology/a_pisces.png">     </th><td>うお座<br>Pisces     </td></tr>
+                </tbody></table>
+            </div>
+            <div class="page-footer relative-footer">ページ 3/3</div>
+        </div>
+    </div>
+</body>
+</html>

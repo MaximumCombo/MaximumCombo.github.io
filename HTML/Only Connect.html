@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Only Connect — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        .only-connect {
+            width: 100%;
+        }
+        td.letters {
+            font-family: 'Georgia', serif;
+            font-size: 15pt;
+            background: white;
+            padding: .1em .3em;
+        }
+        .dark td.letters {
+            background: #222;
+        }
+        td.letters > ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        td.letters > ul > li {
+            display: inline;
+            padding: .25em .2em;
+            margin-right: .15em;
+        }
+    </style>
+</head>
+<body>
+<div class="section">
+    <div class="page page-bg-03">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Only Connect</span>
+        </div>
+        <div class="page-content">
+            <img src="img/Component/Only Connect.svg" class="diagram">
+            <h2>モジュール詳細：オンリーコネクト</h2>
+            <p class="flavour-text">ギリシャの文字は使うのがもったいないので、ヒエログリフを使うことにした。
+
+            <p>このモジュールは2ラウンドで構成されている。
+
+            <h3>ラウンド 1: ヒエログリフ</h3>
+            <ul>
+                <li>モジュールには六つのヒエログリフの文字が 3×2 の配置で表示されており、下には
+                    チーム名が表示されている。
+                <li>それぞれのヒエログリフがいくつのグループに所属しているのかを判断する。
+                <li>所属するグループの数が他と違うヒエログリフを選択する。
+                <li>グループ #1 はヒエログリフが指定された位置にいる場合に所属する。
+                <li>グループ #2 は指定位置のシリアルナンバーの文字がチーム名に使われている場合に所属する。
+                    指定位置の文字が数字の場合、文字に変換する (0=Z,&nbsp;1=A, 2=B,&nbsp;...,&nbsp;9=I)。
+                <li>グループ #3 は爆弾に指定するポートが付いている場合に所属する。
+            </ul>
+
+            <table class='only-connect'>
+                <tr>
+                    <th>グループ
+                    <th>二つの稲<th>ライオン<th>ねじった亜麻糸
+                    <th>ヘビ<th>水<th>ホルス神の目
+                </tr>
+                <tr>
+                    <th>#1
+                    <td>左上<td>真ん中の上<td>右上
+                    <td>左下<td>真ん中の下<td>右下
+                </tr>
+                <tr>
+                    <th>#2
+                    <td>一番目<td>二番目<td>三番目
+                    <td>四番目<td>五番目<td>六番目
+                </tr>
+                <tr>
+                    <th>#3
+                    <td>PS/2<td>パラレル<td>RJ-45
+                    <td>ステレオRCA<td>シリアル<td>DVI-D
+                </tr>
+            </table>
+        </div>
+        <div class="page-footer relative-footer">ページ 1/3</div>
+    </div>
+    <div class="page page-bg-04">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Only Connect</span>
+        </div>
+        <div class="page-content">
+            <h3>ラウンド 2: 文字分け</h3>
+            <ul>
+                <li>モジュールには九つの文字が表示されている。
+                <li>これらの文字を3つの言語グループにそれぞれ分ける。同じグループの文字は同じ言語内で使用されている。
+                    正解は一つのみ。
+            </ul>
+
+            <table class='only-connect-wall'>
+                <tr><th>言語<th>英字以外<th>英字</tr>
+                <!--##-->
+                <tr><th nowrap>アルバニア語<td class=letters><ul><li>ç<li>ë</ul><td class=letters><ul><li>w</ul>
+                <tr><th nowrap>カタルーニャ語<td class=letters><ul><li>à<li>ç<li>é<li>è<li>í<li>ï<li>ó<li>ò<li>ú<li>ü</ul><td class=letters><ul></ul>
+                <tr><th nowrap>クロアチア語<td class=letters><ul><li>ć<li>č<li>đ<li>š<li>ž</ul><td class=letters><ul><li>q<li>w<li>x<li>y</ul>
+                <tr><th nowrap>チェコ語<td class=letters><ul><li>á<li>č<li>ď<li>é<li>ě<li>í<li>ň<li>ó<li>ř<li>š<li>ť<li>ú<li>ů<li>ý<li>ž</ul><td class=letters><ul></ul>
+                <tr><th nowrap>デンマーク語<td class=letters><ul><li>å<li>æ<li>ø</ul><td class=letters><ul></ul>
+                <tr><th nowrap>エスペラント<td class=letters><ul><li>ĉ<li>ĝ<li>ĥ<li>ĵ<li>ŝ<li>ŭ</ul><td class=letters><ul><li>q<li>w<li>x<li>y</ul>
+                <tr><th nowrap>エストニア語<td class=letters><ul><li>ä<li>ö<li>õ<li>š<li>ü<li>ž</ul><td class=letters><ul><li>w<li>x<li>y</ul>
+                <tr><th nowrap>フィンランド語<td class=letters><ul><li>ä<li>ö</ul><td class=letters><ul><li>b<li>c<li>f<li>q<li>w<li>x<li>z</ul>
+                <tr><th nowrap>フランス語<td class=letters><ul><li>à<li>â<li>ä<li>æ<li>ç<li>é<li>è<li>ê<li>ë<li>î<li>ï<li>ô<li>ö<li>œ<li>ù<li>û<li>ü<li>ÿ</ul><td class=letters><ul></ul>
+                <tr><th nowrap>ドイツ語<td class=letters><ul><li>ä<li>ö<li>ß<li>ü</ul><td class=letters><ul></ul>
+                <tr><th nowrap>ハンガリー語<td class=letters><ul><li>á<li>é<li>í<li>ó<li>ö<li>ő<li>ú<li>ü<li>ű</ul><td class=letters><ul></ul>
+                <tr><th nowrap>アイスランド語<td class=letters><ul><li>á<li>æ<li>ð<li>é<li>í<li>ó<li>ö<li>þ<li>ú<li>ý</ul><td class=letters><ul><li>c<li>q<li>w<li>z</ul>
+                <tr><th nowrap>ラトビア語<td class=letters><ul><li>ā<li>č<li>ē<li>ģ<li>ī<li>ķ<li>ļ<li>ņ<li>š<li>ū<li>ž</ul><td class=letters><ul><li>q<li>w<li>x<li>y</ul>
+                <tr><th nowrap>リトアニア語<td class=letters><ul><li>ą<li>č<li>ė<li>ę<li>į<li>š<li>ū<li>ų<li>ž</ul><td class=letters><ul><li>q<li>w<li>x</ul>
+                <tr><th nowrap>ポーランド語<td class=letters><ul><li>ą<li>ć<li>ę<li>ł<li>ń<li>ó<li>ś<li>ź<li>ż</ul><td class=letters><ul><li>q<li>v<li>x</ul>
+                <tr><th nowrap>ポルトガル語<td class=letters><ul><li>á<li>à<li>â<li>ã<li>ç<li>é<li>ê<li>í<li>ó<li>ô<li>õ<li>ú<li>ü</ul><td class=letters><ul><li>k<li>w<li>y</ul>
+                <tr><th nowrap>ルーマニア語<td class=letters><ul><li>â<li>ă<li>î<li>ș<li>ț</ul><td class=letters><ul></ul>
+                <tr><th nowrap>スペイン語<td class=letters><ul><li>á<li>é<li>í<li>ñ<li>ó<li>ú<li>ü</ul><td class=letters><ul></ul>
+                <tr><th nowrap>スウェーデン語<td class=letters><ul><li>ä<li>å<li>ö</ul><td class=letters><ul></ul>
+                <tr><th nowrap>トルコ語<td class=letters><ul><li>ç<li>ğ<li>ı<li>ö<li>ş<li>ü</ul><td class=letters><ul><li>q<li>w<li>x</ul>
+                <tr><th nowrap>ウェールズ語<td class=letters><ul><li>ŵ<li>ŷ</ul><td class=letters><ul><li>k<li>q<li>v<li>x<li>z</ul>
+                <!--###-->
+            </table>
+        </div>
+        <div class="page-footer relative-footer">ページ 2/3</div>
+    </div>
+    <div class="page page-bg-05">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Only Connect</span>
+        </div>
+        <div class="page-content">
+            <h3>付録: 発音区別符号の名称と英字以外の文字</h3>
+
+            <table class='only-connect-appendix'>
+                <tr><td class='letters'><ul><li>á<li>ć<li>é<li>í<li>ń<li>ó<li>ś<li>ú<li>ý<li>ź</ul><td><strong>アキュート</strong></tr>
+                <tr><td class='letters'><ul><li>ő<li>ű</ul><td><strong>ダブルアキュート</strong></tr>
+                <tr><td class='letters'><ul><li>à<li>è<li>ì<li>ò<li>ù</ul><td><strong>グレイヴ</strong></tr>
+                <tr><td class='letters'><ul><li>â<li>ĉ<li>ê<li>ĝ<li>ĥ<li>î<li>ĵ<li>ô<li>ŝ<li>û<li>ŵ<li>ŷ</ul><td><strong>サーカムフレックス</strong></tr>
+                <tr><td class='letters'><ul><li>ä<li>ë<li>ï<li>ö<li>ü<li>ÿ</ul><td><strong>トレマ / ウムラウト</tr>
+                <tr><td class='letters'><ul><li>č<li>ď<li>ě<li>ň<li>ř<li>š<li>ť<li>ž</ul><td><strong>ハーチェク</tr>
+                <tr><td class='letters'><ul><li>ç<li>ş</ul><td><strong>セディーユ</strong></tr>
+                <tr><td class='letters'><ul><li>ģ<li>ķ<li>ļ<li>ņ<li>ș<li>ț</ul><td><strong>コンマビロー</strong></tr>
+                <tr><td class='letters'><ul><li>å<li>ů</ul><td><strong>リング符号</strong></tr>
+                <tr><td class='letters'><ul><li>ă<li>ğ<li>ŭ</ul><td><strong>ブレーヴェ</strong></tr>
+                <tr><td class='letters'><ul><li>ã<li>ñ<li>õ</ul><td><strong>チルダ</strong></tr>
+                <tr><td class='letters'><ul><li>ā<li>ē<li>ī<li>ū</ul><td><strong>マクロン</strong></tr>
+                <tr><td class='letters'><ul><li>ą<li>ę<li>į<li>ų</ul><td><strong>オゴネク</strong></tr>
+                <tr><td class='letters'><ul><li>ė<li>ż</ul><td><strong>ドット符号</strong></tr>
+                <tr><td class='letters'><ul><li>đ<li>ł<li>ø</ul><td><strong>ストローク符号</strong></tr>
+                <tr><td class='letters'><ul><li>æ<li>œ</ul><td><strong>合字</strong></tr>
+                <tr><td class='letters'><ul><li>ð</ul><td><strong>エズ</strong></tr>
+                <tr><td class='letters'><ul><li>ı</ul><td><strong>点なし i</strong></tr>
+                <tr><td class='letters'><ul><li>ß</ul><td><strong>エスツェット</strong></tr>
+                <tr><td class='letters'><ul><li>þ</ul><td><strong>ソーン</strong></tr>
+            </table>
+        </div>
+        <div class="page-footer relative-footer">ページ 3/3</div>
+    </div>
+</div>
+</body>
+</html>

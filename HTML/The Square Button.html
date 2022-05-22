@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html><head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>The Square Button — Keep Talking and Nobody Explodes Module</title>
+		<meta name="viewport" content="initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src='js/ktane-utils.js'></script>
+		<link rel='stylesheet' type='text/css' href='css/font.css'>
+		<link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+
+        <style>
+            .hardmodule-wrap {
+                width: 0;
+                height: 0;
+            }
+            .hardmodule {
+                width: 2em;
+                height: 66em;
+                opacity: 0.3;
+                background-color: #FF0000;
+                -webkit-print-color-adjust: exact;
+            }
+        </style>
+	</head>
+	<body>
+		<div id="ManualContent">
+			<div class="section">
+				<div class="page">
+					<div class='hardmodule-wrap'><div class='hardmodule'></div></div>
+					<div id="Square Button" class="page-header">
+						<span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+						<span class="page-header-section-title">Square Button</span>
+					</div>
+					<div class="page-content">
+						<img src="img/Component/Square Button.svg" class="diagram">
+						<h2>モジュール詳細: 四角いボタン</h2>
+						<p class="flavour-text">これは普通のボタンのように見えるが、騙されるな! 精巧に再現したこの金属のボタンもたった一つの違いで見分けられる: 角の数が違う。</p>
+						試すべき手順の優先順位は下記の通り。最初に該当する手順をこなす：
+						<ol>
+							<li>ボタンが青く、 単3バッテリーの数が単1バッテリーの数より大きい場合、ボタンを押したままで「ボタンを離すタイミング」を参照する。</li>
+							<li>ボタンが黄色か青く、少なくともボタンに書いてある文字の数がシリアルナンバーの最も大きい数字の数の分ある場合、ボタンを押してすぐに離す。</li>
+							<li>ボタンが黄色か青く、ボタンに書いてある単語が色を表す場合、ボタンを押したままで「ボタンを離すタイミング」を参照する。</li>
+							<li>ボタンに何も書かれていない場合、カウントダウンタイマーの秒数がゾロ目になったときにボタンを押してすぐに離す。</li>
+							<li>ボタンがダークグレーでなく、ボタンに書いてある文字の数が光っているインジケータの数よりも大きい場合、ボタンを押してすぐに離す。</li>
+							<li>少なくとも光っていないインジケータが2つあり、シリアルナンバーに母音がある場合、ボタンを押してすぐに離す。</li>
+							<li>上記のいずれもが該当しない場合、ボタンを押したままで「ボタンを離すタイミング」を参照する。</li>
+						</ol>
+						
+						<h3>ボタンを離すタイミング</h3>
+						ボタンを押している間、ボタンの右上が光る。その色によって、ボタンを離してよいタイミングが決まっている：
+						<ul>
+							<li><em>青緑色の場合:</em> カウントダウンタイマーの秒二桁が足して7になったときに離す。</li>
+							<li><em>オレンジの場合:</em> カウントダウンタイマーの秒二桁が足して3か13になったときに離す。</li>
+							<li><em>他の色の場合:</em> カウントダウンタイマーの秒二桁が足して5になったときに離す。</li>
+						</ul>
+						光が点滅している場合、これらのルールに従う:
+						<ul>
+							<li><em>青緑色の場合:</em> カウントダウンタイマーの秒が7の倍数のときに離す。</li>
+							<li><em>オレンジの場合:</em> カウントダウンタイマーの秒数が素数か0のときに離す。</li>
+							<li><em>他の色の場合:</em> カウントダウンタイマーの秒二桁が足して4の倍数になった一秒後に離す。</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

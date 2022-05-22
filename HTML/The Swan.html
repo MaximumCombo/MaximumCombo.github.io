@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>The Swan — Keep Talking and Nobody Explodes Module</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type='text/css' href="css/font.css">
+    <script src='js/ktane-utils.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+
+    <style>
+        .swan-page-1 > .page-content {
+            font-size: 10pt;
+        }
+
+        .swan-page-2 > .page-content {
+            font-size: 11pt;
+        }
+
+        .appendix-subtitle {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page swan-page-1 page-bg-02">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">The Swan</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/The Swan.svg" class="diagram">
+                <h2>モジュール詳細: スワン</h2>
+                <p class="flavour-text">108<s>分</s>秒ごとにボタンを押さなければならない...</p>
+
+                <!-- <p class='appendix-reference'>SEE APPENDIX SW74 FOR THE ORIENTATION MANUAL OF STATION 3.</p> -->
+
+                <ul>
+                    <li>このモジュールは十二個のキーと'Execute'(実行) ボタン、液晶、カウントダウンタイマーがある。</li>
+                    <li>108秒ごとにボタンを押す必要がある。アラーム音が鳴ったら、40秒以内にコードを入力して'Execute'(実行)ボタンを押す。</li>
+                    <li>コードは常に: 4, 8, 15, 16, 23, 42</strong></li>
+                    <li>間違ったコードはミスとなる。</li>
+                    <li>ボタンを押さなかった場合はミスとなる。</li>
+                    <li>コードを入力してボタンを押す度に、システムがリセットされ、タイマーがリスタートする。</li>
+                    <li>システムがリセットした回数は、モジュールを解除するのに必要。</li>
+                    <li>数字を入力してボタンを押すだけではシステムがリセットされるだけで解除にはならない。</li>
+                </ul>
+
+                <ul>
+                    <li>時々、爆弾のモジュールが40%解除される(もしくは、爆弾のカウントダウンタイマーが残り三分だった場合)と、システムのリセット後に違うキーが出てくることがある。</li>
+                    <li>爆弾のカウントダウンタイマーが三分になった場合、タイマーが108へリセットされることがある。これはシステムのリセット数には含まない。</li>
+                    <li>違うキーが出てきたら、108秒以内に、下の「ルール」、「例外」、数列から正解のコードを見つける。</li>
+                    <li>「例外」は「ルール」よりも優先度が高い。</li>
+                </ul>
+                <h4>ルール</h4>
+                <ul>
+                    <li>リセットされた数がどの数列にもない場合、DHARMAと入力。</li>
+                    <li>リセットされた数の八倍とラジンスキーの二項式らせんにある数のどれかとの差が、一つでも2以内のものがあればHATCHと入力。</li>
+                    <li>それぞれの数列の三番目の項にリセットされた数を足した時、一つでも素数でない数がある場合、SWNと入力。</li>
+                    <li>リセットされた数が一つより多くの数列にある場合、DARMAと入力。</li>
+                </ul>
+                <h4>例外</h4>
+                <ul>
+                    <li>どのルールにも当てはまらない場合、SWANと入力。</li>
+                    <li>一つよりも多くのルールに当てはまる場合、HTCHと入力。</li>
+                    <li>リセットされた数が25以上だった場合、77と入力。</li>
+                </ul>
+
+                <h4>数列</h4>
+                <table class='condition-table'>
+                    <tr>
+                        <th>名前</th>
+                        <th>最初の十二項</th>
+                    </tr>
+                    <tr>
+                        <td>ラジンスキーの二項式らせん</td>
+                        <td>7, 15, 27, 39, 59, 75, 87, 107, 123, 143, 159, 179...</td>
+                    </tr>
+                    <tr>
+                        <td>バクーニンの定数</td>
+                        <td>2, 3, 6, 7, 12, 13, 18, 22, 27, 30, 31, 35...</td>
+                    </tr>
+                    <tr>
+                        <td>デグルートの数列</td>
+                        <td>0, 1, 5, 13, 20, 23, 29, 31, 32, 46, 52, 75...</td>
+                    </tr>
+                    <tr>
+                        <td>ミンコフスキーの二次周期</td>
+                        <td>4, 9, 11, 15, 17, 22, 30, 35, 41, 49, 56, 63...</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/2</div>
+        </div>
+	<!-- 
+        <div class="page swan-page-2 page-bg-04">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">The Swan</span>
+            </div>
+            <div class="page-content">
+                <img src="img/The Swan/Swan.jpg" class="diagram">
+                <h2>Appendix SW74</h2>
+                <h2 class="appendix-subtitle">
+                    Orientation Manual for<br>
+                    DHARMA Initiative: Station 3<br>
+                    The Swan
+                </h2>
+                <p>Welcome, I'm Dr. Marvin Candle, and this is the orientation manual for Station 3 of the DHARMA Initiative. In a moment you'll be given a simple set of instructions for how you will fulfill the responsibilities associated with the station. But first, a little history.</p>
+                <p>The DHARMA Initiative was created in 1970, and it is the brainchild of Gerald and Karen DeGroot - two doctoral candidates at the University of Michigan. Following in the footsteps of visionaries such as B.F. Skinner, they imagined a large scale communal research compound where scientists and free thinkers from around the globe could pursue research in meteorology, psychology, parapsychology, zoology, electromagnetism; an Utopian social experiment, supported by Danish industrialist and munitions magnate Alvar Hanso, whose financial backing made their dream of a multi-purpose social science research facility a reality.</p>
+                <p>You and your partner are currently located in Station 3, or the Swan, and will be for the next 540 days. Station 3 was originally constructed as a laboratory where scientists could work to understand the unique electromagnetic fluctuations emanating from this part of the Island.</p>
+                <p>Not long after the experiments began, however, there was an incident. And since that time the following protocol has been observed: every 108 minutes the button must be pushed. From the moment the alarm sounds you will have four minutes to enter the code into the microcomputer processor. When the alarm sounds, either you or your partner must input the code. It is highly recommended that you and your partner take alternating shifts. In this manner you will both stay fresh and alert. It is of the utmost importance that when the alarm sounds the code be entered correctly, and in a timely fashion.</p>
+                <p>Do not attempt to use the computer for anything else other than the entering of the code. This is its only function. The isolation associated with Station 3 may tempt you to try and utilise the computer for communication with the outside world. This is strictly forbidden. Attempting to use the computer in this manner will compromise the integrity of the project or worse, could lead to another incident. I repeat, do not use the computer for anything other than entering the code.</p>
+                <p>Congratulations, until your replacements arrive, the future of the project is in your hands. On behalf of the DeGroots, Alvar Hanso and all of us at the DHARMA Initiative, thank you. Namaste. And good luck.</p>
+            </div>
+            <div class="page-footer relative-footer">Page 2 of 2</div>
+		-->
+        </div>
+    </div>
+</body>
+</html>

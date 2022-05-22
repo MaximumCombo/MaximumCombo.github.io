@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html><head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Plumbing — Keep Talking and Nobody Explodes Module</title>
+		<meta name="viewport" content="initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src='js/ktane-utils.js'></script>
+		<link rel='stylesheet' type='text/css' href='css/font.css'>
+		<link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+
+        <style>
+            .hardmodule-wrap {
+                width: 0;
+                height: 0;
+            }
+            .hardmodule {
+                width: 2em;
+                height: 66em;
+                opacity: 0.3;
+                background-color: #FF0000;
+                -webkit-print-color-adjust: exact;
+            }
+        </style>
+	</head>
+	<body>
+		<div id="ManualContent">
+			<div class="section">
+				<div class="page">
+					<div class='hardmodule-wrap'><div class='hardmodule'></div></div>
+					<div id="Plumbing" class="page-header">
+						<span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+						<span class="page-header-section-title">Plumbing</span>
+					</div>
+					<div class="page-content">
+						<img src="img/Component/Plumbing.svg" class="diagram">
+						<h2>モジュール詳細: パイプ</h2>
+						<p class="flavour-text">これが終わったら手を洗ってほしいね...</p>
+						<ul>
+							<li>このモジュールは左と右にそれぞれ4つのパイプあり、少なくとも一つのパイプをそれぞれつなぐ必要がある。</li>
+							<li>解除者は正しい左右のパイプを、6×6あるパイプをクリックして回転させてつなぐ。</li>
+							<li>左右のパイプの通り道となる全てのパイプはパイプの先を他のパイプにつながるようにする。パイプの先にパイプがつながれていなかった場合はミスとなる。</li>
+							<li>正しくパイプをつないだら、"CHECK"(確認) ボタンを押す。間違った配置はミスとなる。</li>
+							<li>どの色のパイプをつなぐのかは下の表を使い、つなぐパイプを見つける。偽よりも真に書いてある条件の方が多くあてはまる場合はそれがつなぐべきパイプである。</li>
+						</ul>
+					</div>
+				</div>
+				<div class="page">
+					<div class='hardmodule-wrap'><div class='hardmodule'></div></div>
+					<div class="page-header">
+						<span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+						<span class="page-header-section-title">Plumbing</span>
+					</div>
+					<div class="page-content">
+						<table>
+							<tbody>
+								<tr>
+									<td>左側の赤
+										<ul>
+											<li>真: シリアルナンバーに「1」がある</li>
+											<li>真: RJ45ポートが1つだけ</li>
+											<li>偽: 同じ種類のポートがある</li>
+											<li>偽: シリアルナンバーに同じ文字がある</li>
+										</ul>
+									</td><td>左側の黄
+										<ul>
+											<li>真: シリアルナンバーに「2」がある</li>
+											<li>真: ステレオRCAポートが一つ以上ある</li>
+											<li>偽: 同じ種類のポートがない</li>
+											<li>偽: シリアルナンバーに「1」か「L」がある</li>
+										</ul>
+									</td>
+								</tr><tr>
+									<td>左側の緑
+										<ul>
+											<li>真: シリアルナンバーに3つ以上の数字がある</li>
+											<li>真: DVI-Dポートが一つ以上ある</li>
+											<li>偽: 左側の赤のパイプが正しくない</li>
+											<li>偽: 左側の黄のパイプが正しくない</li>
+										</ul>
+									</td><td>左側の青
+										<ul>
+											<li>メモ: 他の左側のパイプが全て正しくなければ正しい</li>
+											<li>真: 少なくともポートが4種類ある</li>
+											<li>真: 少なくとも4つのバッテリーがある</li>
+											<li>偽: ポートがない</li>
+											<li>偽: バッテリーがない</li>
+										</ul>
+									</td>
+								</tr><tr>
+									<td>右側の赤
+										<ul>
+											<li>真: シリアルポートが一つ以上ある</li>
+											<li>真: バッテリーが一つだけある</li>
+											<li>偽: シリアルナンバーに2つ以上の数字がある</li>
+											<li>偽: 左側のパイプが2つよりも多く正しい</li>
+										</ul>
+									</td><td>右側の黄
+										<ul>
+											<li>真: 同じ種類のポートがある</li>
+											<li>真: シリアルナンバーに「4」か「8」がある</li>
+											<li>偽: シリアルナンバーに「2」がない</li>
+											<li>偽: 左側の緑のパイプが正しい</li>
+										</ul>
+									</td>
+								</tr><tr>
+									<td>右側の緑
+										<ul>
+											<li>真: 左側のパイプが3つだけ正しい</li>
+											<li>真: ポートが3つだけある</li>
+											<li>偽: ポートが3つよりも少ない</li>
+											<li>偽: シリアルナンバーに3つよりも多くの数字がある</li>
+										</ul>
+									</td><td>右側の青
+										<ul>
+											<li>メモ: 他の右側のパイプが全て正しくなければ正しい</li>
+											<li>真: 左側のパイプが全て正しい</li>
+											<li>真: 右側のパイプのどれかが正しくない</li>
+											<li>偽: バッテリーが2本よりも少ない</li>
+											<li>偽: パラレルポートがない</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
