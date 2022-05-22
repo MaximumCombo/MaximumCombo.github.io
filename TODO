@@ -1,4 +1,5 @@
 1.これをモジュールのHTML先頭に挿入。
+    <meta name="robots" content="noindex">
     <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
 
 2.Souvenir へ追加 (存在すれば)
