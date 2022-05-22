@@ -35,7 +35,7 @@ var module_info = [
     {name:'Hexamaze', tran_name:'六角迷路', yomi_name:'ろっかくめいろ', d_difficulty: 2, e_difficulty: 4},
     {name:'Kanji', tran_name:'漢字', yomi_name:'かんじ', d_difficulty: 1, e_difficulty: 1},
     {name:'Laundry', tran_name:'洗濯', yomi_name:'せんたく', d_difficulty: 2, e_difficulty: 4},
-    {name:'Letter Keys', tran_name:'一文字のキー', yomi_name:'いちもじのキー', d_difficulty: 1, e_difficulty: 1},
+    {name:'Letter Keys', tran_name:'文字キー', yomi_name:'もじキー', d_difficulty: 1, e_difficulty: 1},
     {name:'Light Cycle', tran_name:'ライトサイクル', d_difficulty: 3, e_difficulty: 4},
     {name:'Listening', tran_name:'リスニング', d_difficulty: 3, e_difficulty: 2},
     {name:'Mastermind', tran_name:'マスターマインド', d_difficulty: 1, e_difficulty: 1, img:'Mastermind Simple'},
