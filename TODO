@@ -4,7 +4,7 @@
 
 2.Souvenir へ追加 (存在すれば)
 
-3.翻訳が終わったらmain.jsに
+3.翻訳が終わったらmodule-list.jsに
     {name:'', tran_name:'', yomi_name:'', d_difficulty: 0, e_difficulty: 0},
 を改変して追加
 

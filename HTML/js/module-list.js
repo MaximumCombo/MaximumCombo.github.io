@@ -158,6 +158,13 @@ var module_info = [
     e_difficulty: 4,
   },
   {
+    name: "Digital Root",
+    tran_name: "数字根",
+    yomi_name: "すうじこん",
+    d_difficulty: 1,
+    e_difficulty: 1,
+  },
+  {
     name: "Double-Oh",
     tran_name: "ダブルオー",
     d_difficulty: 2,
