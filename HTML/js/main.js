@@ -199,8 +199,9 @@ function Insert_Certen_Module(target_name){
 
     document.getElementById('counts').innerHTML = m_counts;
 }
-
-//Entry Point
+//-----------------------------------------------------------------------------------------------------------
+//Entry Point -----------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------
 var table = document.getElementById('table');
 var table_c = document.getElementById('table_contents');
 var m_counts = 0;
