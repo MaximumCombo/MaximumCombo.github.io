@@ -396,6 +396,12 @@ var module_info = [
     e_difficulty: 2,
   },
   {
+    name: "Text Field",
+    tran_name: "テキストフィールド",
+    d_difficulty: 1,
+    e_difficulty: 2,
+  },
+  {
     name: "The Bulb",
     tran_name: "電球",
     yomi_name: "でんきゅう",

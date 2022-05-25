@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Text Field — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        .tf-rule-column {
+            float: left;
+            width: 50%;
+        }
+        .tf-rule-column ul {
+            margin: .1em;
+            list-style-type: none;
+            padding-left: 1.5em;
+        }
+        .tf-rule-column li {
+            position: relative;
+        }
+        .tf-rule-column li:before {
+            position: absolute;
+            left: -1.5em;
+            content: '—';
+        }
+        h4 {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Text Field</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Text Field.svg" class="diagram">
+                <h2>モジュール詳細：テキストフィールド</h2>
+                <p class="flavour-text">
+                    これは簡単だ。たった6種類の文字しか存在しない! 待て、今なんて言った? それぞれの文字で5つのルールをチェックしないといけない? 今言ったことは忘れてくれ。
+                <ul>
+                    <li>このモジュールには 3×4 の配置で文字が並んでいる。全ての文字は A–F の内のどれか一種類で統一されている。
+                    <li><b>セクション A</b> を参照し、上から順にその文字のルールを従う。最初に該当するルールから表の名前を入手する。
+                    <li><b>セクション B</b> を参照し、前の手順で入手した名前の表を見つける。
+                    <li>モジュールの文字と一致する位置にあるボタンを全て選択する。一致する全てのボタンを選択するとモジュールは解除される。
+                    <li><b>注意: 部屋のライトが点灯する前にボタンを押すもしくは既に押したボタンを押すとミスとなる。</b>
+                </ul>
+                <p class="appendix-reference">インジケーターを確認するには「付録A」を参照すること。<br />ポートの種類を確認するには「付録C」を参照すること。
+
+                <p class="Section A">
+                <h3>セクション A: 文字のルール</h3>
+                <div class='tf-rule-column'>
+                    <h4>文字 A</h4>
+                    <ul>
+                        <li>点灯する CLR インジケータがある: 1459
+                        <li>バッテリーが2本より多い: BBFF
+                        <li>バッテリーが1本のみ: 7F67
+                        <li>点灯する FRK インジケータがある: DC52
+                        <li>上記以外: A0C1
+                    </ul>
+                    <h4>文字 B</h4>
+                    <ul>
+                        <li>バッテリーがない: 965A
+                        <li>シリアルナンバーの最後の数字が奇数: 1459
+                        <li>シリアルポートがない: DC52
+                        <li>点灯する TRN インジケータがある: A0C1
+                        <li>上記以外: 7F67
+                    </ul>
+                    <h4>文字 C</h4>
+                    <ul>
+                        <li>DVI-Dポートがある: AA12
+                        <li>バッテリーが2本のみ: FB01
+                        <li>シリアルナンバーに母音がない: DC52
+                        <li>点灯する CAR インジケータがある: 1459
+                        <li>上記以外: 7F67
+                    </ul>
+                </div>
+                <div class='tf-rule-column'>
+                    <h4>文字 D</h4>
+                    <ul>
+                        <li>パラレルポートがある: FB01
+                        <li>バッテリーが2本より少ない: AA12
+                        <li>点灯する SIG インジケータがある: BBFF
+                        <li>PS/2ポートがない: 965A
+                        <li>上記以外: 1459
+                    </ul>
+                    <h4>文字 E</h4>
+                    <ul>
+                        <li>バッテリーが3本より少ない: 7F67
+                        <li>ステレオRCAポートがない: AA12
+                        <li>点灯する BOB インジケータがある: A0C1
+                        <li>RJ-45ポートがある: BBFF
+                        <li>上記以外: DC52
+                    </ul>
+                    <h4>文字 F</h4>
+                    <ul>
+                        <li>シリアルポートがない: DC52
+                        <li>シリアルナンバーに母音がある: A0C1
+                        <li>点灯する IND インジケータがある: 1459
+                        <li>シリアルナンバーの最後の数字が偶数: FB01
+                        <li>上記以外: AA12
+                    </ul>
+                </div>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/2</div>
+        </div>
+        <div class="page page-bg-02">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Text Field</span>
+            </div>
+            <div class="page-content">
+                <h3>セクション B: 表一覧</h3>
+                <div class='tf-rule-column'>
+                    <h4>表 FB01</h4>
+                    <table>
+                        <tr><td>D</td><td>C</td><td>F</td><td>A</td></tr>
+                        <tr><td>B</td><td>E</td><td>F</td><td>F</td></tr>
+                        <tr><td>B</td><td>B</td><td>B</td><td>C</td></tr>
+                    </table>
+
+                    <h4>表 965A</h4>
+                    <table>
+                        <tr><td>C</td><td>B</td><td>E</td><td>F</td></tr>
+                        <tr><td>E</td><td>B</td><td>F</td><td>E</td></tr>
+                        <tr><td>D</td><td>C</td><td>A</td><td>A</td></tr>
+                    </table>
+
+                    <h4>表 1459</h4>
+                    <table>
+                        <tr><td>B</td><td>A</td><td>B</td><td>B</td></tr>
+                        <tr><td>C</td><td>D</td><td>F</td><td>D</td></tr>
+                        <tr><td>D</td><td>F</td><td>C</td><td>E</td></tr>
+                    </table>
+
+                    <h4>表 BBFF</h4>
+                    <table>
+                        <tr><td>D</td><td>A</td><td>B</td><td>F</td></tr>
+                        <tr><td>D</td><td>F</td><td>B</td><td>E</td></tr>
+                        <tr><td>C</td><td>E</td><td>B</td><td>A</td></tr>
+                    </table>
+                </div>
+                <div class='tf-rule-column'>
+                    <h4>表 DC52</h4>
+                    <table>
+                        <tr><td>C</td><td>B</td><td>D</td><td>E</td></tr>
+                        <tr><td>A</td><td>F</td><td>D</td><td>C</td></tr>
+                        <tr><td>B</td><td>E</td><td>B</td><td>D</td></tr>
+                    </table>
+
+                    <h4>表 7F67</h4>
+                    <table>
+                        <tr><td>A</td><td>D</td><td>C</td><td>B</td></tr>
+                        <tr><td>A</td><td>C</td><td>B</td><td>C</td></tr>
+                        <tr><td>A</td><td>E</td><td>F</td><td>A</td></tr>
+                    </table>
+
+                    <h4>表 A0C1</h4>
+                    <table>
+                        <tr><td>E</td><td>C</td><td>F</td><td>A</td></tr>
+                        <tr><td>C</td><td>F</td><td>B</td><td>D</td></tr>
+                        <tr><td>F</td><td>F</td><td>B</td><td>C</td></tr>
+                    </table>
+
+                    <h4>表 AA12</h4>
+                    <table>
+                        <tr><td>B</td><td>E</td><td>A</td><td>B</td></tr>
+                        <tr><td>E</td><td>D</td><td>F</td><td>A</td></tr>
+                        <tr><td>B</td><td>C</td><td>E</td><td>C</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="page-footer relative-footer">ページ 2/2</div>
+        </div>
+    </div>
+</body>
+</html>

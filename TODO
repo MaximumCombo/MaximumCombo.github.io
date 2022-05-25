@@ -5,6 +5,14 @@
 2.Souvenir へ追加 (存在すれば)
 
 3.翻訳が終わったらmodule-list.jsに
-    {name:'', tran_name:'', yomi_name:'', d_difficulty: 0, e_difficulty: 0},
+    {name:'',
+     tran_name:'',
+     yomi_name:'',
+     d_difficulty: 0,
+     e_difficulty: 0
+     },
 を改変して追加
 
+--インジケーターを確認するには「付録A」を参照すること。
+--バッテリーの種類を確認するには「付録B」を参照すること。
+--ポートの種類を確認するには「付録C」を参照すること。
