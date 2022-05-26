@@ -41,7 +41,7 @@ var module_info = [
   {
     name: "Anagrams",
     tran_name: "アナグラム",
-    d_difficulty: 2,
+    d_difficulty: 1,
     e_difficulty: 1,
   },
   {
@@ -465,10 +465,9 @@ var module_info = [
   },
   {
     name: "Word Scramble",
-    tran_name: "並べ替え",
-    yomi_name: "ならべかえ",
+    tran_name: "ワードスクランブル",
     d_difficulty: 1,
-    e_difficulty: 2,
+    e_difficulty: 1,
   },
   {
     name: "Word Search",
