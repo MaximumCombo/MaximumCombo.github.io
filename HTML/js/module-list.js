@@ -456,6 +456,13 @@ var module_info = [
     e_difficulty: 2,
   },
   { name: "Two Bits", tran_name: "2ビット", d_difficulty: 2, e_difficulty: 2 },
+  {name:'Uncolored Squares',
+  tran_name:'色消し格子',
+  yomi_name:'いろけしこうし',
+  d_difficulty: 2,
+  e_difficulty: 2,
+  },
+
   {
     name: "Wire Placement",
     tran_name: "配置ワイヤ",
