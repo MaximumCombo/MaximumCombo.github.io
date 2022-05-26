@@ -52,6 +52,13 @@ var module_info = [
     e_difficulty: 3,
   },
   {
+    name: "Backgrounds",
+    tran_name: "背景",
+    yomi_name: "はいけい",
+    d_difficulty: 1,
+    e_difficulty: 1,
+  },
+  {
     name: "Battleship",
     tran_name: "戦艦ゲーム",
     yomi_name: "せんかんゲーム",
