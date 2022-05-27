@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>The Screw — Keep Talking and Nobody Explodes Mod</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        .boxed {
+            border: 3px solid black;
+            padding-left: 3px;
+            line-height: 105%;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-02">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">The Screw</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/The Screw.svg" class="diagram">
+                <h2>モジュール詳細：ネジ</h2>
+                <p class="flavour-text">
+                    しっかりとねじを巻いて挑もう...
+                </p>
+
+                <ul>
+                    <li>ネジモジュールにはA、B,、C、D の4つのボタンが付いている。</li>
+                    <li>ボタンの下には6つのネジ穴があり、それぞれの枠には色が付けられている。</li>
+                    <li>どの穴にネジを締めるかでボタンを押した時の反応が変化する。</li>
+                    <li>間違ったボタンを押すとミスとなる。ただし、間違った穴にネジを締めてもすぐにミスとはならず、ボタンを押す前ならば何度でも締め直せる。</li>
+                    <li>ネジを締めていない時はボタンを押しても無反応。</li>
+                    <li>ネジは最初、左上の穴に締められている。</li>
+                    <li>次のステージに進むには、ネジを穴から取り出し、正解の穴に締める必要がある。その後、正しいボタンを押す。</li>
+                    <li>モジュールの左上のスクリーンには現在のステージ数が表示されている。</li>
+                    <li>全三ステージ存在する。</li>
+                </ul>
+
+                <h3>最初に、ネジをどの色のネジ穴に締めるかを判断する。</h3>
+                <ul>
+                    <li>ネジ穴は左から順に 1-6 の番号が割り振られる。</li>
+                    <li>最初のステージの正しいネジ穴はバッテリーの数と消灯したインジケータの数の合計で決まる。</li>
+                    <li>二番目のステージの正しいネジ穴はシリアルナンバーの一番右の数字と点灯したインジケータの数の合計で決まる。</li>
+                    <li>三番目のステージの正しいネジ穴はポートの数とバッテリーホルダの合計で決まる。</li>
+                    <li>既に正しいネジ穴にネジが締めてある場合、正しい穴は番号順で次の穴に変化する。</li>
+                    <li>数字が 7 以上の場合、数字が 1-6 の間になるまで 6 を引く。数字が 0 の場合、1 に変える。</li>
+                </ul>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/2</div>
+        </div>
+
+        <div class="page page-bg-04">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">The Screw</span>
+            </div>
+            <div class="page-content">
+
+                <h3>次に、下の表を使用し、どのボタンを押すのかを判断する:</h3>
+                <div class="boxed">
+                    <h3>正しいネジ穴の枠の色が赤、黄色、もしくは緑:</h3>
+                    <h4>正しいネジ穴が上の段にある場合:</h4>
+                    <ul>
+                        <li>正しいネジ穴を、同じ段の左から数えた順番がバッテリーホルダの数と同じ場合、四番目のボタンを押す。</li>
+                        <li>そうでない場合、A のボタンが一番目もしくは三番目の場合、C というラベルのボタンを押す。</li>
+                        <li>そうでない場合、爆弾に CLR、FRK、もしくは TRN インジケータが付いている場合、三番目のボタンを押す。</li>
+                        <li>そうでない場合、正しいネジ穴が青い穴と同じ段に位置する場合、一番目のボタンを押す。</li>
+                        <li>そうでない場合、B というラベルのボタンを押す。</li>
+                    </ul>
+
+                    <h4>正しいネジ穴が下の段にある場合:</h4>
+                    <ul>
+                        <li>正しいネジ穴を、同じ段の左から数えた順番がポートの種類数と同じ場合、二番目のボタンを押す。</li>
+                        <li>そうでない場合、正しいネジ穴を、同じ段の左から数えた順番がバッテリーの数と同じ場合、D というラベルのボタンを押す。</li>
+                        <li>そうでない場合、正しいネジ穴が白い穴と同じ列に位置しない場合、A というラベルのボタンを押す。</li>
+                        <li>そうでない場合、正しいネジ穴の隣にマゼンタの穴がある場合、C というラベルのボタンを押す。</li>
+                        <li>そうでない場合、一番目のボタンを押す。</li>
+                    </ul>
+
+                    <h3>正しいネジ穴の枠の色が青、マゼンタ、もしくは白:</h3>
+                    <h4>正しいネジ穴が上の段にある場合:</h4>
+                    <ul>
+                        <li>正しいネジ穴を、同じ段の左から数えた順番がポートの種類数と同じ場合、D というラベルのボタンを押す。</li>
+                        <li>そうでない場合、C のボタンが二番目もしくは四番目の場合、B というラベルのボタンを押す。</li>
+                        <li>そうでない場合、爆弾に CAR、FRQ、もしくは SND インジケータが付いている場合、四番目のボタンを押す。</li>
+                        <li>そうでない場合、正しいネジ穴が赤い穴と同じ段に位置する場合、二番目のボタンを押す。</li>
+                        <li>そうでない場合、A というラベルのボタンを押す。</li>
+                    </ul>
+
+                    <h4>正しいネジ穴が下の段にある場合:</h4>
+                    <ul>
+                        <li>正しいネジ穴を、同じ段の左から数えた順番がポートプレートの数と同じ場合、 二番目のボタンを押す。</li>
+                        <li>そうでない場合、正しいネジ穴を、同じ段の左から数えた順番がインジケータの数と同じ場合、A というラベルのボタンを押す。</li>
+                        <li>そうでない場合、正しいネジ穴の隣に黄色い穴がある場合、C というラベルのボタンを押す。</li>
+                        <li>そうでない場合、正しいネジ穴が緑の穴と同じ列に位置しない場合、D というラベルのボタンを押す。</li>
+                        <li>そうでない場合、四番目のボタンを押す。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page-footer relative-footer">ページ 2/2</div>
+        </div>
+    </div>
+</body>
+</html>

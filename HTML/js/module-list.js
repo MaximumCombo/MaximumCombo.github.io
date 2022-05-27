@@ -421,6 +421,7 @@ var module_info = [
     d_difficulty: 1,
     e_difficulty: 3,
   },
+  { name: "The Screw", tran_name: "ネジ", d_difficulty: 2, e_difficulty: 3 },
   {
     name: "The Square Button",
     tran_name: "四角いボタン",
@@ -456,11 +457,12 @@ var module_info = [
     e_difficulty: 2,
   },
   { name: "Two Bits", tran_name: "2ビット", d_difficulty: 2, e_difficulty: 2 },
-  {name:'Uncolored Squares',
-  tran_name:'色消し格子',
-  yomi_name:'いろけしこうし',
-  d_difficulty: 2,
-  e_difficulty: 2,
+  {
+    name: "Uncolored Squares",
+    tran_name: "色消し格子",
+    yomi_name: "いろけしこうし",
+    d_difficulty: 2,
+    e_difficulty: 2,
   },
 
   {
