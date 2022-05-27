@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>3×3 Grid — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        table {
+            margin: 1em auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">3×3 Grid</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/3x3 Grid.svg" class="diagram">
+                <h2>モジュール詳細：3x3グリッド</h2>
+                <p class="flavour-text">LEDが全て消灯していた場合、キーパッドの明かりを全て消すべきか、それとも点けるべきか。</p>
+                <ul>
+                    <li>タイマーの左には3x3のディスプレイが付いており、ランダムでLEDが点灯する*</li>
+                    <li>シリアルナンバーの最後の数字が偶数の場合、ディスプレイの通りに、大きい3×3のキーパッドの明滅を切り替える。</li>
+                    <li>シリアルナンバーの最後の数字が奇数の場合、ディスプレイとは逆の状態に、大きい3×3のキーパッドの明滅を切り替える。</li>
+                    <li>
+                        <ul><li>例: 真ん中のディスプレイ以外のLEDが全て点灯した場合、真ん中のキーパッドのみ、明かりを点ける。</li></ul>
+                    </li>
+                    <li>タイマーの時間がなくなる前に明滅を切り替える。時間が切れた時のキーパッドの明滅が間違っている場合は、ミスとなる。</li>
+                </ul>
+                <p><sub>*モジュールが起動した際にLEDが点灯しない場合もある。バグではないので、通常通りの手順を踏むこと。</sub>
+                </p>
+            </div>
+           <div class="page-footer relative-footer">ページ 1/1</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -20,6 +20,13 @@ var module_info = [
     e_difficulty: 3,
   },
   {
+    name: "3x3 Grid",
+    tran_name: "3x3グリッド",
+    d_difficulty: 2,
+    e_difficulty: 2,
+    tag: "特殊モジュール",
+  },
+  {
     name: "Adjacent Letters",
     tran_name: "隣接文字",
     yomi_name: "りんせつもじ",
