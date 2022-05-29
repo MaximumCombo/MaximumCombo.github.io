@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Silly Slots — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        .placeholder {
+            text-decoration: underline;
+        }
+        table.silly {
+            border: none;
+        }
+        .warning {
+            float: right;
+            clear: right;
+            border: 1px solid black;
+            width: 8em;
+            padding: .1em .5em;
+            margin-left: .5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Silly Slots</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Silly Slots.svg" class="diagram">
+
+                <h2>モジュール詳細：おかしなスロット</h2>
+                <p class="flavour-text">イギーがスープをこぼしたので、サリーがソーリーと謝った。</p>
+
+                <p>スロットが異常な状態の場合はレバーを引く。
+                    それ以外の場合は KEEP ボタンを押す。
+                    4回レバーを引くとモジュールは自動的に解除される。</p>
+
+                <p>以下の条件のどれかを満たす場合、スロットは異常な状態:</p>
+
+                <ul>
+                    <li>絵柄に一つだけ <span class='placeholder'>Silly</span> <span class='placeholder'>Sausage</span> がある。</li>
+                    <li>絵柄に一つだけ <span class='placeholder'>Sassy</span> <span class='placeholder'>Sally</span> があり、かつ2ステージ前の同じ位置の絵柄が <span class='placeholder'>Soggy</span> ではない。</li>
+                    <li>絵柄に2つ以上 <span class='placeholder'>Soggy</span> <span class='placeholder'>Steven</span> がある。</li>
+                    <li>絵柄に3つ <span class='placeholder'>Simon</span> があり、かつどの絵柄も <span class='placeholder'>Sassy</span> ではない。</li>
+                    <li><span class='placeholder'>Sally</span> の隣に <span class='placeholder'>Sausage</span> があり、かつ <span class='placeholder'>Sally</span> の左右どちらかに <span class='placeholder'>Soggy</span> がない。</li>
+                    <li>絵柄に2つだけ <span class='placeholder'>Silly</span> があり、かつどちらかが <span class='placeholder'>Steven</span> ではない。</li>
+                    <li>絵柄に一つだけ <span class='placeholder'>Soggy</span> があり、 一つ前のステージの絵柄に <span class='placeholder'>Sausage</span> がない。</li>
+                    <li>3つの絵柄全てが同じ色と絵柄で、かつ前のステージの絵柄に <span class='placeholder'>Soggy</span> <span class='placeholder'>Sausage</span> がない。</li>
+                    <li>3つの絵柄全てが同じ色で、かつ <span class='placeholder'>Sally</span> が絵柄にない もしくは <span class='placeholder'>Silly</span> <span class='placeholder'>Steven</span> が一つ前のステージの絵柄にない。</li>
+                    <li><span class='placeholder'>Silly</span> <span class='placeholder'>Simon</span> の絵柄があり、かつ前のステージの絵柄に <span class='placeholder'>Sassy</span> <span class='placeholder'>Sausage</span> がない。</li>
+                </ul>
+
+                <p>モジュールのディスプレイに表示されたキーワードと表を使い、
+                    <span class='placeholder'>下線</span>が付いている単語を正しい単語に入れ替える。
+                    レバーを引くとキーワードは変化する。</p>
+
+                <table class='silly'>
+                    <tr><td colspan='2' rowspan='2' class='corner'></td><th colspan='7'>下線の単語</th></tr>
+                    <tr><th>Sassy</th><th>Silly</th><th>Soggy</th><th>Sally</th><th>Simon</th><th>Sausage</th><th>Steven</th></tr>
+                    <tr><th rowspan='7'>キーワード</th>
+                        <th>Sassy</th><td>青</td><td>赤</td><td>緑</td><td>サクランボ</td><td>ぶどう</td><td>爆弾</td><td>コイン</td></tr>
+                    <tr><th>Silly</th><td>青</td><td>緑</td><td>赤</td><td>コイン</td><td>爆弾</td><td>ぶどう</td><td>サクランボ</td></tr>
+                    <tr><th>Soggy</th><td>緑</td><td>青</td><td>赤</td><td>コイン</td><td>サクランボ</td><td>爆弾</td><td>ぶどう</td></tr>
+                    <tr><th>Sally</th><td>赤</td><td>青</td><td>緑</td><td>ぶどう</td><td>サクランボ</td><td>爆弾</td><td>コイン</td></tr>
+                    <tr><th>Simon</th><td>赤</td><td>緑</td><td>青</td><td>爆弾</td><td>ぶどう</td><td>サクランボ</td><td>コイン</td></tr>
+                    <tr><th>Sausage</th><td>赤</td><td>青</td><td>緑</td><td>ぶどう</td><td>爆弾</td><td>コイン</td><td>サクランボ</td></tr>
+                    <tr><th>Steven</th><td>緑</td><td>赤</td><td>青</td><td>サクランボ</td><td>爆弾</td><td>コイン</td><td>ぶどう</td></tr>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">ページ 1/1</div>
+        </div>
+    </div>
+</body>
+</html>

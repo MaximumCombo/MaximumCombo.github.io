@@ -377,6 +377,12 @@ var module_info = [
     e_difficulty: 3,
   },
   {
+    name: "Silly Slots",
+    tran_name: "おかしなスロット",
+    d_difficulty: 2,
+    e_difficulty: 4,
+  },
+  {
     name: "Simon Screams",
     tran_name: "サイモンスクリーム",
     d_difficulty: 2,
