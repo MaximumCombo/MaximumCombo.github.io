@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Minesweeper — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/ja.css" id="languageCSS">
+
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        .color-lookup {
+            float: right;
+            margin-left: 1.5em;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .orange {
+            background: orange;
+        }
+
+        .yellow {
+            background: yellow;
+        }
+
+        .green {
+            background: green;
+        }
+
+        .blue {
+            background: blue;
+        }
+
+        .purple {
+            background: purple;
+        }
+    </style>
+</head>
+<body>
+<div class="section">
+    <div class="page page-bg-07">
+        <div class="page-header">
+            <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+            <span class="page-header-section-title">Minesweeper</span>
+        </div>
+        <div class="page-content">
+            <img class="diagram" src="img/Component/Minesweeper.svg">
+            <h2>モジュール詳細：マインスイーパー</h2>
+            <p class="flavour-text">爆弾にマインスイーパーはいらないような気がする。</p>
+            <ul>
+                <li>マインスイーパーモジュールには正方形のマスとモードボタンが付いている。</li>
+                <li>モードボタンを押すことで二つのモードを切り替えできる。
+                    <ul>
+                        <li>Digging モード - 地雷がないと思うマスを開ける。</li>
+                        <li>Flagging モード - 地雷があると思うマスに旗を置く。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>開始マスの特定</h3>
+            <table class="color-lookup borderless">
+                <tr>
+                    <th colspan="2">色</th><th>#</th>
+                </tr>
+                <tr>
+                    <td>赤</td><td class="red"></td><td>5</td>
+                </tr>
+                <tr>
+                    <td>オレンジ</td><td class="orange"></td><td>2</td>
+                </tr>
+                <tr>
+                    <td>黄色</td><td class="yellow"></td><td>3</td>
+                </tr>
+                <tr>
+                    <td>緑</td><td class="green"></td><td>1</td>
+                </tr>
+                <tr>
+                    <td>青</td><td class="blue"></td><td>6</td>
+                </tr>
+                <tr>
+                    <td>紫</td><td class="purple"></td><td>4</td>
+                </tr>
+            </table>
+
+            <p>開始マスは色付きのマスの内のどれか一つ。シリアルナンバーの二番目の数字を取る。もしゼロならば、10で代替する。左上から順に色付きのマスを数え、数字と一致するマスを見つける。数える時、一番右下のマスまで到達したらまた左上から数える。</p>
+
+            <p>見つけたマスの色を表に使う。シリアルナンバーの最初の文字を数字に置き換え(A = 1, B = 2 など)、表から得た数字と合計する。そして、右下から順に色付きのマスを数え、数字と一致するマスを見つける。数える時、一番左上のマスまで到達したらまた右下から数える。見つけたマスが開始マス。</p>
+
+            <p><em>メモ:</em> 開始マスを開けてからでないと、他のマスを開けることはできず、開始マスとは異なる場所を開けると、地雷があるかどうかに関わらずミスとなる。</p>
+
+            <h3>マインスイーパーを解く</h3>
+            <p>マスの数字は周囲の8マスに地雷がいくつ存在するかを示す。この情報を使い、地雷の位置を割り出す。地雷がないマスを全て開けるか、もしくは地雷があるマスに全て旗を立てるとモジュールは解除される。地雷があるマスを開けるとミスとなる。</p>
+
+            <p><em>メモ:</em> 数字をクリックすると周囲の旗が立っていないマスを一気に開ける。マスを長押しすると旗を立てられる。</p>
+        </div>
+        <div class="page-footer relative-footer">ページ 1/1</div>
+    </div>
+</div>
+
+</body>
+</html>

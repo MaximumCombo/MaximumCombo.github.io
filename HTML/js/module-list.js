@@ -295,6 +295,13 @@ var module_info = [
     e_difficulty: 3,
   },
   {
+    name: "Minesweeper",
+    tran_name: "マインスイーパー",
+    d_difficulty: 4,
+    e_difficulty: 2,
+  },
+
+  {
     name: "Morsematics",
     tran_name: "モールス計算",
     yomi_name: "モールスけいさん",
